@@ -15,30 +15,24 @@ const Robot = props => {
             <Card.Content extra>
                 We would put all of the bots attributes here
                 <Accordion fluid styled>
-                    <Accordion.Title active={activeIndex === 0} index={0} onClick={() => handleClick(setIndex, activeIndex, 0)} >
-                        <Icon name="dropdown" />
-                        Attribute 1
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 0} >
-                        Details for Attribute 1
-                    </Accordion.Content>
-                    <Accordion.Title active={activeIndex === 1} index={1} onClick={() => handleClick(setIndex, activeIndex, 1)} >
-                        <Icon name="dropdown" />
-                        Attribute 2
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 1} >
-                        Details for Attribute 2
-                    </Accordion.Content>
-                    <Accordion.Title active={activeIndex === 2} index={2} onClick={() => handleClick(setIndex, activeIndex, 2)} >
-                        <Icon name="dropdown" />
-                        Attribute 3
-                    </Accordion.Title>
-                    <Accordion.Content active={activeIndex === 2} >
-                        Details for Attribute 3
-                    </Accordion.Content>
+                    {props.attributes.map((attribute, index) => getAccordianEntry(activeIndex, setIndex, index, attribute.name, attribute.details))}
                 </Accordion>
             </Card.Content>
         </Card>
+    );
+}
+
+const getAccordianEntry = (activeIndex, setIndex, index, title, details) => {
+    return (
+        <React.Fragment>
+            <Accordion.Title active={activeIndex === index} index={index} onClick={() => handleClick(setIndex, activeIndex, index)} >
+                <Icon name="dropdown" />
+                {title}
+            </Accordion.Title>
+            <Accordion.Content active={activeIndex === index} >
+                {details}
+            </Accordion.Content>
+        </React.Fragment>
     );
 }
 
@@ -51,6 +45,20 @@ Robot.defaultProps = {
     name: "Default Robot",
     modelNumber: -1,
     description: "I am but a humble default description for a humble default robot",
+    attributes : [
+        {
+          name: "First",
+          details: "I am first",
+        },
+        {
+          name: "Second",
+          details: "I am second",
+        },
+        {
+          name: "Third",
+          details: "I am third",
+        }
+    ],
 }
 
 export default Robot;
