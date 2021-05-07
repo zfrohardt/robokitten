@@ -18,4 +18,11 @@ const Robot = props => {
     );
 }
 
+Robot.defaultProps = {
+    img: "https://robohash.org/default",
+    name: "Default Robot",
+    modelNumber: -1,
+    description: "I am but a humble default description for a humble default robot",
+}
+
 export default Robot;
