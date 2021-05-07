@@ -26,9 +26,17 @@ function App() {
                 <Robot img={"https://robohash.org/VJ9.png?set=set1"} name={"Wall-E"} modelNumber={42} description={"They call me a killer robot, but I just want to find love"} attributes={attributes} />
                 <Robot />
                 <Robot />
+                <Robot />
             </Card.Group>
         </div>
     );
 }
+
+// Routes:
+//      Home
+//      Game Screen
+//      Seed
+//      Browse Robots
+
 
 export default App;

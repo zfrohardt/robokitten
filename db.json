@@ -1,0 +1,43 @@
+{
+    "robots": [
+        {
+            "modelNumber": 1,
+            "class": "Default",
+            "description": "I am but a humble default description for a humble default robot",
+            "damage": -1,
+            "health": -1,
+            "defense": -1,
+            "attributes" : []
+        },
+        {
+            "modelNumber": 3,
+            "class": "Attacker",
+            "description": "I am aggressive, bitch",
+            "damage": 7,
+            "health": 4,
+            "defense": 0,
+            "attributes" : [1]
+        }
+    ],
+    "attributes": [
+        {
+            "id": 1,
+            "name": "First",
+            "description": "I am first",
+            "type": "passive"
+        },
+        {
+            "id": 2,
+            "name": "Second",
+            "description": "I am second",
+            "type": "active"
+        },
+        {
+            "id": 3,
+            "name": "Third",
+            "description": "I am third",
+            "type": "active"
+        }
+    ],
+    "users": []
+}
