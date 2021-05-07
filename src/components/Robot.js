@@ -9,11 +9,13 @@ const Robot = props => {
             <Image src={props.img} wrapped ui={false} />
             <Card.Content>
                 <Card.Header>{props.name}</Card.Header>
-                <Card.Meta>Model Number {props.modelNumber}</Card.Meta>
+                <Card.Meta>Class: {props.class} | Model Number {props.modelNumber}</Card.Meta>
                 <Card.Description>{props.description}</Card.Description>
             </Card.Content>
             <Card.Content extra>
-                We would put all of the bots attributes here
+                Damage: {props.damage} | Health: {props.health} | Defense: {props.defense}
+            </Card.Content>
+            <Card.Content extra>
                 <Accordion fluid styled>
                     {props.attributes.map((attribute, index) => getAccordianEntry(activeIndex, setIndex, index, attribute.name, attribute.details))}
                 </Accordion>
@@ -44,7 +46,11 @@ Robot.defaultProps = {
     img: "https://robohash.org/default",
     name: "Default Robot",
     modelNumber: -1,
+    class: "Default",
     description: "I am but a humble default description for a humble default robot",
+    damage: -1,
+    health: -1,
+    defense: -1,
     attributes : [
         {
           name: "First",
