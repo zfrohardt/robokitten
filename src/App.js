@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Robot from './components/Robot';
 import 'semantic-ui-css/semantic.min.css';
 import { Card } from 'semantic-ui-react';
