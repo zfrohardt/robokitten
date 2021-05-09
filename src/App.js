@@ -5,7 +5,9 @@ import Robot from './components/Robot';
 import 'semantic-ui-css/semantic.min.css';
 import { Card } from 'semantic-ui-react';
 import SplashScreen from './components/SplashScreen';
+import Game from './components/Game';
 import Browse from './components/Browse';
+import Stats from './components/Stats';
 
 const attributes = [
     {
@@ -27,8 +29,9 @@ function App() {
         <div className="App">
             <Router>
                 <Route exact path="/" component={SplashScreen} />
+                <Route exact path="/play" component={Game} />
                 <Route exact path="/troops" component={Browse} />
-
+                <Route exact path='/statistics' component={Stats} />
             </Router>
             {/* <Card.Group itemsPerRow={3} >
                 <Robot img={"https://robohash.org/VJ9.png?set=set1"} name={"Wall-E"} modelNumber={42} description={"They call me a killer robot, but I just want to find love"} attributes={attributes} />
