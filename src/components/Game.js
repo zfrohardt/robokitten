@@ -11,6 +11,7 @@ export default class Game extends Component {
     render() {
         return (
             <div>
+                This is where we build all of our game logic
             </div>
         );
     }
