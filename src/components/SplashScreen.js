@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Link} from 'react';
 import {Button, Container, Header} from 'semantic-ui-react';
 
 const SplashScreen = props => (
@@ -9,6 +9,7 @@ const SplashScreen = props => (
             <Button icon="factory" content="Examine the Troops!" color="yellow" /> {/* Look at the list of robots */}
             <Button icon="hand victory" content="Admire our Victories!" color="yellow" /> {/* Look at high scores */}
         </Button.Group>
+        <Link href="/test" />
     </Container>
 )
 

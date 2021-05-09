@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import Robot from './components/Robot';
 import 'semantic-ui-css/semantic.min.css';
 import { Card } from 'semantic-ui-react';
-import SplashScreen from './SplashScreen';
+import SplashScreen from './components/SplashScreen';
+import Browse from './components/Browse';
 
 const attributes = [
     {
@@ -25,7 +26,9 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Route path="/" component={SplashScreen} />
+                <Route exact path="/" component={SplashScreen} />
+                <Route exact path="/troops" component={Browse} />
+
             </Router>
             {/* <Card.Group itemsPerRow={3} >
                 <Robot img={"https://robohash.org/VJ9.png?set=set1"} name={"Wall-E"} modelNumber={42} description={"They call me a killer robot, but I just want to find love"} attributes={attributes} />
