@@ -148,7 +148,7 @@ const makeRobotCard = (key, robot, abilities) => {
     // TODO: Sort by the order of ids in the db? maybe this is a non issue
     let specificAbilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
     return (
-        <Robot key={key} {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
+        <Robot key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
     );
 }
 
