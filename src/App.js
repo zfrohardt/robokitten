@@ -28,7 +28,6 @@ const attributes = [
 const STD_URL_LENGTH = 3;
 
 function App() {
-    console.log(getURLSeed());
     return (
         <div className="App">
             <Router>

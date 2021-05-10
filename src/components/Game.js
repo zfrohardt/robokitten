@@ -14,8 +14,6 @@ export default class Game extends Component {
     }
 
     render() {
-        console.log(this.state.seed);
-
         return (
             <div>
                 This is where we build all of our game logic: {this.props.seed} <br />
