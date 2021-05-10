@@ -305,37 +305,44 @@
         {
             "modelNumber": "1",
             "description": "There is no time to remedy our enemies' ignorance. Blast it out of them.",
-            "teamBonus": "Adds 3 to each warrior's damage"
+            "teamBonus": "Plus 3 Damage",
+            "teamBonusDesc": "Adds 3 to each warrior's damage"
         },
         {
             "modelNumber": "2",
             "description": "My soldiers are like a cache of bombs: reday to explode. I am here to light their fuse.",
-            "teamBonus": "Fire type attacks times 2"
+            "teamBonus": "Fire Bonus",
+            "teamBonusDesc": "Fire type attacks times 2"
         },
         {
             "modelNumber": "3",
             "description": "Effective use of terrain is a lesson good commanders learn quickly.",
-            "teamBonus": "Adds 3 to each warrior's defense"
+            "teamBonus": "Plus 3 Defense",
+            "teamBonusDesc": "Adds 3 to each warrior's defense"
         },
         {
             "modelNumber": "4",
             "description": "Give me my warriors and I will change the world!",
-            "teamBonus": "Adds 3 to each warrior's health"
+            "teamBonus": "Plus 3 Health",
+            "teamBonusDesc": "Adds 3 to each warrior's health"
         },
         {
             "modelNumber": "5",
             "description": "Command is the act of balancing on a vine and convincing others that it is firm ground.",
-            "teamBonus": "Adds 2 to all of each warrior's stats"
+            "teamBonus": "Plus 2 All Stats",
+            "teamBonusDesc": "Adds 2 to all of each warrior's stats"
         },
         {
             "modelNumber": "6",
             "description": "My soldiers are electric. Boogie woogie, woogie!",
-            "teamBonus": "Lightning type attacks times 2"
+            "teamBonus": "Lightning Bonus",
+            "teamBonusDesc": "Lightning type attacks times 2"
         },
         {
             "modelNumber": "7",
             "description": "If you want peace, prepare for war.",
-            "teamBonus": "Bullet type attacks times 2"
+            "teamBonus": "Bullet Bonus",
+            "teamBonusDesc": "Bullet type attacks times 2"
         }
     ],
     "abilities": [
