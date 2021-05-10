@@ -8,13 +8,14 @@ const Robot = props => {
         fire: 'fire',
         lightning: 'lightning',
         bullet: 'crosshairs',
-        normal: 'cog'
+        normal: 'cog',
+        captain: 'flag'
     }
 
     const [activeIndex, setIndex] = useState(-1);
     return (
         <Card>
-            <Image src={props.img} wrapped ui={false} className={props.type}/>
+            <Image src={`https://robohash.org/ModelNumber${props.modelNumber}.png`} wrapped ui={false} className={props.type}/>
             <Card.Content>
                 <Card.Header><Icon color='grey' name={iconMapper[props.type]} />{props.name}</Card.Header>
                 <Card.Meta>Class: {props.class} | Type: {props.type}</Card.Meta>
@@ -53,7 +54,6 @@ const handleClick = (setIndex, activeIndex, index) => {
 }
 
 Robot.defaultProps = {
-    img: "https://robohash.org/default",
     name: "Default Robot",
     modelNumber: -1,
     class: "Default",
@@ -61,7 +61,7 @@ Robot.defaultProps = {
     damage: -1,
     health: -1,
     defense: -1,
-    attributes : [
+    abilities : [
         {
           name: "First",
           description: "I am first",
