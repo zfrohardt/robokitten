@@ -1,9 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
-import Robot from './components/Robot';
 import 'semantic-ui-css/semantic.min.css';
-import { Card } from 'semantic-ui-react';
+
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+
 import SplashScreen from './components/SplashScreen';
 import Game from './components/Game';
 import Browse from './components/Browse';
