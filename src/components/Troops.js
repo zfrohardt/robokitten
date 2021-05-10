@@ -13,7 +13,7 @@ const Troops = (props) => {
                 </Menu>
             </Container>
             <Card.Group>
-                {props.robots.map(robot => makeRobotCard(robot, props.abilities))}
+                {props.robots.map((robot, index) => makeRobotCard(index, robot, props.abilities))}
             </Card.Group>
         </React.Fragment>
     );
@@ -79,11 +79,11 @@ const typeOptions = [
     }
 ]
 
-const makeRobotCard = (robot, abilities) => {
+const makeRobotCard = (key, robot, abilities) => {
     // TODO: Sort by the order of ids in the db? maybe this is a non issue
     let specificAbilities = abilities.filter(ability => robot.abilities.includes(ability.id));
     return (
-        <Robot {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} attributes={specificAbilities} />
+        <Robot key={key} {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} attributes={specificAbilities} />
     );
 }
 
