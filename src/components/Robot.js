@@ -8,7 +8,7 @@ const Robot = props => {
         fire: 'fire',
         lightning: 'lightning',
         bullet: 'crosshairs',
-        normal: 'power off'
+        normal: 'cog'
     }
 
     const [activeIndex, setIndex] = useState(-1);
