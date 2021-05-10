@@ -7,6 +7,7 @@ import RandomWords from 'random-words';
 import SplashScreen from './components/SplashScreen';
 import Game from './components/Game';
 import Troops from './components/Troops';
+import Enemies from './components/Enemies';
 import Stats from './components/Stats';
 import Error from './components/Error';
 
@@ -36,6 +37,8 @@ function App() {
                     <Redirect exact from="/play" to={`/play/${getURLSeed()}`} />
                     <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
                     <Route exact path="/troops" component={Troops} />
+                    <Route exact path="/enemies" component={Enemies} />
+                    <Redirect exact from="/kittens" to="/enemies" />
                     <Route exact path='/statistics' component={Stats} />
                     <Route component={Error} />
                 </Switch>
