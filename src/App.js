@@ -68,7 +68,7 @@ export default class App extends Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column verticalAlign="bottom">
-                            A GAME MADE BY TWO NON ROBOTS, MARC AND ZACH
+                            A GAME MADE BY TWO NON ROBOTS, <a href="https://github.com/moshriguez">MARC</a> AND <a href="https://github.com/zfrohardt">ZACH</a>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
