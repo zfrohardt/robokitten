@@ -57,6 +57,11 @@
   background-size: cover;
 }
 
+.card div.captain.image {
+  background-image: url('https://cdn.wallpapersafari.com/41/72/7IuROi.jpg');
+  background-size: cover;
+}
+
 .accordion .title.passive{
   background-color: rgba(128, 128, 128, 0.26);
 }
