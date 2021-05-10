@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Browse = (props) => {
+const Troops = (props) => {
     return (
         <div>
             This is where you can browse our troops.
@@ -8,4 +8,4 @@ const Browse = (props) => {
     );
 }
 
-export default Browse;
+export default Troops;
