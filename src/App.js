@@ -4,7 +4,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 import {Grid, Menu} from 'semantic-ui-react';
 
-import {BrowserRouter as Router, Link, Redirect, Route, Switch} from 'react-router-dom';
+import {Link, Redirect, Route, Switch} from 'react-router-dom';
 import RandomWords from 'random-words';
 
 import SplashScreen from './components/SplashScreen';
@@ -34,8 +34,7 @@ export default class App extends Component {
     }
 
     getURLSeed() {
-        var randomWords = require('random-words');
-        return randomWords({exactly: STD_URL_LENGTH, join: "-"});
+        return RandomWords({exactly: STD_URL_LENGTH, join: "-"});
     }
 
     populateDataFromServer = name => {
@@ -48,26 +47,23 @@ export default class App extends Component {
                 <Grid textAlign='center' style={{ height: '100vh' }} columns={1}>
                     <Grid.Row>
                         <Grid.Column verticalAlign="top">
-                            {/* TODO: fix the double router problem when creating the shared menus */}
                             <Menu>
-                                <Menu.Item as='a' to="/" >Home</Menu.Item>
+                                <Menu.Item as={Link} to="/" >Home</Menu.Item>
                             </Menu>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column verticalAlign="middle" stretched>
-                            <Router>
-                                <Switch>
-                                    <Route exact path="/" component={SplashScreen} />
-                                    <Redirect exact from="/play" to={`/play/${this.getURLSeed()}`} />
-                                    <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
-                                    <Route exact path="/troops" render={() => <Troops robots={this.state.robots} abilities={this.state.abilities} />} />
-                                    <Route exact path="/enemies" component={Enemies} />
-                                    <Redirect exact from="/kittens" to="/enemies" />
-                                    <Route exact path='/statistics' component={Stats} />
-                                    <Route component={Error} status={404} />
-                                </Switch>
-                            </Router>
+                            <Switch>
+                                <Route exact path="/" component={SplashScreen} />
+                                <Route exact path="/play" render={() => <Redirect to={`/play/${this.getURLSeed()}`} />} />
+                                <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
+                                <Route exact path="/troops" render={() => <Troops robots={this.state.robots} abilities={this.state.abilities} />} />
+                                <Route exact path="/enemies" component={Enemies} />
+                                <Redirect exact from="/kittens" to="/enemies" />
+                                <Route exact path='/statistics' component={Stats} />
+                                <Route component={Error} status={404} />
+                            </Switch>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
