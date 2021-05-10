@@ -117,16 +117,21 @@ const typeOptions = [
     },
     {
         key: 1,
+        text: "Normal",
+        value: "normal",
+    },
+    {
+        key: 2,
         text: "Fire",
         value: "fire",
     },
     {
-        key: 2,
+        key: 3,
         text: "Lightning",
         value: "lightning",
     },
     {
-        key: 3,
+        key: 4,
         text: "Bullet",
         value: "bullet",
     }
