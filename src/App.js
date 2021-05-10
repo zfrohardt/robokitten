@@ -18,6 +18,15 @@ const API = 'http://localhost:3000';
 const STD_URL_LENGTH = 3;
 
 export default class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            robots: [],
+            abilities: [],
+            captains: [],
+        };
+    }
+
     componentDidMount() {
         this.populateDataFromServer('robots');
         this.populateDataFromServer('abilities');
@@ -52,7 +61,7 @@ export default class App extends Component {
                                     <Route exact path="/" component={SplashScreen} />
                                     <Redirect exact from="/play" to={`/play/${this.getURLSeed()}`} />
                                     <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
-                                    <Route exact path="/troops" render={() => <Troops robots={this.state.robots} />} />
+                                    <Route exact path="/troops" render={() => <Troops robots={this.state.robots} abilities={this.state.abilities} />} />
                                     <Route exact path="/enemies" component={Enemies} />
                                     <Redirect exact from="/kittens" to="/enemies" />
                                     <Route exact path='/statistics' component={Stats} />
