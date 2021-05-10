@@ -57,7 +57,7 @@ export default class App extends Component {
                             <Switch>
                                 <Route exact path="/" component={SplashScreen} />
                                 <Route exact path="/play" render={() => <Redirect to={`/play/${this.getURLSeed()}`} />} />
-                                <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
+                                <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} {...this.state}  />} />
                                 <Route exact path="/troops" render={() => <Troops robots={this.state.robots} abilities={this.state.abilities} />} />
                                 <Route exact path="/enemies" component={Enemies} />
                                 <Redirect exact from="/kittens" to="/enemies" />
