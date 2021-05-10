@@ -117,16 +117,21 @@ const typeOptions = [
     },
     {
         key: 1,
+        text: "Normal",
+        value: "normal",
+    },
+    {
+        key: 2,
         text: "Fire",
         value: "fire",
     },
     {
-        key: 2,
+        key: 3,
         text: "Lightning",
         value: "lightning",
     },
     {
-        key: 3,
+        key: 4,
         text: "Bullet",
         value: "bullet",
     }
@@ -143,11 +148,7 @@ const makeRobotCard = (key, robot, abilities) => {
     // TODO: Sort by the order of ids in the db? maybe this is a non issue
     let specificAbilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
     return (
-<<<<<<< HEAD
-        <Robot key={key} {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} attributes={specificAbilities} />
-=======
-        <Robot {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
->>>>>>> robotCardEdits
+        <Robot key={key} {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
     );
 }
 
