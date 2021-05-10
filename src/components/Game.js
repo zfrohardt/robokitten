@@ -18,20 +18,20 @@ export default class Game extends Component {
     }
 
     render() {
-        console.log(this.getNumberFromRange(this.state.captainSeed, this.props.captains.length));
-        console.log(this.getRandomRobots());
+        // console.log(this.props.robots)
         return (
             (this.state.setup)? 
-                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={this.selectWarriors} /> :
+                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={this.selectWarriors} abilities={this.props.abilities}/> :
                 <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} />
         );
     }
 
     selectWarriors(robots) {
-        this.setState({
-            setup: false,
-            warriors: robots,
-        })
+        console.log(robots)
+        // this.setState({
+        //     setup: false,
+        //     warriors: robots,
+        // })
     }
 
     getRandomRobots() {
@@ -49,8 +49,12 @@ export default class Game extends Component {
     }
 
     getIndexFromRange(rand, arr) {
+        if (arr.length === 0) {
+            return {}
+        }
         return arr[this.getNumberFromRange(rand, arr.length)];
     }
+    
 
     getNumberFromRange(rand, upperBound) {
         return Math.floor(rand * upperBound);
