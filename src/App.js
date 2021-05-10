@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import Robot from './components/Robot';
 import 'semantic-ui-css/semantic.min.css';
 import { Card } from 'semantic-ui-react';
@@ -8,6 +8,7 @@ import SplashScreen from './components/SplashScreen';
 import Game from './components/Game';
 import Browse from './components/Browse';
 import Stats from './components/Stats';
+import Error from './components/Error';
 
 const attributes = [
     {
@@ -28,26 +29,17 @@ function App() {
     return (
         <div className="App">
             <Router>
-                <Route exact path="/" component={SplashScreen} />
-                <Route exact path="/play" component={Game} />
-                <Route exact path="/troops" component={Browse} />
-                <Route exact path='/statistics' component={Stats} />
+                <Switch>
+                    <Route exact path="/" component={SplashScreen} />
+                    <Redirect exact from="/play" to="/play/redirect-test" />
+                    <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
+                    <Route exact path="/troops" component={Browse} />
+                    <Route exact path='/statistics' component={Stats} />
+                    <Route component={Error} />
+                </Switch>
             </Router>
-            {/* <Card.Group itemsPerRow={3} >
-                <Robot img={"https://robohash.org/VJ9.png?set=set1"} name={"Wall-E"} modelNumber={42} description={"They call me a killer robot, but I just want to find love"} attributes={attributes} />
-                <Robot />
-                <Robot />
-                <Robot />
-            </Card.Group> */}
         </div>
     );
 }
-
-// Routes:
-//      Home
-//      Game Screen
-//      Seed
-//      Browse Robots
-
 
 export default App;
