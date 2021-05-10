@@ -12,9 +12,9 @@ const Troops = (props) => {
 
 const makeRobotCard = (robot, abilities) => {
     // TODO: Sort by the order of ids in the db? maybe this is a non issue
-    let specificAbilities = abilities.filter(ability => robot.abilities.includes(ability.id));
+    let specificAbilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
     return (
-        <Robot {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} attributes={specificAbilities} />
+        <Robot {...robot} img={`https://robohash.org/ModelNumber${robot.modelNumber}.png`} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
     );
 }
 
