@@ -28,7 +28,7 @@
             "health": "26",
             "defense": "2",
             "type": "fire",
-            "abilities": "[ 21, 25, 13]"
+            "abilities": [21, 25, 13]
         },
         {
             "modelNumber": "4",
@@ -98,7 +98,7 @@
             "health": "27",
             "defense": "4",
             "type": "normal",
-            "abilities": "[ 14, 11, 13]"
+            "abilities": [14, 11, 13]
         },
         {
             "modelNumber": "11",
