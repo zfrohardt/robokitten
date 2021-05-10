@@ -8,7 +8,7 @@
             "health": "18",
             "defense": "0",
             "type": "bullet",
-            "abilities": "[27, 28, 14]"
+            "abilities": [27, 28, 14]
         },
         {
             "modelNumber": "2",
@@ -18,7 +18,7 @@
             "health": "16",
             "defense": "0",
             "type": "normal",
-            "abilities": "[ 11, 9, 29]"
+            "abilities": [11, 9, 29]
         },
         {
             "modelNumber": "3",
@@ -38,7 +38,7 @@
             "health": "26",
             "defense": "3",
             "type": "bullet",
-            "abilities": "[ 26, 30, 10]"
+            "abilities": [ 26, 30, 10]
         },
         {
             "modelNumber": "5",
@@ -48,7 +48,7 @@
             "health": "12",
             "defense": "0",
             "type": "normal",
-            "abilities": "[ 9, 12, 15]"
+            "abilities": [ 9, 12, 15]
         },
         {
             "modelNumber": "6",
@@ -58,7 +58,7 @@
             "health": "17",
             "defense": "3",
             "type": "fire",
-            "abilities": "[ 21, 23, 2]"
+            "abilities": [ 21, 23, 2]
         },
         {
             "modelNumber": "7",
@@ -68,7 +68,7 @@
             "health": "15",
             "defense": "4",
             "type": "lightning",
-            "abilities": "[ 16, 17, 13]"
+            "abilities": [ 16, 17, 13]
         },
         {
             "modelNumber": "8",
@@ -78,7 +78,7 @@
             "health": "15",
             "defense": "1",
             "type": "normal",
-            "abilities": "[ 15, 11, 10]"
+            "abilities": [15, 11, 10]
         },
         {
             "modelNumber": "9",
@@ -88,7 +88,7 @@
             "health": "21",
             "defense": "1",
             "type": "lightning",
-            "abilities": "[ 20, 19, 9]"
+            "abilities": [20, 19, 9]
         },
         {
             "modelNumber": "10",
@@ -108,7 +108,7 @@
             "health": "22",
             "defense": "8",
             "type": "fire",
-            "abilities": "[ 22, 3, 4]"
+            "abilities": [ 22, 3, 4]
         },
         {
             "modelNumber": "12",
@@ -118,7 +118,7 @@
             "health": "15",
             "defense": "7",
             "type": "bullet",
-            "abilities": "[ 28, 1, 5]"
+            "abilities": [ 28, 1, 5]
         },
         {
             "modelNumber": "13",
@@ -128,7 +128,7 @@
             "health": "28",
             "defense": "5",
             "type": "normal",
-            "abilities": "[ 14, 4, 2]"
+            "abilities": [ 14, 4, 2]
         },
         {
             "modelNumber": "14",
@@ -138,7 +138,7 @@
             "health": "15",
             "defense": "8",
             "type": "lightning",
-            "abilities": "[ 17, 4, 3]"
+            "abilities": [ 17, 4, 3]
         },
         {
             "modelNumber": "15",
@@ -148,7 +148,7 @@
             "health": "25",
             "defense": "9",
             "type": "fire",
-            "abilities": "[ 25, 1, 3]"
+            "abilities": [ 25, 1, 3]
         },
         {
             "modelNumber": "16",
@@ -158,7 +158,7 @@
             "health": "20",
             "defense": "8",
             "type": "bullet",
-            "abilities": "[ 4, 29, 2]"
+            "abilities": [ 4, 29, 2]
         },
         {
             "modelNumber": "17",
@@ -168,7 +168,7 @@
             "health": "28",
             "defense": "8",
             "type": "normal",
-            "abilities": "[ 11, 5, 4]"
+            "abilities": [ 11, 5, 4]
         },
         {
             "modelNumber": "18",
@@ -178,7 +178,7 @@
             "health": "28",
             "defense": "6",
             "type": "lightning",
-            "abilities": "[ 18, 5, 1]"
+            "abilities": [ 18, 5, 1]
         },
         {
             "modelNumber": "19",
@@ -188,7 +188,7 @@
             "health": "28",
             "defense": "6",
             "type": "normal",
-            "abilities": "[ 15, 5, 1]"
+            "abilities": [15, 5, 1]
         },
         {
             "modelNumber": "20",
@@ -198,7 +198,7 @@
             "health": "21",
             "defense": "7",
             "type": "normal",
-            "abilities": "[ 13, 1, 5]"
+            "abilities": [13, 1, 5]
         },
         {
             "modelNumber": "21",
@@ -208,7 +208,7 @@
             "health": "28",
             "defense": "1",
             "type": "fire",
-            "abilities": "[ 25, 6, 2]"
+            "abilities": [25, 6, 2]
         },
         {
             "modelNumber": "22",
@@ -218,7 +218,7 @@
             "health": "26",
             "defense": "2",
             "type": "bullet",
-            "abilities": "[ 28, 7, 2]"
+            "abilities": [28, 7, 2]
         },
         {
             "modelNumber": "23",
@@ -228,7 +228,7 @@
             "health": "25",
             "defense": "3",
             "type": "normal",
-            "abilities": "[ 11, 6, 8]"
+            "abilities": [11, 6, 8]
         },
         {
             "modelNumber": "24",
@@ -238,7 +238,7 @@
             "health": "13",
             "defense": "2",
             "type": "lightning",
-            "abilities": "[ 17, 8, 10]"
+            "abilities": [17, 8, 10]
         },
         {
             "modelNumber": "25",
@@ -248,7 +248,7 @@
             "health": "29",
             "defense": "4",
             "type": "fire",
-            "abilities": "[ 22, 6, 2]"
+            "abilities": [22, 6, 2]
         },
         {
             "modelNumber": "26",
@@ -258,7 +258,7 @@
             "health": "25",
             "defense": "1",
             "type": "bullet",
-            "abilities": "[ 30, 7, 2]"
+            "abilities": [30, 7, 2]
         },
         {
             "modelNumber": "27",
@@ -268,7 +268,7 @@
             "health": "19",
             "defense": "2",
             "type": "normal",
-            "abilities": "[ 11, 7, 2]"
+            "abilities": [11, 7, 2]
         },
         {
             "modelNumber": "28",
@@ -278,7 +278,7 @@
             "health": "29",
             "defense": "4",
             "type": "lightning",
-            "abilities": "[ 19, 8, 2]"
+            "abilities": [19, 8, 2]
         },
         {
             "modelNumber": "29",
@@ -288,7 +288,7 @@
             "health": "26",
             "defense": "1",
             "type": "normal",
-            "abilities": "[ 12, 7, 10]"
+            "abilities": [12, 7, 10]
         },
         {
             "modelNumber": "30",
@@ -298,7 +298,7 @@
             "health": "25",
             "defense": "4",
             "type": "normal",
-            "abilities": "[ 14, 6, 2]"
+            "abilities": [14, 6, 2]
         }
     ],
     "captains": [
