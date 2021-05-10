@@ -2,6 +2,7 @@ import './App.css';
 import 'semantic-ui-css/semantic.min.css';
 
 import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
+import RandomWords from 'random-words';
 
 import SplashScreen from './components/SplashScreen';
 import Game from './components/Game';
@@ -24,13 +25,16 @@ const attributes = [
     }
 ]
 
+const STD_URL_LENGTH = 3;
+
 function App() {
+    console.log(getURLSeed());
     return (
         <div className="App">
             <Router>
                 <Switch>
                     <Route exact path="/" component={SplashScreen} />
-                    <Redirect exact from="/play" to="/play/redirect-test" />
+                    <Redirect exact from="/play" to={`/play/${getURLSeed()}`} />
                     <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} />} />
                     <Route exact path="/troops" component={Browse} />
                     <Route exact path='/statistics' component={Stats} />
@@ -39,6 +43,11 @@ function App() {
             </Router>
         </div>
     );
+}
+
+function getURLSeed() {
+    var randomWords = require('random-words');
+    return randomWords({exactly: STD_URL_LENGTH, join: "-"});
 }
 
 export default App;
