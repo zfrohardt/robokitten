@@ -61,20 +61,7 @@ Robot.defaultProps = {
     damage: -1,
     health: -1,
     defense: -1,
-    abilities : [
-        {
-          name: "First",
-          description: "I am first",
-        },
-        {
-          name: "Second",
-          description: "I am second",
-        },
-        {
-          name: "Third",
-          description: "I am third",
-        }
-    ],
+    abilities : [],
 }
 
 export default Robot;
