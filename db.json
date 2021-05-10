@@ -347,7 +347,7 @@
     ],
     "abilities": [
         {
-            "id": "1",
+            "id": 1,
             "name": "Absorb",
             "description": "Warrior redirects half of all damage dealt this turn to itself",
             "type": "normal",
@@ -355,7 +355,7 @@
             "target": "self"
         },
         {
-            "id": "2",
+            "id": 2,
             "name": "Harden",
             "description": "Each Warrior's defense increases by 1",
             "type": "normal",
@@ -363,7 +363,7 @@
             "target": "none"
         },
         {
-            "id": "3",
+            "id": 3,
             "name": "Protect",
             "description": "Each Warrior's defense increases by 2",
             "type": "normal",
@@ -371,7 +371,7 @@
             "target": "none"
         },
         {
-            "id": "4",
+            "id": 4,
             "name": "Attract",
             "description": "Warrior redirects all damage dealt this turn to itself",
             "type": "normal",
@@ -379,7 +379,7 @@
             "target": "self"
         },
         {
-            "id": "5",
+            "id": 5,
             "name": "Iron Defence",
             "description": "Each Warrior's defense increases times 2",
             "type": "normal",
@@ -387,7 +387,7 @@
             "target": "none"
         },
         {
-            "id": "6",
+            "id": 6,
             "name": "Helping Hand",
             "description": "Select warrior's health increases by 5 at the end of the turn",
             "type": "normal",
@@ -395,7 +395,7 @@
             "target": "warrior"
         },
         {
-            "id": "7",
+            "id": 7,
             "name": "Mr. Fixit",
             "description": "Each warrior's health increases by 4 at the end of each turn",
             "type": "normal",
@@ -403,7 +403,7 @@
             "target": "none"
         },
         {
-            "id": "8",
+            "id": 8,
             "name": "Tune Up",
             "description": "Each warrior's health increases by 2 at the end of each turn",
             "type": "normal",
@@ -411,7 +411,7 @@
             "target": "none"
         },
         {
-            "id": "9",
+            "id": 9,
             "name": "Battle Cry",
             "description": "Each Warrior's damage increases by 2",
             "type": "normal",
@@ -419,7 +419,7 @@
             "target": "none"
         },
         {
-            "id": "10",
+            "id": 10,
             "name": "Robot Bark",
             "description": "Damage dealt by kitties is reduced by 5",
             "type": "normal",
@@ -427,7 +427,7 @@
             "target": "none"
         },
         {
-            "id": "11",
+            "id": 11,
             "name": "Scratch",
             "description": "Regular attack = ceil(rand()*warrior'sDamage)",
             "type": "normal",
@@ -435,7 +435,7 @@
             "target": "none"
         },
         {
-            "id": "12",
+            "id": 12,
             "name": "Double Kick",
             "description": "Regular attack times 2",
             "type": "normal",
@@ -443,7 +443,7 @@
             "target": "none"
         },
         {
-            "id": "13",
+            "id": 13,
             "name": "Rage",
             "description": "Each Warrior's damage increases by 3 for this turn",
             "type": "normal",
@@ -451,7 +451,7 @@
             "target": "none"
         },
         {
-            "id": "14",
+            "id": 14,
             "name": "Sonic Boom",
             "description": "Regular attack plus 3",
             "type": "normal",
@@ -459,7 +459,7 @@
             "target": "none"
         },
         {
-            "id": "15",
+            "id": 15,
             "name": "Kamakazie",
             "description": "Takes out one enemy, but at the cost of the warrior that performed the action.",
             "type": "normal",
@@ -467,7 +467,7 @@
             "target": "enemy"
         },
         {
-            "id": "16",
+            "id": 16,
             "name": "Lightning Bolt",
             "description": "Select enemy receives Super lightning attack = warrior'sDamage (bullet type)",
             "type": "lightning",
@@ -475,7 +475,7 @@
             "target": "enemy"
         },
         {
-            "id": "17",
+            "id": 17,
             "name": "Shock",
             "description": "Lightning attack",
             "type": "lightning",
@@ -483,7 +483,7 @@
             "target": "none"
         },
         {
-            "id": "18",
+            "id": 18,
             "name": "Thunder Punch",
             "description": "Lightning attack plus 3",
             "type": "lightning",
@@ -491,7 +491,7 @@
             "target": "none"
         },
         {
-            "id": "19",
+            "id": 19,
             "name": "Magnetic Flux",
             "description": "Lightning attack plus 2",
             "type": "lightning",
@@ -499,7 +499,7 @@
             "target": "none"
         },
         {
-            "id": "20",
+            "id": 20,
             "name": "Zap Canon",
             "description": "Lightning attack times 2",
             "type": "lightning",
@@ -507,7 +507,7 @@
             "target": "none"
         },
         {
-            "id": "21",
+            "id": 21,
             "name": "Fire Ball",
             "description": "Select enemy receives Super fire attack = warrior'sDamage (bullet type)",
             "type": "fire",
@@ -515,7 +515,7 @@
             "target": "enemy"
         },
         {
-            "id": "22",
+            "id": 22,
             "name": "Torch",
             "description": "Fire attack plus 1",
             "type": "fire",
@@ -523,7 +523,7 @@
             "target": "none"
         },
         {
-            "id": "23",
+            "id": 23,
             "name": "Heat Ray",
             "description": "Fire attack plus 3",
             "type": "fire",
@@ -531,7 +531,7 @@
             "target": "none"
         },
         {
-            "id": "24",
+            "id": 24,
             "name": "Burning Oil",
             "description": "Fire attack times 2",
             "type": "fire",
@@ -539,7 +539,7 @@
             "target": "none"
         },
         {
-            "id": "25",
+            "id": 25,
             "name": "Flame Slash",
             "description": "Fire attack",
             "type": "fire",
@@ -547,7 +547,7 @@
             "target": "none"
         },
         {
-            "id": "26",
+            "id": 26,
             "name": "Sniper",
             "description": "Select enemy receives Super bullet attack = warrior'sDamage (bullet type)",
             "type": "bullet",
@@ -555,7 +555,7 @@
             "target": "enemy"
         },
         {
-            "id": "27",
+            "id": 27,
             "name": "Bullet Barrage",
             "description": "Bullet attack times 2",
             "type": "bullet",
@@ -563,7 +563,7 @@
             "target": "none"
         },
         {
-            "id": "28",
+            "id": 28,
             "name": "Open Fire",
             "description": "Bullet attack",
             "type": "bullet",
@@ -571,7 +571,7 @@
             "target": "none"
         },
         {
-            "id": "29",
+            "id": 29,
             "name": "Catnip Shot",
             "description": "Damage dealt by kitties is halved this turn",
             "type": "bullet",
@@ -579,7 +579,7 @@
             "target": "none"
         },
         {
-            "id": "30",
+            "id": 30,
             "name": "Robot Rock",
             "description": "Bullet attack plus 3",
             "type": "bullet",
