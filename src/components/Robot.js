@@ -17,14 +17,14 @@ const Robot = props => {
             </Card.Content>
             <Card.Content extra>
                 <Accordion fluid styled>
-                    {props.attributes.map((attribute, index) => getAccordianEntry(activeIndex, setIndex, index, attribute.name, attribute.details))}
+                    {props.attributes.map((attribute, index) => getAccordianEntry(activeIndex, setIndex, index, attribute.name, attribute.description))}
                 </Accordion>
             </Card.Content>
         </Card>
     );
 }
 
-const getAccordianEntry = (activeIndex, setIndex, index, title, details) => {
+const getAccordianEntry = (activeIndex, setIndex, index, title, description) => {
     return (
         <React.Fragment>
             <Accordion.Title active={activeIndex === index} index={index} onClick={() => handleClick(setIndex, activeIndex, index)} >
@@ -32,7 +32,7 @@ const getAccordianEntry = (activeIndex, setIndex, index, title, details) => {
                 {title}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === index} >
-                {details}
+                {description}
             </Accordion.Content>
         </React.Fragment>
     );
@@ -54,15 +54,15 @@ Robot.defaultProps = {
     attributes : [
         {
           name: "First",
-          details: "I am first",
+          description: "I am first",
         },
         {
           name: "Second",
-          details: "I am second",
+          description: "I am second",
         },
         {
           name: "Third",
-          details: "I am third",
+          description: "I am third",
         }
     ],
 }
