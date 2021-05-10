@@ -3,13 +3,22 @@ import React, {useState} from 'react';
 import {Accordion, Card, Icon, Image} from 'semantic-ui-react';
 
 const Robot = props => {
+
+    const iconMapper = {
+        fire: 'fire',
+        lightning: 'lightning',
+        bullet: 'crosshairs',
+        normal: 'power off'
+    }
+
     const [activeIndex, setIndex] = useState(-1);
     return (
         <Card>
-            <Image src={props.img} wrapped ui={false} />
+            <Image src={props.img} wrapped ui={false} className={props.type}/>
             <Card.Content>
-                <Card.Header>{props.name}</Card.Header>
-                <Card.Meta>Class: {props.class} | Model Number {props.modelNumber}</Card.Meta>
+                <Card.Header><Icon color='grey' name={iconMapper[props.type]} />{props.name}</Card.Header>
+                <Card.Meta>Class: {props.class} | Type: {props.type}</Card.Meta>
+                <Card.Meta>Model Number {props.modelNumber}</Card.Meta>
                 <Card.Description>{props.description}</Card.Description>
             </Card.Content>
             <Card.Content extra>
@@ -17,22 +26,23 @@ const Robot = props => {
             </Card.Content>
             <Card.Content extra>
                 <Accordion fluid styled>
-                    {props.attributes.map((attribute, index) => getAccordianEntry(activeIndex, setIndex, index, attribute.name, attribute.description))}
+                    {props.abilities.map((ability, index) => getAccordianEntry(activeIndex, setIndex, index, ability))}
                 </Accordion>
             </Card.Content>
         </Card>
     );
 }
 
-const getAccordianEntry = (activeIndex, setIndex, index, title, description) => {
+const getAccordianEntry = (activeIndex, setIndex, index, ability) => {
+    const passive = (ability.passive ? 'passive' : null)
     return (
-        <React.Fragment>
-            <Accordion.Title active={activeIndex === index} index={index} onClick={() => handleClick(setIndex, activeIndex, index)} >
+        <React.Fragment key={index}>
+            <Accordion.Title active={activeIndex === index} index={index} className={passive} onClick={() => handleClick(setIndex, activeIndex, index)} >
                 <Icon name="dropdown" />
-                {title}
+                {ability.name}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === index} >
-                {description}
+                {ability.description}
             </Accordion.Content>
         </React.Fragment>
     );
