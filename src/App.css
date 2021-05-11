@@ -62,7 +62,7 @@
   background-size: cover;
 }
 
-.accordion .title.passive{
+.accordion .title.passive, .content div.accordion .title.passive:hover, .content div.accordion div.active.title.passive {
   background-color: rgba(128, 128, 128, 0.26);
 }
 
