@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Button, Card, Grid} from 'semantic-ui-react';
 import Captain from './Captain'
-import Robot from './Robot'
+import RobotDisplayCard from './RobotDisplayCard'
 
 const MAX_ROBOTS = 3;
 
@@ -51,7 +51,7 @@ const getRobotSelectPanel = (robot, abilities, selected, addRobot) => {
     return (
         <Card>
             <Button color={(selected)? "green" : "blue"} content="Select" onClick={() => addRobot()} />
-            <Robot {...robot} abilities={getAbilities(robot, abilities)}/>
+            <RobotDisplayCard {...robot} abilities={getAbilities(robot, abilities)}/>
         </Card>
     )
 }

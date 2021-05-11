@@ -1,9 +1,9 @@
-// Display component for a Robot
+// Display component for a RobotDisplayCard
 import React, {useState} from 'react';
 import {Accordion, Card, Icon, Image} from 'semantic-ui-react';
 import iconMapper from './TypeIcons'
 
-const Robot = props => {
+const RobotDisplayCard = props => {
 
 
     const [activeIndex, setIndex] = useState(-1);
@@ -17,7 +17,7 @@ const Robot = props => {
                 <Card.Description>{props.description}</Card.Description>
             </Card.Content>
                 <Card.Content>
-                    Damage: {props.damage} | Health: {props.health} | Defense: {props.defense}
+                    Damage: {props.baseDamage} | Health: {props.maxHealth} | Defense: {props.baseDefense}
                 </Card.Content>
                 <Card.Content extra>
                     <Accordion fluid styled>
@@ -48,15 +48,15 @@ const handleClick = (setIndex, activeIndex, index) => {
     setIndex((activeIndex === index)? -1 : index);
 }
 
-Robot.defaultProps = {
-    name: "Default Robot",
+RobotDisplayCard.defaultProps = {
+    name: "Default RobotDisplayCard",
     modelNumber: -1,
     class: "Default",
-    description: "I am but a humble default description for a humble default robot",
+    description: "I am but a humble default description for a humble default robotDisplayCard",
     damage: -1,
     health: -1,
     defense: -1,
     abilities : [],
 }
 
-export default Robot;
+export default RobotDisplayCard;

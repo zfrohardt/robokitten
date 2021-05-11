@@ -3,7 +3,7 @@ import {Card, Icon, Image} from 'semantic-ui-react';
 
 const Captain = props => {
     return (
-        <Card className="captain">
+        <Card className={props.type}>
             <Image src={`https://robohash.org/ModelNumber${props.modelNumber}.png`} wrapped ui={false} className={props.type}/>
             <Card.Content>
                 <Card.Header>
