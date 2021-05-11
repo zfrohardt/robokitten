@@ -41,6 +41,11 @@ export default class Game extends Component {
         for(let i = 0; i < 5; i++) {
             randomRobots.push(this.getIndexFromRange(rng(), this.props.robots));
         }
+
+        if(randomRobots[0] === {}) {
+            return [];
+        }
+
         return randomRobots;
     }
 
