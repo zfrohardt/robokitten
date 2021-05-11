@@ -311,7 +311,7 @@
       },
       {
         "modelNumber": 2,
-        "description": "My soldiers are like a cache of bombs: reday to explode. I am here to light their fuse.",
+        "description": "My soldiers are like a cache of bombs: ready to explode. I am here to light their fuse.",
         "teamBonus": "Fire Bonus",
         "teamBonusDesc": "Fire type attacks times 2",
         "type": "captain"
