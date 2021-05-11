@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import './App.css';
 import 'semantic-ui-css/semantic.min.css';
-import {Grid, Menu} from 'semantic-ui-react';
+import {Button, Grid, Menu} from 'semantic-ui-react';
 
 import {Link, Redirect, Route, Switch} from 'react-router-dom';
 import RandomWords from 'random-words';
@@ -48,7 +48,12 @@ export default class App extends Component {
                     <Grid.Row>
                         <Grid.Column verticalAlign="top">
                             <Menu>
-                                <Menu.Item as={Link} to="/" >Home</Menu.Item>
+                                <Menu.Item>
+                                    <Button content="Home" icon="home" as={Link} to="/" />
+                                </Menu.Item>
+                                <Menu.Item>
+                                    <Button content="Source" icon="github" as='a' href="https://github.com/zfrohardt/robokitten" target="_blank" />
+                                </Menu.Item>
                             </Menu>
                         </Grid.Column>
                     </Grid.Row>
@@ -68,7 +73,7 @@ export default class App extends Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column verticalAlign="bottom">
-                            A GAME MADE BY TWO NON ROBOTS, <a href="https://github.com/moshriguez">MARC</a> AND <a href="https://github.com/zfrohardt">ZACH</a>
+                            <span>A GAME MADE BY TWO NON ROBOTS, <a href="https://github.com/moshriguez">MARC</a> AND <a href="https://github.com/zfrohardt">ZACH</a></span>
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
