@@ -7,13 +7,9 @@ class KillKittens extends React.Component {
     state = {
 
     }
-
-    getAbilities = (robot, abilities) => {
-        return abilities.filter(ability => robot.abilityIds.includes(ability.id));
-    }
     
     renderBattleRobots = () => {
-        return this.props.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} abilities={this.getAbilities(warrior, this.props.abilities)} />)
+        return this.props.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
 
     render() {
