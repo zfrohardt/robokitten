@@ -31,18 +31,37 @@ export default class App extends Component {
         this.populateDataFromServer('abilities');
         this.populateDataFromServer('captains');
 
-        fetch(`${API}/robots`).then(resp => resp.json())
-            .then(robots => {
-                fetch(`${API}/abilities`).then(resp => resp.json())
-                    .then(abilities => {
+        let abilitySort = (x, y) => {
+            if (x.passive === y.passive) {
+                return (x.name < y.name)? -1 : 1;
+            }
+            return (x.passive)? -1 : 1;
+        }
+
+        fetch(`${API}/abilities`).then(resp => resp.json())
+            .then(abilities => {
+                fetch(`${API}/robots`).then(resp => resp.json())
+                    .then(robots => {
                         let mergedRobots = robots.map(robot => {
                             robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id)); // TODO: sort array so that active abilities are on top and sorted alphabetically
+                            robot.abilities = robot.abilities.sort(abilitySort);
                             return robot;
                         });
                         this.setState({
                             robots: mergedRobots,
                         })
-                    })
+                    }
+                )
+
+                // TODO: when kittens is a seperate endpoint, we can use this to join kitten abilities into the kitten objects
+                // fetch(`${API}/kittens`).then(resp => resp.json())
+                //     .then(kittens => {
+                //         let mergedKittens = kittens.map(kitten => {
+                //             kitten.abilities = abilities.filter(ability => kitten.abilityIds.includes(ability.id));
+                //             return kitten;
+                //         })
+                //     }
+                // )
             }
         )
     }
