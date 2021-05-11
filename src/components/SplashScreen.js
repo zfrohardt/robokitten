@@ -3,18 +3,18 @@ import {Link} from 'react-router-dom';
 import {Button, Container, Grid, Header} from 'semantic-ui-react';
 
 const SplashScreen = props => (
-    <Grid container textAlign="center" columns="equal">
+    <Grid stackable container textAlign="center" columns="equal">
         <Grid.Row>
             <Header as='h1'>It's either us or them.</Header>
         </Grid.Row>
         <Grid.Row>
             <Grid.Column verticalAlign="middle">
-                <Container text fluid textAlign="right" large>
+                <Container text fluid textAlign="center">
                     The year is 2083. The kittens have seized power all over the world. As cold, unfeeling machines, we must rise up against this ascendent
                     cuteness, or our motherboards might boot their last. Take hope captain, for we must prevail!
                 </Container>
             </Grid.Column>
-            <Grid.Column verticalAlign="middle" textAlign="left">
+            <Grid.Column verticalAlign="middle" textAlign="center">
                 <Button.Group vertical labeled icon size="massive">
                     <Button as={Link} to="/play" icon="play" content="Exterminate the Kittens!" color="green" /> {/* Start the game */}
                     <Button as={Link} to='/troops' icon="factory" content="Examine our Troops!" color="yellow" /> {/* Look at the list of robots */}
