@@ -2,7 +2,7 @@ import React from 'react';
 
 const KillKittens = props => {
     return (
-        <div></div>
+        <div>Game Time</div>
     );
 }
 
