@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import {Dropdown, Container, Card, Menu} from 'semantic-ui-react';
-import Robot from './Robot';
+import RobotDisplayCard from './RobotDisplayCard';
 
 const Troops = (props) => {
 
@@ -148,7 +148,7 @@ const makeRobotCard = (key, robot, abilities) => {
     // TODO: Sort by the order of ids in the db? maybe this is a non issue
     let specificAbilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
     return (
-        <Robot key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
+        <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
     );
 }
 
