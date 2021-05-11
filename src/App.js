@@ -36,7 +36,7 @@ export default class App extends Component {
                 fetch(`${API}/abilities`).then(resp => resp.json())
                     .then(abilities => {
                         let mergedRobots = robots.map(robot => {
-                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
+                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id)); // TODO: sort array so that active abilities are on top and sorted alphabetically
                             return robot;
                         });
                         this.setState({
@@ -78,8 +78,8 @@ export default class App extends Component {
                                 <Route exact path="/" component={SplashScreen} />
                                 <Route exact path="/play" render={() => <Redirect to={`/play/${this.getURLSeed()}`} />} />
                                 <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} {...this.state}  />} />
-                                <Route exact path="/troops" render={() => <Troops robots={this.state.robots} abilities={this.state.abilities} />} />
-                                <Route exact path="/enemies" component={Enemies} />
+                                <Route exact path="/troops" render={() => <Troops robots={this.state.robots} />} />
+                                <Route exact path="/enemies" render={() => <Enemies kittens={this.state.kittens}/>} />
                                 <Redirect exact from="/kittens" to="/enemies" />
                                 <Route exact path='/statistics' component={Stats} />
                                 <Route component={Error} status={404} />
