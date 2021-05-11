@@ -51,7 +51,7 @@ const getAccordianEntry = (activeIndex, setIndex, index, ability) => {
                 {ability.name}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === index} >
-                {ability.description}
+                {ability.passive ? `Passive ablility: ${ability.description}` : ability.description}
             </Accordion.Content>
         </React.Fragment>
     );
