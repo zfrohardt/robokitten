@@ -21,8 +21,8 @@ export default class Game extends Component {
         // console.log(this.props.robots)
         return (
             (this.state.setup)? 
-                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={(robots) => this.selectWarriors(robots)} abilities={this.props.abilities}/> :
-                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} abilities={this.props.abilities} />
+                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={(robots) => this.selectWarriors(robots)} /> :
+                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} />
         );
     }
 
