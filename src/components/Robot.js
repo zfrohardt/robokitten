@@ -16,20 +16,14 @@ const Robot = props => {
                 <Card.Meta>Model Number {props.modelNumber}</Card.Meta>
                 <Card.Description>{props.description}</Card.Description>
             </Card.Content>
-            
-            { props.damage !== -1 && props.health !== -1 && props.defense !== -1 &&
                 <Card.Content>
                     Damage: {props.damage} | Health: {props.health} | Defense: {props.defense}
                 </Card.Content>
-            }
-
-            { props.abilities.length > 0 &&
                 <Card.Content extra>
                     <Accordion fluid styled>
                         {props.abilities.map((ability, index) => getAccordianEntry(activeIndex, setIndex, index, ability))}
                     </Accordion>
                 </Card.Content>
-            }
         </Card>
     );
 }
