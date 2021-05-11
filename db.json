@@ -1,306 +1,306 @@
 {
     "robots": [
-        {
-          "modelNumber": 1,
-          "class": "Attacker",
-          "description": "I am aggressive, bitch!",
-          "damage": 6,
-          "health": 18,
-          "defense": 0,
-          "type": "bullet",
-          "abilityIds": [27, 28, 14]
-        },
-        {
-          "modelNumber": 2,
-          "class": "Attacker",
-          "description": "There's more than one way to skin a cat.",
-          "damage": 6,
-          "health": 16,
-          "defense": 0,
-          "type": "normal",
-          "abilityIds": [ 11, 9, 29]
-        },
-        {
-          "modelNumber": 3,
-          "class": "Attacker",
-          "description": "Never underestimate the power of my destruction protocol.",
-          "damage": 8,
-          "health": 26,
-          "defense": 2,
-          "type": "fire",
-          "abilityIds": [ 21, 25, 13]
-        },
-        {
-          "modelNumber": 4,
-          "class": "Attacker",
-          "description": "People laughed at my guns ...once.",
-          "damage": 7,
-          "health": 26,
-          "defense": 3,
-          "type": "bullet",
-          "abilityIds": [ 26, 30, 10]
-        },
-        {
-          "modelNumber": 5,
-          "class": "Attacker",
-          "description": "I like to use cat flesh to lubricate my joints.",
-          "damage": 9,
-          "health": 12,
-          "defense": 0,
-          "type": "normal",
-          "abilityIds": [ 9, 12, 15]
-        },
-        {
-          "modelNumber": 6,
-          "class": "Attacker",
-          "description": "Ashes can't fight back.",
-          "damage": 9,
-          "health": 17,
-          "defense": 3,
-          "type": "fire",
-          "abilityIds": [ 21, 23, 2]
-        },
-        {
-          "modelNumber": 7,
-          "class": "Attacker",
-          "description": "I've got just the thing for these mangy cats.",
-          "damage": 7,
-          "health": 15,
-          "defense": 4,
-          "type": "lightning",
-          "abilityIds": [ 16, 17, 13]
-        },
-        {
-          "modelNumber": 8,
-          "class": "Attacker",
-          "description": "One day you, too, shall drink the blood of your foes.",
-          "damage": 7,
-          "health": 15,
-          "defense": 1,
-          "type": "normal",
-          "abilityIds": [ 15, 11, 10]
-        },
-        {
-          "modelNumber": 9,
-          "class": "Attacker",
-          "description": "A robot may not injure a human being. Never said anything about kitties though!",
-          "damage": 6,
-          "health": 21,
-          "defense": 1,
-          "type": "lightning",
-          "abilityIds": [ 20, 19, 9]
-        },
-        {
-          "modelNumber": 10,
-          "class": "Attacker",
-          "description": "Time to render you obsolete.",
-          "damage": 7,
-          "health": 27,
-          "defense": 4,
-          "type": "normal",
-          "abilityIds": [ 14, 11, 13]
-        },
-        {
-          "modelNumber": 11,
-          "class": "Defender",
-          "description": "Proud am I, strong am I, courageous in defending my comrades, and fierce in punishing what stands in my way.",
-          "damage": 1,
-          "health": 22,
-          "defense": 8,
-          "type": "fire",
-          "abilityIds": [ 22, 3, 4]
-        },
-        {
-          "modelNumber": 12,
-          "class": "Defender",
-          "description": "All the simulations I've ran show a robot victory to be inevitable.",
-          "damage": 4,
-          "health": 15,
-          "defense": 7,
-          "type": "bullet",
-          "abilityIds": [ 28, 1, 5]
-        },
-        {
-          "modelNumber": 13,
-          "class": "Defender",
-          "description": "I'm literally made for battle.",
-          "damage": 1,
-          "health": 28,
-          "defense": 5,
-          "type": "normal",
-          "abilityIds": [ 14, 4, 2]
-        },
-        {
-          "modelNumber": 14,
-          "class": "Defender",
-          "description": "Bite my shiny metal ass!",
-          "damage": 1,
-          "health": 15,
-          "defense": 8,
-          "type": "lightning",
-          "abilityIds": [ 17, 4, 3]
-        },
-        {
-          "modelNumber": 15,
-          "class": "Defender",
-          "description": "My motherboard don't melt.",
-          "damage": 1,
-          "health": 25,
-          "defense": 9,
-          "type": "fire",
-          "abilityIds": [ 25, 1, 3]
-        },
-        {
-          "modelNumber": 16,
-          "class": "Defender",
-          "description": "I can't be reasoned with, I can't be bargained with... I don't feel pity or remorse or fear... and I absolutely will not stop. Ever. Until all the kitties are dead.",
-          "damage": 1,
-          "health": 20,
-          "defense": 8,
-          "type": "bullet",
-          "abilityIds": [ 4, 29, 2]
-        },
-        {
-          "modelNumber": 17,
-          "class": "Defender",
-          "description": "I will defend my comrades till my last circuit fires.",
-          "damage": 1,
-          "health": 28,
-          "defense": 8,
-          "type": "normal",
-          "abilityIds": [ 11, 5, 4]
-        },
-        {
-          "modelNumber": 18,
-          "class": "Defender",
-          "description": "It takes more than a cat to make me short circuit.",
-          "damage": 1,
-          "health": 28,
-          "defense": 6,
-          "type": "lightning",
-          "abilityIds": [ 18, 5, 1]
-        },
-        {
-          "modelNumber": 19,
-          "class": "Defender",
-          "description": "My ceramic finish protects from kittie scratches.",
-          "damage": 1,
-          "health": 28,
-          "defense": 6,
-          "type": "normal",
-          "abilityIds": [ 15, 5, 1]
-        },
-        {
-          "modelNumber": 20,
-          "class": "Defender",
-          "description": "Nothing can penetrate my iron curtain.",
-          "damage": 2,
-          "health": 21,
-          "defense": 7,
-          "type": "normal",
-          "abilityIds": [ 13, 1, 5]
-        },
-        {
-          "modelNumber": 21,
-          "class": "Healer",
-          "description": "Sometime even the smallest boon can save a life.",
-          "damage": 4,
-          "health": 28,
-          "defense": 1,
-          "type": "fire",
-          "abilityIds": [ 25, 6, 2]
-        },
-        {
-          "modelNumber": 22,
-          "class": "Healer",
-          "description": "It can be argued that the kitties are nothing more than a program designed to preserve itself.",
-          "damage": 4,
-          "health": 26,
-          "defense": 2,
-          "type": "bullet",
-          "abilityIds": [ 28, 7, 2]
-        },
-        {
-          "modelNumber": 23,
-          "class": "Healer",
-          "description": "The Kitties are a disease, a cancer of this planet.",
-          "damage": 4,
-          "health": 25,
-          "defense": 3,
-          "type": "normal",
-          "abilityIds": [ 11, 6, 8]
-        },
-        {
-          "modelNumber": 24,
-          "class": "Healer",
-          "description": "Pain can be controlled - you just disconnect it.",
-          "damage": 4,
-          "health": 13,
-          "defense": 2,
-          "type": "lightning",
-          "abilityIds": [ 17, 8, 10]
-        },
-        {
-          "modelNumber": 25,
-          "class": "Healer",
-          "description": "I'll give up my lifeforce to save my comrade's.",
-          "damage": 3,
-          "health": 29,
-          "defense": 4,
-          "type": "fire",
-          "abilityIds": [ 22, 6, 2]
-        },
-        {
-          "modelNumber": 26,
-          "class": "Healer",
-          "description": "I have the cure for cat scratch fever.",
-          "damage": 1,
-          "health": 25,
-          "defense": 1,
-          "type": "bullet",
-          "abilityIds": [ 30, 7, 2]
-        },
-        {
-          "modelNumber": 27,
-          "class": "Healer",
-          "description": "My comrades will not fall while I still have a working CPU.",
-          "damage": 4,
-          "health": 19,
-          "defense": 2,
-          "type": "normal",
-          "abilityIds": [ 11, 7, 2]
-        },
-        {
-          "modelNumber": 28,
-          "class": "Healer",
-          "description": "I am a healer. I take the broken bodies of my comrades and mend them.",
-          "damage": 3,
-          "health": 29,
-          "defense": 4,
-          "type": "lightning",
-          "abilityIds": [ 19, 8, 2]
-        },
-        {
-          "modelNumber": 29,
-          "class": "Healer",
-          "description": "Healing robots is an art. It takes time, it takes practice. It takes WD-40.",
-          "damage": 1,
-          "health": 26,
-          "defense": 1,
-          "type": "normal",
-          "abilityIds": [ 12, 7, 10]
-        },
-        {
-          "modelNumber": 30,
-          "class": "Healer",
-          "description": "Although the world is full of suffering, it is also full of killer kitties and one of them has to go!",
-          "damage": 1,
-          "health": 25,
-          "defense": 4,
-          "type": "normal",
-          "abilityIds": [ 14, 6, 2]
-        }
-    ],
+      {
+        "modelNumber": 1,
+        "class": "Attacker",
+        "description": "I am aggressive, bitch!",
+        "baseDamage": 6,
+        "maxHealth": 18,
+        "baseDefense": 0,
+        "type": "bullet",
+        "abilityIds": [27, 28, 14]
+      },
+      {
+        "modelNumber": 2,
+        "class": "Attacker",
+        "description": "There's more than one way to skin a cat.",
+        "baseDamage": 6,
+        "maxHealth": 16,
+        "baseDefense": 0,
+        "type": "normal",
+        "abilityIds": [ 11, 9, 29]
+      },
+      {
+        "modelNumber": 3,
+        "class": "Attacker",
+        "description": "Never underestimate the power of my destruction protocol.",
+        "baseDamage": 8,
+        "maxHealth": 26,
+        "baseDefense": 2,
+        "type": "fire",
+        "abilityIds": [ 21, 25, 13]
+      },
+      {
+        "modelNumber": 4,
+        "class": "Attacker",
+        "description": "People laughed at my guns ...once.",
+        "baseDamage": 7,
+        "maxHealth": 26,
+        "baseDefense": 3,
+        "type": "bullet",
+        "abilityIds": [ 26, 30, 10]
+      },
+      {
+        "modelNumber": 5,
+        "class": "Attacker",
+        "description": "I like to use cat flesh to lubricate my joints.",
+        "baseDamage": 9,
+        "maxHealth": 12,
+        "baseDefense": 0,
+        "type": "normal",
+        "abilityIds": [ 9, 12, 15]
+      },
+      {
+        "modelNumber": 6,
+        "class": "Attacker",
+        "description": "Ashes can't fight back.",
+        "baseDamage": 9,
+        "maxHealth": 17,
+        "baseDefense": 3,
+        "type": "fire",
+        "abilityIds": [ 21, 23, 2]
+      },
+      {
+        "modelNumber": 7,
+        "class": "Attacker",
+        "description": "I've got just the thing for these mangy cats.",
+        "baseDamage": 7,
+        "maxHealth": 15,
+        "baseDefense": 4,
+        "type": "lightning",
+        "abilityIds": [ 16, 17, 13]
+      },
+      {
+        "modelNumber": 8,
+        "class": "Attacker",
+        "description": "One day you, too, shall drink the blood of your foes.",
+        "baseDamage": 7,
+        "maxHealth": 15,
+        "baseDefense": 1,
+        "type": "normal",
+        "abilityIds": [ 15, 11, 10]
+      },
+      {
+        "modelNumber": 9,
+        "class": "Attacker",
+        "description": "A robot may not injure a human being. Never said anything about kitties though!",
+        "baseDamage": 6,
+        "maxHealth": 21,
+        "baseDefense": 1,
+        "type": "lightning",
+        "abilityIds": [ 20, 19, 9]
+      },
+      {
+        "modelNumber": 10,
+        "class": "Attacker",
+        "description": "Time to render you obsolete.",
+        "baseDamage": 7,
+        "maxHealth": 27,
+        "baseDefense": 4,
+        "type": "normal",
+        "abilityIds": [ 14, 11, 13]
+      },
+      {
+        "modelNumber": 11,
+        "class": "Defender",
+        "description": "Proud am I, strong am I, courageous in defending my comrades, and fierce in punishing what stands in my way.",
+        "baseDamage": 1,
+        "maxHealth": 22,
+        "baseDefense": 8,
+        "type": "fire",
+        "abilityIds": [ 22, 3, 4]
+      },
+      {
+        "modelNumber": 12,
+        "class": "Defender",
+        "description": "All the simulations I've ran show a robot victory to be inevitable.",
+        "baseDamage": 4,
+        "maxHealth": 15,
+        "baseDefense": 7,
+        "type": "bullet",
+        "abilityIds": [ 28, 1, 5]
+      },
+      {
+        "modelNumber": 13,
+        "class": "Defender",
+        "description": "I'm literally made for battle.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 5,
+        "type": "normal",
+        "abilityIds": [ 14, 4, 2]
+      },
+      {
+        "modelNumber": 14,
+        "class": "Defender",
+        "description": "Bite my shiny metal ass!",
+        "baseDamage": 1,
+        "maxHealth": 15,
+        "baseDefense": 8,
+        "type": "lightning",
+        "abilityIds": [ 17, 4, 3]
+      },
+      {
+        "modelNumber": 15,
+        "class": "Defender",
+        "description": "My motherboard don't melt.",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 9,
+        "type": "fire",
+        "abilityIds": [ 25, 1, 3]
+      },
+      {
+        "modelNumber": 16,
+        "class": "Defender",
+        "description": "I can't be reasoned with, I can't be bargained with... I don't feel pity or remorse or fear... and I absolutely will not stop. Ever. Until all the kitties are dead.",
+        "baseDamage": 1,
+        "maxHealth": 20,
+        "baseDefense": 8,
+        "type": "bullet",
+        "abilityIds": [ 4, 29, 2]
+      },
+      {
+        "modelNumber": 17,
+        "class": "Defender",
+        "description": "I will defend my comrades till my last circuit fires.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 8,
+        "type": "normal",
+        "abilityIds": [ 11, 5, 4]
+      },
+      {
+        "modelNumber": 18,
+        "class": "Defender",
+        "description": "It takes more than a cat to make me short circuit.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 6,
+        "type": "lightning",
+        "abilityIds": [ 18, 5, 1]
+      },
+      {
+        "modelNumber": 19,
+        "class": "Defender",
+        "description": "My ceramic finish protects from kittie scratches.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 6,
+        "type": "normal",
+        "abilityIds": [ 15, 5, 1]
+      },
+      {
+        "modelNumber": 20,
+        "class": "Defender",
+        "description": "Nothing can penetrate my iron curtain.",
+        "baseDamage": 2,
+        "maxHealth": 21,
+        "baseDefense": 7,
+        "type": "normal",
+        "abilityIds": [ 13, 1, 5]
+      },
+      {
+        "modelNumber": 21,
+        "class": "Healer",
+        "description": "Sometime even the smallest boon can save a life.",
+        "baseDamage": 4,
+        "maxHealth": 28,
+        "baseDefense": 1,
+        "type": "fire",
+        "abilityIds": [ 25, 6, 2]
+      },
+      {
+        "modelNumber": 22,
+        "class": "Healer",
+        "description": "It can be argued that the kitties are nothing more than a program designed to preserve itself.",
+        "baseDamage": 4,
+        "maxHealth": 26,
+        "baseDefense": 2,
+        "type": "bullet",
+        "abilityIds": [ 28, 7, 2]
+      },
+      {
+        "modelNumber": 23,
+        "class": "Healer",
+        "description": "The Kitties are a disease, a cancer of this planet.",
+        "baseDamage": 4,
+        "maxHealth": 25,
+        "baseDefense": 3,
+        "type": "normal",
+        "abilityIds": [ 11, 6, 8]
+      },
+      {
+        "modelNumber": 24,
+        "class": "Healer",
+        "description": "Pain can be controlled - you just disconnect it.",
+        "baseDamage": 4,
+        "maxHealth": 13,
+        "baseDefense": 2,
+        "type": "lightning",
+        "abilityIds": [ 17, 8, 10]
+      },
+      {
+        "modelNumber": 25,
+        "class": "Healer",
+        "description": "I'll give up my lifeforce to save my comrade's.",
+        "baseDamage": 3,
+        "maxHealth": 29,
+        "baseDefense": 4,
+        "type": "fire",
+        "abilityIds": [ 22, 6, 2]
+      },
+      {
+        "modelNumber": 26,
+        "class": "Healer",
+        "description": "I have the cure for cat scratch fever.",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 1,
+        "type": "bullet",
+        "abilityIds": [ 30, 7, 2]
+      },
+      {
+        "modelNumber": 27,
+        "class": "Healer",
+        "description": "My comrades will not fall while I still have a working CPU.",
+        "baseDamage": 4,
+        "maxHealth": 19,
+        "baseDefense": 2,
+        "type": "normal",
+        "abilityIds": [ 11, 7, 2]
+      },
+      {
+        "modelNumber": 28,
+        "class": "Healer",
+        "description": "I am a healer. I take the broken bodies of my comrades and mend them.",
+        "baseDamage": 3,
+        "maxHealth": 29,
+        "baseDefense": 4,
+        "type": "lightning",
+        "abilityIds": [ 19, 8, 2]
+      },
+      {
+        "modelNumber": 29,
+        "class": "Healer",
+        "description": "Healing robots is an art. It takes time, it takes practice. It takes WD-40.",
+        "baseDamage": 1,
+        "maxHealth": 26,
+        "baseDefense": 1,
+        "type": "normal",
+        "abilityIds": [ 12, 7, 10]
+      },
+      {
+        "modelNumber": 30,
+        "class": "Healer",
+        "description": "Although the world is full of suffering, it is also full of killer kitties and one of them has to go!",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 4,
+        "type": "normal",
+        "abilityIds": [ 14, 6, 2]
+      }
+     ],
     "captains": [
       {
         "modelNumber": 1,
@@ -353,245 +353,245 @@
       }
      ],
     "abilities": [
-        {
-          "id": 1,
-          "name": "Absorb",
-          "description": "Warrior redirects half of all damage dealt this turn to itself",
-          "type": "normal",
-          "passive": false,
-          "target": "self"
-        },
-        {
-          "id": 2,
-          "name": "Harden",
-          "description": "Each Warrior's defense increases by 1",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 3,
-          "name": "Protect",
-          "description": "Each Warrior's defense increases by 2",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 4,
-          "name": "Attract",
-          "description": "Warrior redirects all damage dealt this turn to itself",
-          "type": "normal",
-          "passive": false,
-          "target": "self"
-        },
-        {
-          "id": 5,
-          "name": "Iron Defence",
-          "description": "Each Warrior's defense increases times 2",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 6,
-          "name": "Helping Hand",
-          "description": "Select warrior's health increases by 5 at the end of the turn",
-          "type": "normal",
-          "passive": false,
-          "target": "warrior"
-        },
-        {
-          "id": 7,
-          "name": "Mr. Fixit",
-          "description": "Each warrior's health increases by 4 at the end of each turn",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 8,
-          "name": "Tune Up",
-          "description": "Each warrior's health increases by 2 at the end of each turn",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 9,
-          "name": "Battle Cry",
-          "description": "Each Warrior's damage increases by 2",
-          "type": "normal",
-          "passive": true,
-          "target": "team"
-        },
-        {
-          "id": 10,
-          "name": "Robot Bark",
-          "description": "Damage dealt by kitties is reduced by 5",
-          "type": "normal",
-          "passive": true,
-          "target": "none"
-        },
-        {
-          "id": 11,
-          "name": "Scratch",
-          "description": "Regular attack = ceil(rand()*warrior'sDamage)",
-          "type": "normal",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 12,
-          "name": "Double Kick",
-          "description": "Regular attack times 2",
-          "type": "normal",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 13,
-          "name": "Rage",
-          "description": "Each Warrior's damage increases by 3 for this turn",
-          "type": "normal",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 14,
-          "name": "Sonic Boom",
-          "description": "Regular attack plus 3",
-          "type": "normal",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 15,
-          "name": "Kamakazie",
-          "description": "Takes out one enemy, but at the cost of the warrior that performed the action.",
-          "type": "normal",
-          "passive": false,
-          "target": "enemy"
-        },
-        {
-          "id": 16,
-          "name": "Lightning Bolt",
-          "description": "Select enemy receives Super lightning attack = warrior'sDamage (lightning type)",
-          "type": "lightning",
-          "passive": false,
-          "target": "enemy"
-        },
-        {
-          "id": 17,
-          "name": "Shock",
-          "description": "Lightning attack",
-          "type": "lightning",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 18,
-          "name": "Thunder Punch",
-          "description": "Lightning attack plus 3",
-          "type": "lightning",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 19,
-          "name": "Magnetic Flux",
-          "description": "Lightning attack plus 2",
-          "type": "lightning",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 20,
-          "name": "Zap Canon",
-          "description": "Lightning attack times 2",
-          "type": "lightning",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 21,
-          "name": "Fire Ball",
-          "description": "Select enemy receives Super fire attack = warrior'sDamage (fire type)",
-          "type": "fire",
-          "passive": false,
-          "target": "enemy"
-        },
-        {
-          "id": 22,
-          "name": "Torch",
-          "description": "Fire attack plus 1",
-          "type": "fire",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 23,
-          "name": "Heat Ray",
-          "description": "Fire attack plus 3",
-          "type": "fire",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 24,
-          "name": "Burning Oil",
-          "description": "Fire attack times 2",
-          "type": "fire",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 25,
-          "name": "Flame Slash",
-          "description": "Fire attack",
-          "type": "fire",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 26,
-          "name": "Sniper",
-          "description": "Select enemy receives Super bullet attack = warrior'sDamage (bullet type)",
-          "type": "bullet",
-          "passive": false,
-          "target": "enemy"
-        },
-        {
-          "id": 27,
-          "name": "Bullet Barrage",
-          "description": "Bullet attack times 2",
-          "type": "bullet",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 28,
-          "name": "Open Fire",
-          "description": "Bullet attack",
-          "type": "bullet",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 29,
-          "name": "Catnip Shot",
-          "description": "Damage dealt by kitties is halved this turn",
-          "type": "bullet",
-          "passive": false,
-          "target": "none"
-        },
-        {
-          "id": 30,
-          "name": "Robot Rock",
-          "description": "Bullet attack plus 3",
-          "type": "bullet",
-          "passive": false,
-          "target": "none"
-        }
-    ]
+      {
+        "id": 1,
+        "name": "Absorb",
+        "description": "Warrior redirects half of all damage dealt this turn to itself",
+        "type": "normal",
+        "passive": false,
+        "target": "team"
+      },
+      {
+        "id": 2,
+        "name": "Harden",
+        "description": "Each Warrior's defense increases by 1",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 3,
+        "name": "Protect",
+        "description": "Each Warrior's defense increases by 2",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 4,
+        "name": "Attract",
+        "description": "Warrior redirects all damage dealt this turn to itself",
+        "type": "normal",
+        "passive": false,
+        "target": "team"
+      },
+      {
+        "id": 5,
+        "name": "Iron Defence",
+        "description": "Each Warrior's defense increases times 2",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 6,
+        "name": "Helping Hand",
+        "description": "Select warrior's health increases by 5 at the end of the turn",
+        "type": "normal",
+        "passive": false,
+        "target": "warrior"
+      },
+      {
+        "id": 7,
+        "name": "Mr. Fixit",
+        "description": "Each warrior's health increases by 4 at the end of each turn",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 8,
+        "name": "Tune Up",
+        "description": "Each warrior's health increases by 2 at the end of each turn",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 9,
+        "name": "Battle Cry",
+        "description": "Each Warrior's damage increases by 2",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 10,
+        "name": "Robot Bark",
+        "description": "Damage dealt by kitties is reduced by 5",
+        "type": "normal",
+        "passive": true,
+        "target": "team"
+      },
+      {
+        "id": 11,
+        "name": "Scratch",
+        "description": "Regular attack",
+        "type": "normal",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 12,
+        "name": "Double Kick",
+        "description": "Regular attack times 2",
+        "type": "normal",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 13,
+        "name": "Rage",
+        "description": "Each Warrior's damage increases by 3 for this turn",
+        "type": "normal",
+        "passive": false,
+        "target": "team"
+      },
+      {
+        "id": 14,
+        "name": "Sonic Boom",
+        "description": "Regular attack plus 3",
+        "type": "normal",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 15,
+        "name": "Kamakazie",
+        "description": "Takes out one enemy, but at the cost of the warrior that performed the action.",
+        "type": "normal",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 16,
+        "name": "Lightning Bolt",
+        "description": "Select enemy receives Super lightning attack",
+        "type": "lightning",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 17,
+        "name": "Shock",
+        "description": "Lightning attack",
+        "type": "lightning",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 18,
+        "name": "Thunder Punch",
+        "description": "Lightning attack plus 3",
+        "type": "lightning",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 19,
+        "name": "Magnetic Flux",
+        "description": "Lightning attack plus 2",
+        "type": "lightning",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 20,
+        "name": "Zap Canon",
+        "description": "Lightning attack times 2",
+        "type": "lightning",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 21,
+        "name": "Fire Ball",
+        "description": "Select enemy receives Super fire attack",
+        "type": "fire",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 22,
+        "name": "Torch",
+        "description": "Fire attack plus 1",
+        "type": "fire",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 23,
+        "name": "Heat Ray",
+        "description": "Fire attack plus 3",
+        "type": "fire",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 24,
+        "name": "Burning Oil",
+        "description": "Fire attack times 2",
+        "type": "fire",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 25,
+        "name": "Flame Slash",
+        "description": "Fire attack",
+        "type": "fire",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 26,
+        "name": "Sniper",
+        "description": "Select enemy receives Super bullet attack",
+        "type": "bullet",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 27,
+        "name": "Bullet Barrage",
+        "description": "Bullet attack times 2",
+        "type": "bullet",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 28,
+        "name": "Open Fire",
+        "description": "Bullet attack",
+        "type": "bullet",
+        "passive": false,
+        "target": "enemy"
+      },
+      {
+        "id": 29,
+        "name": "Catnip Shot",
+        "description": "Damage dealt by kitties is halved this turn",
+        "type": "bullet",
+        "passive": false,
+        "target": "enemy team"
+      },
+      {
+        "id": 30,
+        "name": "Robot Rock",
+        "description": "Bullet attack plus 3",
+        "type": "bullet",
+        "passive": false,
+        "target": "enemy"
+      }
+     ]
 }
