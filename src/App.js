@@ -28,9 +28,23 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        this.populateDataFromServer('robots');
         this.populateDataFromServer('abilities');
         this.populateDataFromServer('captains');
+
+        fetch(`${API}/robots`).then(resp => resp.json())
+            .then(robots => {
+                fetch(`${API}/abilities`).then(resp => resp.json())
+                    .then(abilities => {
+                        let mergedRobots = robots.map(robot => {
+                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
+                            return robot;
+                        });
+                        this.setState({
+                            robots: mergedRobots,
+                        })
+                    })
+            }
+        )
     }
 
     getURLSeed() {
@@ -42,6 +56,7 @@ export default class App extends Component {
     }
 
     render() {
+        console.log(this.state);
         return (
             <div className="App">
                 <Grid textAlign='center' style={{ height: '100vh' }} columns={1}>
