@@ -2,15 +2,16 @@
 import React, {useState} from 'react';
 import {Accordion, Card, Icon, Image} from 'semantic-ui-react';
 
+const iconMapper = {
+    fire: 'fire',
+    lightning: 'lightning',
+    bullet: 'crosshairs',
+    normal: 'cog',
+    captain: 'flag',
+    passive: 'globe'
+}
 const Robot = props => {
 
-    const iconMapper = {
-        fire: 'fire',
-        lightning: 'lightning',
-        bullet: 'crosshairs',
-        normal: 'cog',
-        captain: 'flag'
-    }
 
     const [activeIndex, setIndex] = useState(-1);
     return (
@@ -46,6 +47,7 @@ const getAccordianEntry = (activeIndex, setIndex, index, ability) => {
         <React.Fragment key={index}>
             <Accordion.Title active={activeIndex === index} index={index} className={passive} onClick={() => handleClick(setIndex, activeIndex, index)} >
                 <Icon name="dropdown" />
+                <Icon color='grey' name={iconMapper[ability.passive ? 'passive' : ability.type]} />
                 {ability.name}
             </Accordion.Title>
             <Accordion.Content active={activeIndex === index} >
