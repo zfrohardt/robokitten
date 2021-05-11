@@ -476,7 +476,7 @@
         {
           "id": 16,
           "name": "Lightning Bolt",
-          "description": "Select enemy receives Super lightning attack = warrior'sDamage (bullet type)",
+          "description": "Select enemy receives Super lightning attack = warrior'sDamage (lightning type)",
           "type": "lightning",
           "passive": false,
           "target": "enemy"
@@ -516,7 +516,7 @@
         {
           "id": 21,
           "name": "Fire Ball",
-          "description": "Select enemy receives Super fire attack = warrior'sDamage (bullet type)",
+          "description": "Select enemy receives Super fire attack = warrior'sDamage (fire type)",
           "type": "fire",
           "passive": false,
           "target": "enemy"
