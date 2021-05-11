@@ -17,7 +17,7 @@ const RobotDisplayCard = props => {
                 <Card.Description>{props.description}</Card.Description>
             </Card.Content>
                 <Card.Content>
-                    Damage: {props.damage} | Health: {props.health} | Defense: {props.defense}
+                    Damage: {props.baseDamage} | Health: {props.maxHealth} | Defense: {props.baseDefense}
                 </Card.Content>
                 <Card.Content extra>
                     <Accordion fluid styled>

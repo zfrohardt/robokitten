@@ -37,22 +37,22 @@
   }
 }
 
-.cards .card div.fire.image {
+.cards .card div.fire.image, .column .card div.fire.image {
   background-image: url('https://m.media-amazon.com/images/I/61ktb-R7bvL._AC_SY355_.jpg');
   background-size: contain;
 }
 
-.cards .card div.lightning.image {
+.cards .card div.lightning.image, .column .card div.lightning.image {
   background-image: url('https://wallpaperaccess.com/full/4776196.jpg');
   background-size: cover;
 }
 
-.cards .card div.bullet.image {
+.cards .card div.bullet.image, .column .card div.bullet.image {
   background-image: url('https://img.freepik.com/free-photo/lot-bullets-background-illustration_200694-99.jpg?size=626&ext=jpg');
   background-size: cover;
 }
 
-.cards .card div.normal.image {
+.cards .card div.normal.image, .column .card div.normal.image {
   background-image: url('https://fractory.com/wp-content/uploads/2020/09/Types-of-Gears.jpg');
   background-size: cover;
 }
