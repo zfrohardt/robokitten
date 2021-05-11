@@ -1,0 +1,24 @@
+import React from 'react';
+import {Card, Icon, Image} from 'semantic-ui-react';
+
+const Captain = props => {
+    return (
+        <Card className="captain">
+            <Image src={`https://robohash.org/ModelNumber${props.modelNumber}.png`} wrapped ui={false} className={props.type}/>
+            <Card.Content>
+                <Card.Header>
+                    <Icon color='grey' name='flag' />
+                    Captain my Captain{props.name}
+                </Card.Header>
+                <Card.Meta>Model Number {props.modelNumber}</Card.Meta>
+                <Card.Description>{props.description}</Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <Card.Header>Captain Bonus:</Card.Header>
+                <Card.Description>{props.teamBonusDesc}</Card.Description>
+            </Card.Content>
+        </Card>
+    )
+}
+
+export default Captain

@@ -57,9 +57,19 @@
   background-size: cover;
 }
 
+div.card.captain {
+  width: fit-content;
+  flex-direction: row;
+}
+
+div.column .captain>.extra {
+  border-left: 1px solid rgba(0,0,0,.05);
+}
+
 .card div.captain.image {
   background-image: url('https://cdn.wallpapersafari.com/41/72/7IuROi.jpg');
   background-size: cover;
+  flex: auto;
 }
 
 .accordion .title.passive, .content div.accordion .title.passive:hover, .content div.accordion div.active.title.passive {

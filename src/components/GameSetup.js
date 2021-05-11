@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Button, Card, Grid} from 'semantic-ui-react';
+import Captain from './Captain'
 import Robot from './Robot'
 
 const MAX_ROBOTS = 3;
@@ -29,7 +30,7 @@ const GameSetup = props => {
         <Grid container columns="equal" >
             <Grid.Row centered>
                 <Grid.Column>
-                    <Robot {...props.captain}/>
+                    <Captain {...props.captain}/>
                 </Grid.Column>
                 <Grid.Column verticalAlign="middle" textAlign="left">
                     <Button size="massive" disabled={chosenRobots.length !== MAX_ROBOTS} color="olive" content='Find Glory on the Battlefield!'
