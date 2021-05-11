@@ -37,7 +37,7 @@ const Troops = (props) => {
                 </Menu>
             </Container>
             <Card.Group>
-                {applyFiltersAndSort(props.robots, classFilter, typeFilter, sort).map((robot, index) => makeRobotCard(index, robot, props.abilities))}
+                {applyFiltersAndSort(props.robots, classFilter, typeFilter, sort).map((robot, index) => makeRobotCard(index, robot))}
             </Card.Group>
         </React.Fragment>
     );
@@ -144,11 +144,10 @@ const filterType = (robot, filter) => {
     return robot.type === filter;
 }
 
-const makeRobotCard = (key, robot, abilities) => {
-    // TODO: Sort by the order of ids in the db? maybe this is a non issue
-    let specificAbilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
+const makeRobotCard = (key, robot) => {
+    console.log(robot);
     return (
-        <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} abilities={specificAbilities} />
+        <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} />
     );
 }
 
