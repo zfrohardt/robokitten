@@ -26,16 +26,21 @@ const GameSetup = props => {
     console.log(chosenRobots);
 
     return (
-        <Grid>
-            <Grid.Row>
-                <Robot {...props.captain}/>
+        <Grid container columns="equal" >
+            <Grid.Row centered>
+                <Grid.Column>
+                    <Robot {...props.captain}/>
+                </Grid.Column>
+                <Grid.Column verticalAlign="middle" textAlign="left">
+                    <Button size="massive" disabled={chosenRobots.length !== MAX_ROBOTS} color="olive" content='Find Glory on the Battlefield!'
+                        onClick={() => props.selectCallback(props.robotChoices.filter((robot, index) => chosenRobots.includes(index)))} />
+                </Grid.Column>
             </Grid.Row>
             <Grid.Row>
                 <Card.Group itemsPerRow={5}>
                     {props.robotChoices.map((robot, index) => getRobotSelectPanel(robot, props.abilities, chosenRobots.includes(index), () => addRobotToState(index, chosenRobots, setChosenRobots)))}
                 </Card.Group>
             </Grid.Row>
-            <Button onClick={() => props.selectCallback(props.robotChoices.filter((robot, index) => chosenRobots.includes(index)))} disabled={chosenRobots.length !== MAX_ROBOTS} color="olive" content='Find Glory on the Battlefield!'/>
         </Grid>
         
     );
