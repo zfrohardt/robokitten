@@ -1,15 +1,8 @@
 // Display component for a Robot
 import React, {useState} from 'react';
 import {Accordion, Card, Icon, Image} from 'semantic-ui-react';
+import iconMapper from './TypeIcons'
 
-const iconMapper = {
-    fire: 'fire',
-    lightning: 'lightning',
-    bullet: 'crosshairs',
-    normal: 'cog',
-    captain: 'flag',
-    passive: 'globe'
-}
 const Robot = props => {
 
 
