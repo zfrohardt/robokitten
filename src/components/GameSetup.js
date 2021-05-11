@@ -6,8 +6,6 @@ import RobotDisplayCard from './RobotDisplayCard'
 const MAX_ROBOTS = 3;
 
 const GameSetup = props => {
-    console.log(props.robotChoices);
-
     const [chosenRobots, setChosenRobots] = useState([]);
     
     let addRobotToState = (robotIndex, chosenRobots, setChosenRobots) => {
@@ -23,9 +21,6 @@ const GameSetup = props => {
         }
     }
 
-    console.log("This is the current state:");
-    console.log(chosenRobots);
-
     return (
         <Grid container columns="equal" >
             <Grid.Row centered>
@@ -39,7 +34,7 @@ const GameSetup = props => {
             </Grid.Row>
             <Grid.Row>
                 <Card.Group itemsPerRow={5}>
-                    {props.robotChoices.map((robot, index) => getRobotSelectPanel(robot, props.abilities, chosenRobots.includes(index), () => addRobotToState(index, chosenRobots, setChosenRobots)))}
+                    {props.robotChoices.map((robot, index) => getRobotSelectPanel(robot, chosenRobots.includes(index), () => addRobotToState(index, chosenRobots, setChosenRobots)))}
                 </Card.Group>
             </Grid.Row>
         </Grid>
@@ -47,17 +42,13 @@ const GameSetup = props => {
     );
 }
 
-const getRobotSelectPanel = (robot, abilities, selected, addRobot) => {
+const getRobotSelectPanel = (robot, selected, addRobot) => {
     return (
         <Card>
             <Button color={(selected)? "green" : "blue"} content="Select" onClick={() => addRobot()} />
-            <RobotDisplayCard {...robot} abilities={getAbilities(robot, abilities)}/>
+            <RobotDisplayCard {...robot} />
         </Card>
     )
-}
-
-const getAbilities = (robot, abilities) => {
-    return abilities.filter(ability => robot.abilityIds.includes(ability.id));
 }
 
 export default GameSetup;
