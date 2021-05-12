@@ -75,8 +75,12 @@ class KillKittens extends React.Component {
         })
     }
 
+    componentDidUpdate() {
+        console.log(this.state.pendingAbilities);
+    }
+
     renderBattleRobots = (combatants, enemies, turn) => {
-        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
+        return combatants.map((warrior, index) => (warrior.currentHealth === 0)? null : <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
     }
 
     postEvents(events) {
@@ -91,22 +95,18 @@ class KillKittens extends React.Component {
         
         let events = this.state.pendingAbilities.map((pending, index) => {
             let returnArray = pending.abilities.map(ability => {ability.self = state.team[index]; return ability;})
-            console.log("RETURN ARRAY");
-            console.log(returnArray);
             return returnArray;
         })
         events = events.reduce((acc, arr) => acc.concat(arr), [])
         events.sort((x, y) => (x.ability.passive === y.ability.passive)? 0 : (x.ability.passive)? 0 : 1);
 
-        events = events.map(event => {
-            console.log("TEAM");
-            console.log(state.team);
-            applyAbility(rng(), event.ability.id, state, event.self, event.target)
-        });
+        events = events.map(event => applyAbility(rng(), event.ability.id, state, event.self, event.target));
         this.postEvents(events);
         this.setState({
             seed: rng(),
             turnNumber: this.state.turnNumber + 1,
+            warriors: robots.filter(robot => robot.currentHealth > 0),
+            kittens: kittens.filter(kitten => kitten.currentHealth > 0),
         })
         this.resetPendingUpdates();
     }
@@ -125,7 +125,12 @@ class KillKittens extends React.Component {
         })
     }
 
+    numberAlive = () => {
+        return (this.state.turnNumber % 2 === 1)? this.state.warriors.reduce((acc, warrior) => (warrior.currentHealth > 0)? acc + 1 : acc, 0) : this.state.kittens.reduce((acc, kitten) => (kitten.currentHealth > 0)? acc + 1 : acc, 0);
+    }
+
     render() {
+        console.log(this.numberAlive())
         return (
             <div>
                 <Grid columns='equal' >
@@ -138,7 +143,7 @@ class KillKittens extends React.Component {
                             size="large" 
                             color="olive" 
                             content={`End ${(this.state.turnNumber % 2 === 1)? "Robot" : "Kitten"} Turn`}
-                            disabled={!this.state.pendingAbilities.reduce((acc, val) => acc && val.confirmed, true)}
+                            disabled={this.numberAlive() !== this.state.pendingAbilities.reduce((acc, val) => (val.confirmed)? acc + 1 : acc, 0)}
                             onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.kittens)}/>
                         </Grid.Column>
                         <Grid.Column>

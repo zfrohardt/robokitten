@@ -7,16 +7,25 @@ const applyAbility = (seed, abilityId, state, self, target={}) => {
 const abilityLookup = {
     1 : (state, self, target, seed) => "Absorb hasn't been implemented yet. Sorry, you wasted your turn", // redirect
     2 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentDefense += 1);
+            state.team = state.team.map(warrior => {
+                warrior.currentDefense += 1;
+                return warrior;
+            })
             return `${self.name} used Harden boosted his team's defense by 1`;
         },
     3 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentDefense += 2);
+            state.team = state.team.map(warrior => {
+                warrior.currentDefense += 2;
+                return warrior;
+            });
             return `${self.name} used Protect and boosted his team's defense by 2`;
         },
-    4 : (state, self, target, seed) => "Protect hasn't been implemented yet. Sorry, you wasted your turn", // redirect
+    4 : (state, self, target, seed) => "Attract hasn't been implemented yet. Sorry, you wasted your turn", // redirect
     5 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentDefense *= 2);
+            state.team = state.team.map(warrior => {
+                warrior.currentDefense *= 2;
+                return warrior;
+            });
             return `${self.name} used Iron Defense and boosted his team's defense by 2x`;
         },
     6 : (state, self, target, seed) => {
@@ -24,15 +33,24 @@ const abilityLookup = {
             return `${self.name} used Helping Hand and healed ${target.name} by 5`
         },
     7 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentHealth += 4);
+            state.team = state.team.map(warrior => {
+                warrior.currentHealth += 4;
+                return warrior;
+            });
             return `${self.name} used Mr. Fixit and healed his team for 4`;
         },
     8 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentHealth += 2);
+            state.team = state.team.map(warrior => {
+                warrior.currentHealth += 2;
+                return warrior;
+            });
             return `${self.name} used Tune Up and healed his team for 2`
         },
     9 : (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentDamage += 2);
+            state.team = state.team.map(warrior => {
+                warrior.currentDamage += 2;
+                return warrior;
+            });
             return `${self.name} used Battle Cry and boosted his team's damage by 2`
         },
     10: (state, self, target, seed) => "Robot Bark hasn't been implemented yet. Sorry, you wasted your turn", // reduce
@@ -47,7 +65,10 @@ const abilityLookup = {
             return `${self.name} used Double Kick and attacked ${target.name} for ${damage} normal damage`;
         },
     13: (state, self, target, seed) => {
-            state.team = state.team.map(warrior => warrior.currentDamage += 3);
+            state.team = state.team.map(warrior => {
+                warrior.currentDamage += 3;
+                return warrior;
+            });
             return `${self.name} used Rage and boosted the damage of his team by 3`;
         },
     14: (state, self, target, seed) => {
