@@ -13,6 +13,7 @@ class KillKittens extends React.Component {
     }
 
     componentDidMount() {
+        let test = () => this.forceUpdate();
         this.setState({
             warriors: this.props.warriors.map(warrior => {
                 warrior._currentHealth = warrior.maxHealth;
@@ -20,6 +21,7 @@ class KillKittens extends React.Component {
                     set: function(newHealth) {
                         this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
                         this._currentHealth = (newHealth > 0)? newHealth : 0;
+                        test();
                     },
                     get: function() {
                         return this._currentHealth;
@@ -57,6 +59,10 @@ class KillKittens extends React.Component {
         })
     }
 
+    componentDidUpdate() {
+        console.log(this.state.warriors.map(warrior => `Current Health: ${warrior.currentHealth} | Max Health: ${warrior.maxHealth}`));
+    }
+
     renderBattleRobots = () => {
         return this.state.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
@@ -64,6 +70,8 @@ class KillKittens extends React.Component {
     render() {
         return (
             <div>
+                <Button onClick={() => {this.state.warriors[0].currentHealth = -1; console.log(this.state.warriors[0]) }} content="CLICK HERE" />
+                <Button onClick={() => this.forceUpdate()} content="YOU CAN ALSO CLICK HERE" />
                 <Grid columns='equal' >
                     <Grid.Row>
                         <Grid.Column>
