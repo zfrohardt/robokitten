@@ -16,7 +16,7 @@ class KillKittens extends React.Component {
             warriors: this.props.warriors.map(warrior => {
                 warrior._currentHealth = warrior.maxHealth;
                 Object.defineProperty(warrior, "currentHealth", {
-                    set: function (newHealth) {
+                    set: function(newHealth) {
                         this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
                         this._currentHealth = (newHealth > 0)? newHealth : 0;
                     },
@@ -24,14 +24,38 @@ class KillKittens extends React.Component {
                         return this._currentHealth;
                     },
                     configurable: true,
+                    enumerable: true,
                 });
+
+                warrior._currentDamage = warrior.baseDamage;
+                Object.defineProperty(warrior, "currentDamage", {
+                    set: function(newDamage) {
+                        this._currentDamage = (newDamage > 0)? newDamage : 0;
+                    },
+                    get: function() {
+                        return this._currentDamage;
+                    },
+                    configurable: true,
+                    enumerable: true,
+                });
+
+                warrior._currentDefense = warrior.baseDefense;
+                Object.defineProperty(warrior, "currentDefense", {
+                    set: function(newDefense) {
+                        this._currentDefense = (newDefense > 0)? newDefense : 0;
+                    },
+                    get: function() {
+                        return this._currentDefense;
+                    },
+                    configurable: true,
+                    enumerable: true,
+                });
+
                 return warrior;
             })
         })
     }
 
-
-    
     renderBattleRobots = () => {
         return this.state.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
