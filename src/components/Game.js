@@ -12,6 +12,7 @@ export default class Game extends Component {
         this.state = {
             captainSeed: rng(),
             randomRobotSeed: rng(),
+            gameplaySeed: rng(),
             warriors: [],
             setup: true,
         }
@@ -22,7 +23,7 @@ export default class Game extends Component {
         return (
             (this.state.setup)? 
                 <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={(robots) => this.selectWarriors(robots)} /> :
-                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} />
+                <KillKittens seed={this.state.gameplaySeed} warriors={this.state.warriors} captain={this.getCaptain()} />
         );
     }
 
@@ -39,7 +40,9 @@ export default class Game extends Component {
         let randomRobots = [];
 
         for(let i = 0; i < 5; i++) {
-            randomRobots.push(this.getIndexFromRange(rng(), this.props.robots));
+            let robot = this.getIndexFromRange(rng(), this.props.robots);
+            robot.name = "Zach";
+            randomRobots.push(robot);
         }
 
         if(randomRobots[0] === {}) {
@@ -50,7 +53,9 @@ export default class Game extends Component {
     }
 
     getCaptain() {
-        return this.getIndexFromRange(this.state.captainSeed, this.props.captains);
+        let captain = this.getIndexFromRange(this.state.captainSeed, this.props.captains);
+        captain.name = "Marc"
+        return captain;
     }
 
     getIndexFromRange(rand, arr) {

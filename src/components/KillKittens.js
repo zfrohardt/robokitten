@@ -2,15 +2,18 @@ import React from 'react';
 import RobotBattleCard from './RobotBattleCard'
 import Captain from './Captain'
 import { Button, Grid } from 'semantic-ui-react';
+import applyAbility from './ApplyAbility';
+import SeedRandom from 'seedrandom';
 
 class KillKittens extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             warriors: [],
             kittens: [],
             events: [],
             turnNumber: 1,
+            seed: props.seed,
         };
     }
 
@@ -67,14 +70,20 @@ class KillKittens extends React.Component {
         return this.state.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
 
-    postEvent(event) {
+    postEvents(events) {
         this.setState({
-            events: [event].concat(this.state.events),
+            events: this.state.events.concat(events),
         });
     }
 
     endOfTurnHandler = (robots, kittens) => {
-        console.log("This is the end of a turn");
+        let rng = SeedRandom(this.state.seed);
+        let event = applyAbility(rng(), 12, {team: robots, enemies: kittens}, robots[0], robots[1]);
+        let event2 = applyAbility(rng(), 12, {team: robots, enemies: kittens}, robots[0], robots[1]);
+        this.setState({
+            seed: rng()
+        })
+        this.postEvents([event, event2])
     }
 
     render() {
@@ -91,7 +100,7 @@ class KillKittens extends React.Component {
                             color="olive" 
                             content={`End ${(this.state.turnNumber % 2 === 1)? "Robot" : "Kitten"} Turn`}
                             disabled={false}
-                            onClick={event => this.endOfTurnHandler()}/>
+                            onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.robots)}/>
                         </Grid.Column>
                         <Grid.Column>
                             <Captain {...this.props.captain}/>
@@ -105,7 +114,7 @@ class KillKittens extends React.Component {
                             <div className="gameLog">
                                 <h3>Game Log</h3>
                                 <ul>
-                                    {this.state.events.map(event => <li>{event}</li>)}
+                                    {this.state.events.reverse().map(event => <li>{event}</li>)}
                                 </ul>
                             </div>
                         </Grid.Column>
