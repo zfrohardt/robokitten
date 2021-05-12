@@ -23,25 +23,26 @@ class RobotBattleCard extends Component {
     }
 
     renderAbilities = () => {
+    
         return this.props.abilities.map(ability => {
         if (ability.target === 'team' || ability.target === 'enemy team') {
             return <Popup content={ability.passive ? `Passive ability: ${ability.description}` : ability.description} trigger={<Menu.Item 
                 name={ability.name} 
-                disabled={ability.passive} 
+                disabled={ability.passive || this.props.turn} 
                 color={true ? 'grey' : null} 
                 onClick={()=>this.chooseAbility(ability, {})} />} />
         } else if (ability.target === 'enemy') {
             return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
             <Dropdown.Menu>
                 <Dropdown.Header>Choose a target</Dropdown.Header>
-                {this.props.enemies.map((enemy, index) => <Dropdown.Item onClick={()=>this.chooseAbility(ability, enemy)}>{`# ${enemy.modelNumber}`}</Dropdown.Item>)}
+                {this.props.enemies.map((enemy, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, enemy)}>{`# ${enemy.modelNumber}`}</Dropdown.Item>)}
             </Dropdown.Menu>
             </Dropdown>} />
         } else if (ability.target === 'warrior') {
             return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
             <Dropdown.Menu>
                 <Dropdown.Header>Choose a target</Dropdown.Header>
-                {this.props.team.map((teammate, index) => <Dropdown.Item onClick={()=>this.chooseAbility(ability, teammate)}>{`# ${teammate.modelNumber}`}</Dropdown.Item>)}
+                {this.props.team.map((teammate, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, teammate)}>{`# ${teammate.modelNumber}`}</Dropdown.Item>)}
             </Dropdown.Menu>
             </Dropdown>} />
         }
