@@ -43,7 +43,7 @@ export default class App extends Component {
                 fetch(`${API}/robots`).then(resp => resp.json())
                     .then(robots => {
                         let mergedRobots = robots.map(robot => {
-                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id)); // TODO: sort array so that active abilities are on top and sorted alphabetically
+                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
                             robot.abilities = robot.abilities.sort(abilitySort);
                             return robot;
                         });
