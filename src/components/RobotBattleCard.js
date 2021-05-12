@@ -3,22 +3,26 @@ import {Card, Dropdown, Grid, Icon, Image, Menu, Popup, Progress} from 'semantic
 import iconMapper from './TypeIcons'
 
 const RobotBattleCard = props => {
-    //console.log(props)
     const renderAbilities = () => {
         return props.abilities.map(ability => {
-        if (ability.target === 'team' || ability.taget === 'enemy team') {
+        if (ability.target === 'team' || ability.target === 'enemy team') {
             return <Popup content={ability.passive ? `Passive ability: ${ability.description}` : ability.description} trigger={<Menu.Item 
                 name={ability.name} 
                 disabled={ability.passive} 
                 color={true ? 'grey' : null} 
                 onClick={()=>console.log(ability.name)} />} />
-        } else {
+        } else if (ability.target === 'enemy') {
             return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
             <Dropdown.Menu>
                 <Dropdown.Header>Choose a target</Dropdown.Header>
-                <Dropdown.Item>Kittie 1</Dropdown.Item>
-                <Dropdown.Item>Kittie 2</Dropdown.Item>
-                <Dropdown.Item>Kittie 3</Dropdown.Item>
+                {props.enemies.map((enemy, index) => <Dropdown.Item onClick={()=>console.log(ability.name, index)}>{`# ${enemy.modelNumber}`}</Dropdown.Item>)}
+            </Dropdown.Menu>
+            </Dropdown>} />
+        } else if (ability.target === 'warrior') {
+            return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
+            <Dropdown.Menu>
+                <Dropdown.Header>Choose a target</Dropdown.Header>
+                {props.team.map((teammate, index) => <Dropdown.Item onClick={()=>console.log(ability.name, index)}>{`# ${teammate.modelNumber}`}</Dropdown.Item>)}
             </Dropdown.Menu>
             </Dropdown>} />
         }
