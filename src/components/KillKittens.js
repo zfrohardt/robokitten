@@ -89,7 +89,7 @@ class KillKittens extends React.Component {
                             <Button 
                             size="large" 
                             color="olive" 
-                            content="End Turn"
+                            content={`End ${(this.state.turnNumber % 2 === 1)? "Robot" : "Kitten"} Turn`}
                             disabled={false}
                             onClick={event => this.endOfTurnHandler()}/>
                         </Grid.Column>
