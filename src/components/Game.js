@@ -23,7 +23,7 @@ export default class Game extends Component {
         return (
             (this.state.setup)? 
                 <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomCombatants(this.props.robots, 5)} selectCallback={(robots) => this.selectWarriors(robots)} /> :
-                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} kittens={this.getRandomCombatants(this.props.kittens, 3)}/>
+                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} kittens={this.getRandomCombatants(this.props.kittens, 3)} postVictories={this.postVictories} />
         );
     }
 
@@ -66,5 +66,18 @@ export default class Game extends Component {
 
     getNumberFromRange(rand, upperBound) {
         return Math.floor(rand * upperBound);
+    }
+
+    postVictories = (victoryObj) => {
+        configObj = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+              },
+            body: JSON.stringify(victoryObj)
+        }
+        fetch('http://localhost:3000/victories', configObj)
+        .then(res => res.json())
+        .then(console.log)
     }
 }
