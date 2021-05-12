@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Dropdown, Grid, Icon, Image, Menu} from 'semantic-ui-react';
+import {Card, Dropdown, Grid, Icon, Image, Menu, Progress} from 'semantic-ui-react';
 import iconMapper from './TypeIcons'
 
 const RobotBattleCard = props => {
@@ -43,9 +43,19 @@ const RobotBattleCard = props => {
                         <Card.Header><Icon color='grey' name={iconMapper[props.type]} />{props.name}</Card.Header>
                     </Card.Content>
                     <Card.Content extra>
-                        Damage: {props.currentDamage}<br/>
-                        Health: {props.currentHealth}<br/>
-                        Defense: {props.currentDefense}
+                        {/* Health: {props.currentHealth}<br/> */}
+                        <Progress 
+                            value={props.currentHealth} 
+                            total={props.maxHealth} 
+                            progress='ratio'
+                            label={`Health: ${props.currentHealth}`} 
+                            color={
+                                props.currentHealth/props.maxHealth > 0.75 ? 'green' 
+                                : props.currentHealth/props.maxHealth < 0.25 ? 'red' 
+                                : 'yellow'}
+                            size="small" />
+                            Damage: {props.currentDamage}<br/>
+                            Defense: {props.currentDefense}
                     </Card.Content>
                 </Card>
             </Grid.Column>
