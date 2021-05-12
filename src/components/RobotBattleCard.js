@@ -10,7 +10,8 @@ class RobotBattleCard extends Component {
     }
 
     chooseAbility = (ability, target) => {
-        const passiveAbilities = this.props.abilities.filter(ability => ability.passive)
+        let passiveAbilities = this.props.abilities.filter(ability => ability.passive)
+        passiveAbilities = passiveAbilities.map(a => {return {ability: a, target: {}}})
         const chosenAbility = {
             ability: ability,
             target: target
