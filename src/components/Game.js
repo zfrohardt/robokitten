@@ -70,11 +70,7 @@ export default class Game extends Component {
     }
 
     postVictories = (victoryObj) => {
-<<<<<<< HEAD
         let configObj = {
-=======
-        const configObj = {
->>>>>>> stats
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
