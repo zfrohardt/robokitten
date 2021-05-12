@@ -1,11 +1,28 @@
 import React from 'react';
-import {Button, Card, Container, Grid, Icon, Image} from 'semantic-ui-react';
+import {Button, Card, Dropdown, Grid, Icon, Image, Menu} from 'semantic-ui-react';
 import iconMapper from './TypeIcons'
 
 const RobotBattleCard = props => {
     //console.log(props)
     const renderAbilities = () => {
-        return props.abilities.map(ability => <Button>{ability.name}</Button>)
+        return props.abilities.map(ability => {
+        if (ability.target === 'team' || ability.taget === 'enemy team') {
+            return <Menu.Item 
+                    name={ability.name} 
+                    disabled={ability.passive} 
+                    color={true ? 'grey' : null} 
+                    onClick={()=>console.log(ability.name)} />
+        } else {
+            return <Dropdown item text={ability.name}>
+            <Dropdown.Menu>
+                <Dropdown.Header>Choose a target</Dropdown.Header>
+                <Dropdown.Item>Kittie 1</Dropdown.Item>
+                <Dropdown.Item>Kittie 2</Dropdown.Item>
+                <Dropdown.Item>Kittie 3</Dropdown.Item>
+            </Dropdown.Menu>
+            </Dropdown>
+        }
+        })
     }
 
     return(
@@ -26,21 +43,18 @@ const RobotBattleCard = props => {
                         <Card.Header><Icon color='grey' name={iconMapper[props.type]} />{props.name}</Card.Header>
                     </Card.Content>
                     <Card.Content extra>
-                        Damage: {props.baseDamage}<br/>
+                        Damage: {props.currentDamage}<br/>
                         Health: {props.currentHealth}<br/>
-                        Defense: {props.baseDefense}
+                        Defense: {props.currentDefense}
                     </Card.Content>
                 </Card>
             </Grid.Column>
             <Grid.Column width={5}>
-                <Button.Group vertical>
+                <Menu vertical >
                     {renderAbilities()}
-                </Button.Group>
-            </Grid.Column>
-            <Grid.Column width={5}>
-                <Card>
-                    <p>Choose an action...</p>
-                </Card>
+                    
+                </Menu>
+            
             </Grid.Column>
         </Grid>
     )

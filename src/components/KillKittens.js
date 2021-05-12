@@ -8,6 +8,7 @@ class KillKittens extends React.Component {
         super();
         this.state = {
             warriors: [],
+            events: []
         };
     }
 
@@ -39,7 +40,7 @@ class KillKittens extends React.Component {
     render() {
         return (
             <div>
-                <Grid container columns='equal' >
+                <Grid columns='equal' >
                     <Grid.Row>
                         <Grid.Column>
                             <Captain {...this.props.captain}/>
@@ -64,7 +65,7 @@ class KillKittens extends React.Component {
                             <div className="gameLog">
                                 <h3>Game Log</h3>
                                 <ul>
-                                    <li></li>
+                                    {this.state.events.map(event => <li></li>)}
                                 </ul>
                             </div>
                         </Grid.Column>
