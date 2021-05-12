@@ -3,7 +3,7 @@ import {Button, Card, Grid, Icon, Image} from 'semantic-ui-react';
 import iconMapper from './TypeIcons'
 
 const RobotBattleCard = props => {
-    console.log(props)
+    //console.log(props)
     const renderAbilities = () => {
         return props.abilities.map(ability => <Button>{ability.name}</Button>)
     }
@@ -27,7 +27,7 @@ const RobotBattleCard = props => {
                     </Card.Content>
                     <Card.Content extra>
                         Damage: {props.baseDamage}<br/>
-                        Health: {props.maxHealth}<br/>
+                        Health: {props.currentHealth}<br/>
                         Defense: {props.baseDefense}
                     </Card.Content>
                 </Card>

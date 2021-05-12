@@ -4,12 +4,36 @@ import Captain from './Captain'
 import { Button, Grid } from 'semantic-ui-react';
 
 class KillKittens extends React.Component {
-    state = {
-
+    constructor() {
+        super();
+        this.state = {
+            warriors: [],
+        };
     }
+
+    componentDidMount() {
+        this.setState({
+            warriors: this.props.warriors.map(warrior => {
+                warrior._currentHealth = warrior.maxHealth;
+                Object.defineProperty(warrior, "currentHealth", {
+                    set: function (newHealth) {
+                        this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
+                        this._currentHealth = (newHealth > 0)? newHealth : 0;
+                    },
+                    get: function() {
+                        return this._currentHealth;
+                    },
+                    configurable: true,
+                });
+                return warrior;
+            })
+        })
+    }
+
+
     
     renderBattleRobots = () => {
-        return this.props.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
+        return this.state.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
 
     render() {
