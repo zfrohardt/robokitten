@@ -979,6 +979,29 @@
 				"Took some names",
 				"Went out for ice cream"
 			]
+		},
+    {
+			"captainName": "Sample",
+			"captainId": 0,
+			"troops": [
+				{
+					"name": "Troop 1",
+					"id": 0
+				},
+				{
+					"name": "Troop 2",
+					"id": 1
+				},
+				{
+					"name": "Troop 3",
+					"id": 2
+				}
+			],
+			"eventLog": [
+				"Kicked some ass",
+				"Took some names",
+				"Went out for ice cream"
+			]
 		}
 	]
 }
