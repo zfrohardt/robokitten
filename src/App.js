@@ -54,7 +54,6 @@ export default class App extends Component {
                     }
                 )
 
-                // TODO: when kittens is a seperate endpoint, we can use this to join kitten abilities into the kitten objects
                 fetch(`${API}/kittens`).then(resp => resp.json())
                     .then(kittens => {
                         let mergedKittens = kittens.map(kitten => {
@@ -101,8 +100,8 @@ export default class App extends Component {
                                 <Route exact path="/" component={SplashScreen} />
                                 <Route exact path="/play" render={() => <Redirect to={`/play/${this.getURLSeed()}`} />} />
                                 <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} {...this.state}  />} />
-                                <Route exact path="/troops" render={() => <Troops robots={this.state.robots} />} />
-                                <Route exact path="/enemies" render={() => <Troops kittens robots={this.state.kittens}/>} />
+                                <Route exact path="/troops" render={() => <Troops troops={this.state.robots} />} />
+                                <Route exact path="/enemies" render={() => <Troops kittens troops={this.state.kittens}/>} />
                                 <Redirect exact from="/kittens" to="/enemies" />
                                 <Route exact path='/statistics' component={Stats} />
                                 <Route component={Error} status={404} />

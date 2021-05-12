@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Dropdown, Container, Card, Menu} from 'semantic-ui-react';
 import RobotDisplayCard from './RobotDisplayCard';
+import KittenDisplayCard from './KittenDisplayCard';
 
 const Troops = (props) => {
 
@@ -37,7 +38,10 @@ const Troops = (props) => {
                 </Menu>
             </Container>
             <Card.Group>
-                {applyFiltersAndSort(props.robots, classFilter, typeFilter, sort).map((robot, index) => makeRobotCard(index, robot))}
+                {(props.kittens)? 
+                    applyFiltersAndSort(props.troops, classFilter, typeFilter, sort).map((robot, index) => makeKittenCard(index, robot)) :
+                    applyFiltersAndSort(props.troops, classFilter, typeFilter, sort).map((kitten, index) => makeRobotCard(index, kitten))
+                }
             </Card.Group>
         </React.Fragment>
     );
@@ -102,11 +106,11 @@ const classOptions = [
     }
 ]
 
-const filterClass = (robot, filter) => {
+const filterClass = (troop, filter) => {
     if(filter === "All") {
         return true;
     }
-    return robot.class === filter;
+    return troop.class === filter;
 }
 
 const typeOptions = [
@@ -137,17 +141,24 @@ const typeOptions = [
     }
 ]
 
-const filterType = (robot, filter) => {
+const filterType = (troop, filter) => {
     if(filter === "All") {
         return true;
     }
-    return robot.type === filter;
+    return troop.type === filter;
 }
 
 const makeRobotCard = (key, robot) => {
     console.log(robot);
     return (
         <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} />
+    );
+}
+
+const makeKittenCard = (key, kitten) => {
+    console.log(kitten);
+    return (
+        <KittenDisplayCard key={key} {...kitten} name={`Kitten Breed ${kitten.modelNumber}`} />
     );
 }
 
