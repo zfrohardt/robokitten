@@ -25,7 +25,7 @@ const GameSetup = props => {
         <Grid container columns="equal" >
             <Grid.Row centered>
                 <Grid.Column>
-                    <Captain {...props.captain}/>
+                    <Captain {...props.robotCaptain}/>
                 </Grid.Column>
                 <Grid.Column verticalAlign="middle" textAlign="left">
                     <Button size="massive" disabled={chosenRobots.length !== MAX_ROBOTS} color="olive" content='Find Glory on the Battlefield!'
