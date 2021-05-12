@@ -78,10 +78,11 @@ class KillKittens extends React.Component {
 
     endOfTurnHandler = (robots, kittens) => {
         let rng = SeedRandom(this.state.seed);
-        let event = applyAbility(rng(), 12, {team: robots, enemies: kittens}, robots[0], robots[1]);
+        let event = applyAbility(rng(), 25, {team: robots, enemies: kittens}, robots[0], robots[1]);
         let event2 = applyAbility(rng(), 12, {team: robots, enemies: kittens}, robots[0], robots[1]);
         this.setState({
-            seed: rng()
+            seed: rng(),
+            turnNumber: this.state.turnNumber + 1,
         })
         this.postEvents([event, event2])
     }
