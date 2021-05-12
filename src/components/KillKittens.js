@@ -5,6 +5,9 @@ import { Button, Grid } from 'semantic-ui-react';
 import applyAbility from './ApplyAbility';
 import SeedRandom from 'seedrandom';
 
+const defaultAbilityPackage = {confirmed: false, abilities:[]}
+const defaultAbilityPackageGroup = [defaultAbilityPackage, defaultAbilityPackage, defaultAbilityPackage]
+
 class KillKittens extends React.Component {
     constructor(props) {
         super(props);
@@ -14,6 +17,7 @@ class KillKittens extends React.Component {
             events: [],
             turnNumber: 1,
             seed: props.seed,
+            pendingAbilities: defaultAbilityPackageGroup,
         };
     }
 
@@ -67,7 +71,7 @@ class KillKittens extends React.Component {
     }
 
     renderBattleRobots = (combatants, enemies) => {
-        return combatants.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants}/>)
+        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.updatePackage(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants}/>)
     }
 
     postEvents(events) {
@@ -88,6 +92,20 @@ class KillKittens extends React.Component {
         this.postEvents([event, event2])
     }
 
+    packageUpdate(index, abilityPackage) {
+        let packages = this.state.pendingAbilities.slice(0);
+        packages[index] = abilityPackage;
+        this.setState({
+            pendingAbilities: packages,
+        })
+    }
+
+    resetPendingUpdates() {
+        this.setState({
+            pendingAbilities: defaultAbilityPackageGroup,
+        })
+    }
+
     render() {
         return (
             <div>
@@ -101,7 +119,7 @@ class KillKittens extends React.Component {
                             size="large" 
                             color="olive" 
                             content={`End ${(this.state.turnNumber % 2 === 1)? "Robot" : "Kitten"} Turn`}
-                            disabled={false}
+                            disabled={this.state.pendingAbilities.reduce((acc, val) => acc && val, true)}
                             onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.robots)}/>
                         </Grid.Column>
                         <Grid.Column>
