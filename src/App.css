@@ -76,3 +76,6 @@ div.column .captain>.extra {
   background-color: rgba(128, 128, 128, 0.26);
 }
 
+div.ui.container.grid.cat {
+  flex-direction: row-reverse;
+}

@@ -8,7 +8,8 @@
         "maxHealth": 18,
         "baseDefense": 0,
         "type": "bullet",
-        "abilityIds": [27, 28, 14]
+        "abilityIds": [27, 28, 14],
+        "cat": false
       },
       {
         "modelNumber": 2,
@@ -18,7 +19,8 @@
         "maxHealth": 16,
         "baseDefense": 0,
         "type": "normal",
-        "abilityIds": [ 11, 9, 29]
+        "abilityIds": [ 11, 9, 29],
+        "cat": false
       },
       {
         "modelNumber": 3,
@@ -28,7 +30,8 @@
         "maxHealth": 26,
         "baseDefense": 2,
         "type": "fire",
-        "abilityIds": [ 21, 25, 13]
+        "abilityIds": [ 21, 25, 13],
+        "cat": false
       },
       {
         "modelNumber": 4,
@@ -38,7 +41,8 @@
         "maxHealth": 26,
         "baseDefense": 3,
         "type": "bullet",
-        "abilityIds": [ 26, 30, 10]
+        "abilityIds": [ 26, 30, 10],
+        "cat": false
       },
       {
         "modelNumber": 5,
@@ -48,7 +52,8 @@
         "maxHealth": 12,
         "baseDefense": 0,
         "type": "normal",
-        "abilityIds": [ 9, 12, 15]
+        "abilityIds": [ 9, 12, 15],
+        "cat": false
       },
       {
         "modelNumber": 6,
@@ -58,7 +63,8 @@
         "maxHealth": 17,
         "baseDefense": 3,
         "type": "fire",
-        "abilityIds": [ 21, 23, 2]
+        "abilityIds": [ 21, 23, 2],
+        "cat": false
       },
       {
         "modelNumber": 7,
@@ -68,7 +74,8 @@
         "maxHealth": 15,
         "baseDefense": 4,
         "type": "lightning",
-        "abilityIds": [ 16, 17, 13]
+        "abilityIds": [ 16, 17, 13],
+        "cat": false
       },
       {
         "modelNumber": 8,
@@ -78,7 +85,8 @@
         "maxHealth": 15,
         "baseDefense": 1,
         "type": "normal",
-        "abilityIds": [ 15, 11, 10]
+        "abilityIds": [ 15, 11, 10],
+        "cat": false
       },
       {
         "modelNumber": 9,
@@ -88,7 +96,8 @@
         "maxHealth": 21,
         "baseDefense": 1,
         "type": "lightning",
-        "abilityIds": [ 20, 19, 9]
+        "abilityIds": [ 20, 19, 9],
+        "cat": false
       },
       {
         "modelNumber": 10,
@@ -98,7 +107,8 @@
         "maxHealth": 27,
         "baseDefense": 4,
         "type": "normal",
-        "abilityIds": [ 14, 11, 13]
+        "abilityIds": [ 14, 11, 13],
+        "cat": false
       },
       {
         "modelNumber": 11,
@@ -108,7 +118,8 @@
         "maxHealth": 22,
         "baseDefense": 8,
         "type": "fire",
-        "abilityIds": [ 22, 3, 4]
+        "abilityIds": [ 22, 3, 4],
+        "cat": false
       },
       {
         "modelNumber": 12,
@@ -118,7 +129,8 @@
         "maxHealth": 15,
         "baseDefense": 7,
         "type": "bullet",
-        "abilityIds": [ 28, 1, 5]
+        "abilityIds": [ 28, 1, 5],
+        "cat": false
       },
       {
         "modelNumber": 13,
@@ -128,7 +140,8 @@
         "maxHealth": 28,
         "baseDefense": 5,
         "type": "normal",
-        "abilityIds": [ 14, 4, 2]
+        "abilityIds": [ 14, 4, 2],
+        "cat": false
       },
       {
         "modelNumber": 14,
@@ -138,7 +151,8 @@
         "maxHealth": 15,
         "baseDefense": 8,
         "type": "lightning",
-        "abilityIds": [ 17, 4, 3]
+        "abilityIds": [ 17, 4, 3],
+        "cat": false
       },
       {
         "modelNumber": 15,
@@ -148,7 +162,8 @@
         "maxHealth": 25,
         "baseDefense": 9,
         "type": "fire",
-        "abilityIds": [ 25, 1, 3]
+        "abilityIds": [ 25, 1, 3],
+        "cat": false
       },
       {
         "modelNumber": 16,
@@ -158,7 +173,8 @@
         "maxHealth": 20,
         "baseDefense": 8,
         "type": "bullet",
-        "abilityIds": [ 4, 29, 2]
+        "abilityIds": [ 4, 29, 2],
+        "cat": false
       },
       {
         "modelNumber": 17,
@@ -168,7 +184,8 @@
         "maxHealth": 28,
         "baseDefense": 8,
         "type": "normal",
-        "abilityIds": [ 11, 5, 4]
+        "abilityIds": [ 11, 5, 4],
+        "cat": false
       },
       {
         "modelNumber": 18,
@@ -178,7 +195,8 @@
         "maxHealth": 28,
         "baseDefense": 6,
         "type": "lightning",
-        "abilityIds": [ 18, 5, 1]
+        "abilityIds": [ 18, 5, 1],
+        "cat": false
       },
       {
         "modelNumber": 19,
@@ -188,7 +206,8 @@
         "maxHealth": 28,
         "baseDefense": 6,
         "type": "normal",
-        "abilityIds": [ 15, 5, 1]
+        "abilityIds": [ 15, 5, 1],
+        "cat": false
       },
       {
         "modelNumber": 20,
@@ -198,7 +217,8 @@
         "maxHealth": 21,
         "baseDefense": 7,
         "type": "normal",
-        "abilityIds": [ 13, 1, 5]
+        "abilityIds": [ 13, 1, 5],
+        "cat": false
       },
       {
         "modelNumber": 21,
@@ -208,7 +228,8 @@
         "maxHealth": 28,
         "baseDefense": 1,
         "type": "fire",
-        "abilityIds": [ 25, 6, 2]
+        "abilityIds": [ 25, 6, 2],
+        "cat": false
       },
       {
         "modelNumber": 22,
@@ -218,7 +239,8 @@
         "maxHealth": 26,
         "baseDefense": 2,
         "type": "bullet",
-        "abilityIds": [ 28, 7, 2]
+        "abilityIds": [ 28, 7, 2],
+        "cat": false
       },
       {
         "modelNumber": 23,
@@ -228,7 +250,8 @@
         "maxHealth": 25,
         "baseDefense": 3,
         "type": "normal",
-        "abilityIds": [ 11, 6, 8]
+        "abilityIds": [ 11, 6, 8],
+        "cat": false
       },
       {
         "modelNumber": 24,
@@ -238,7 +261,8 @@
         "maxHealth": 13,
         "baseDefense": 2,
         "type": "lightning",
-        "abilityIds": [ 17, 8, 10]
+        "abilityIds": [ 17, 8, 10],
+        "cat": false
       },
       {
         "modelNumber": 25,
@@ -248,7 +272,8 @@
         "maxHealth": 29,
         "baseDefense": 4,
         "type": "fire",
-        "abilityIds": [ 22, 6, 2]
+        "abilityIds": [ 22, 6, 2],
+        "cat": false
       },
       {
         "modelNumber": 26,
@@ -258,7 +283,8 @@
         "maxHealth": 25,
         "baseDefense": 1,
         "type": "bullet",
-        "abilityIds": [ 30, 7, 2]
+        "abilityIds": [ 30, 7, 2],
+        "cat": false
       },
       {
         "modelNumber": 27,
@@ -268,7 +294,8 @@
         "maxHealth": 19,
         "baseDefense": 2,
         "type": "normal",
-        "abilityIds": [ 11, 7, 2]
+        "abilityIds": [ 11, 7, 2],
+        "cat": false
       },
       {
         "modelNumber": 28,
@@ -278,7 +305,8 @@
         "maxHealth": 29,
         "baseDefense": 4,
         "type": "lightning",
-        "abilityIds": [ 19, 8, 2]
+        "abilityIds": [ 19, 8, 2],
+        "cat": false
       },
       {
         "modelNumber": 29,
@@ -288,7 +316,8 @@
         "maxHealth": 26,
         "baseDefense": 1,
         "type": "normal",
-        "abilityIds": [ 12, 7, 10]
+        "abilityIds": [ 12, 7, 10],
+        "cat": false
       },
       {
         "modelNumber": 30,
@@ -298,7 +327,8 @@
         "maxHealth": 25,
         "baseDefense": 4,
         "type": "normal",
-        "abilityIds": [ 14, 6, 2]
+        "abilityIds": [ 14, 6, 2],
+        "cat": false
       }
      ],
     "captains": [
@@ -592,6 +622,338 @@
         "type": "bullet",
         "passive": false,
         "target": "enemy"
+      }
+     ],
+     "kittens": [
+      {
+        "modelNumber": 1,
+        "class": "Attacker",
+        "description": "I'm feisty, bitch!",
+        "baseDamage": 6,
+        "maxHealth": 18,
+        "baseDefense": 0,
+        "type": "bullet",
+        "abilityIds": [27, 28, 14],
+        "cat": true
+      },
+      {
+        "modelNumber": 2,
+        "class": "Attacker",
+        "description": "As much as I have water, I do love fish...",
+        "baseDamage": 6,
+        "maxHealth": 16,
+        "baseDefense": 0,
+        "type": "normal",
+        "abilityIds": [ 11, 9, 29],
+        "cat": true
+      },
+      {
+        "modelNumber": 3,
+        "class": "Attacker",
+        "description": "I had a conscience once. But alas, I seem to have forgotten where I put it.",
+        "baseDamage": 8,
+        "maxHealth": 26,
+        "baseDefense": 2,
+        "type": "fire",
+        "abilityIds": [ 21, 25, 13],
+        "cat": true
+      },
+      {
+        "modelNumber": 4,
+        "class": "Attacker",
+        "description": "People laughed at my guns ...once.",
+        "baseDamage": 7,
+        "maxHealth": 26,
+        "baseDefense": 3,
+        "type": "bullet",
+        "abilityIds": [ 26, 30, 10],
+        "cat": true
+      },
+      {
+        "modelNumber": 5,
+        "class": "Attacker",
+        "description": "My cuteness will make the bots short circuit.",
+        "baseDamage": 9,
+        "maxHealth": 12,
+        "baseDefense": 0,
+        "type": "normal",
+        "abilityIds": [ 9, 12, 15],
+        "cat": true
+      },
+      {
+        "modelNumber": 6,
+        "class": "Attacker",
+        "description": "Ashes can't fight back.",
+        "baseDamage": 9,
+        "maxHealth": 17,
+        "baseDefense": 3,
+        "type": "fire",
+        "abilityIds": [ 21, 23, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 7,
+        "class": "Attacker",
+        "description": "I've got just the thing for these tinker toys.",
+        "baseDamage": 7,
+        "maxHealth": 15,
+        "baseDefense": 4,
+        "type": "lightning",
+        "abilityIds": [ 16, 17, 13],
+        "cat": true
+      },
+      {
+        "modelNumber": 8,
+        "class": "Attacker",
+        "description": "One day you, too, shall drink the blood of your foes.",
+        "baseDamage": 7,
+        "maxHealth": 15,
+        "baseDefense": 1,
+        "type": "normal",
+        "abilityIds": [ 15, 11, 10],
+        "cat": true
+      },
+      {
+        "modelNumber": 9,
+        "class": "Attacker",
+        "description": "In ancient times cats were worshipped as gods.",
+        "baseDamage": 6,
+        "maxHealth": 21,
+        "baseDefense": 1,
+        "type": "lightning",
+        "abilityIds": [ 20, 19, 9],
+        "cat": true
+      },
+      {
+        "modelNumber": 10,
+        "class": "Attacker",
+        "description": "The phrase ‘domestic cat’ is an oxymoron.",
+        "baseDamage": 7,
+        "maxHealth": 27,
+        "baseDefense": 4,
+        "type": "normal",
+        "abilityIds": [ 14, 11, 13],
+        "cat": true
+      },
+      {
+        "modelNumber": 11,
+        "class": "Defender",
+        "description": "Proud am I, strong am I, courageous in defending my comrades, and fierce in punishing what stands in my way.",
+        "baseDamage": 1,
+        "maxHealth": 22,
+        "baseDefense": 8,
+        "type": "fire",
+        "abilityIds": [ 22, 3, 4],
+        "cat": true
+      },
+      {
+        "modelNumber": 12,
+        "class": "Defender",
+        "description": "Cats rule the world.",
+        "baseDamage": 4,
+        "maxHealth": 15,
+        "baseDefense": 7,
+        "type": "bullet",
+        "abilityIds": [ 28, 1, 5],
+        "cat": true
+      },
+      {
+        "modelNumber": 13,
+        "class": "Defender",
+        "description": "Cats will outsmart robots every time.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 5,
+        "type": "normal",
+        "abilityIds": [ 14, 4, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 14,
+        "class": "Defender",
+        "description": "Never try to outstubborn a cat.",
+        "baseDamage": 1,
+        "maxHealth": 15,
+        "baseDefense": 8,
+        "type": "lightning",
+        "abilityIds": [ 17, 4, 3],
+        "cat": true
+      },
+      {
+        "modelNumber": 15,
+        "class": "Defender",
+        "description": "The way to get on with a cat is to treat it as an equal – or even better, as the superior it knows itself to be.",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 9,
+        "type": "fire",
+        "abilityIds": [ 25, 1, 3],
+        "cat": true
+      },
+      {
+        "modelNumber": 16,
+        "class": "Defender",
+        "description": "The coldest depth of Hell is reserved for people who abandon kittens.",
+        "baseDamage": 1,
+        "maxHealth": 20,
+        "baseDefense": 8,
+        "type": "bullet",
+        "abilityIds": [ 4, 29, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 17,
+        "class": "Defender",
+        "description": "Cats are people, and the sooner the world accepts that fact, the better off the world will be. ",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 8,
+        "type": "normal",
+        "abilityIds": [ 11, 5, 4],
+        "cat": true
+      },
+      {
+        "modelNumber": 18,
+        "class": "Defender",
+        "description": "It's very hard to be polite when you're a cat",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 6,
+        "type": "lightning",
+        "abilityIds": [ 18, 5, 1],
+        "cat": true
+      },
+      {
+        "modelNumber": 19,
+        "class": "Defender",
+        "description": "The reason cats climb is so we can look down on almost every other animal... it's also why we hate birds.",
+        "baseDamage": 1,
+        "maxHealth": 28,
+        "baseDefense": 6,
+        "type": "normal",
+        "abilityIds": [ 15, 5, 1],
+        "cat": true
+      },
+      {
+        "modelNumber": 20,
+        "class": "Defender",
+        "description": "Do not meddle in the affairs of cats, for they are subtle and will piss on your computer.",
+        "baseDamage": 2,
+        "maxHealth": 21,
+        "baseDefense": 7,
+        "type": "normal",
+        "abilityIds": [ 13, 1, 5],
+        "cat": true
+      },
+      {
+        "modelNumber": 21,
+        "class": "Healer",
+        "description": "Sometime even the smallest boon can save a life.",
+        "baseDamage": 4,
+        "maxHealth": 28,
+        "baseDefense": 1,
+        "type": "fire",
+        "abilityIds": [ 25, 6, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 22,
+        "class": "Healer",
+        "description": "Guilt isn't in cat vocabulary.",
+        "baseDamage": 4,
+        "maxHealth": 26,
+        "baseDefense": 2,
+        "type": "bullet",
+        "abilityIds": [ 28, 7, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 23,
+        "class": "Healer",
+        "description": "To assume a cat is asleep is a grave mistake. We can close our eyes and keep both ears awake.",
+        "baseDamage": 4,
+        "maxHealth": 25,
+        "baseDefense": 3,
+        "type": "normal",
+        "abilityIds": [ 11, 6, 8],
+        "cat": true
+      },
+      {
+        "modelNumber": 24,
+        "class": "Healer",
+        "description": "The cat is the only animal to have succeeded in domesticating man.",
+        "baseDamage": 4,
+        "maxHealth": 13,
+        "baseDefense": 2,
+        "type": "lightning",
+        "abilityIds": [ 17, 8, 10],
+        "cat": true
+      },
+      {
+        "modelNumber": 25,
+        "class": "Healer",
+        "description": "I'll give up my nine lives to save my comrade's.",
+        "baseDamage": 3,
+        "maxHealth": 29,
+        "baseDefense": 4,
+        "type": "fire",
+        "abilityIds": [ 22, 6, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 26,
+        "class": "Healer",
+        "description": "Cat scratch fever won't beat us.",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 1,
+        "type": "bullet",
+        "abilityIds": [ 30, 7, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 27,
+        "class": "Healer",
+        "description": "My comrades will not fall while I still have tuna.",
+        "baseDamage": 4,
+        "maxHealth": 19,
+        "baseDefense": 2,
+        "type": "normal",
+        "abilityIds": [ 11, 7, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 28,
+        "class": "Healer",
+        "description": "I am a healer. I take the broken bodies of my comrades and mend them.",
+        "baseDamage": 3,
+        "maxHealth": 29,
+        "baseDefense": 4,
+        "type": "lightning",
+        "abilityIds": [ 19, 8, 2],
+        "cat": true
+      },
+      {
+        "modelNumber": 29,
+        "class": "Healer",
+        "description": "Imagination is the only weapon in the war with reality.",
+        "baseDamage": 1,
+        "maxHealth": 26,
+        "baseDefense": 1,
+        "type": "normal",
+        "abilityIds": [ 12, 7, 10],
+        "cat": true
+      },
+      {
+        "modelNumber": 30,
+        "class": "Healer",
+        "description": "I'm not known for my compassion.",
+        "baseDamage": 1,
+        "maxHealth": 25,
+        "baseDefense": 4,
+        "type": "normal",
+        "abilityIds": [ 14, 6, 2],
+        "cat": true
       }
      ]
 }
