@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {Button, Container, Grid, Image} from 'semantic-ui-react';
 
 const Victory = props => {
+
+    useEffect(() => {
+		props.postVictory();
+	}, []);
+
     return (
         <Grid centered>
             <Grid.Row>
