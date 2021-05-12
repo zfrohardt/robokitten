@@ -21,8 +21,8 @@ export default class Game extends Component {
         // console.log(this.props.robots)
         return (
             (this.state.setup)? 
-                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomRobots()} selectCallback={(robots) => this.selectWarriors(robots)} /> :
-                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} />
+                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomCombatants(this.props.robots, 5)} selectCallback={(robots) => this.selectWarriors(robots)} /> :
+                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} kittens={this.getRandomCombatants(this.props.kittens, 3)}/>
         );
     }
 
@@ -34,12 +34,12 @@ export default class Game extends Component {
         })
     }
 
-    getRandomRobots() {
+    getRandomCombatants(robotsOrKittens, num) {
         let rng = SeedRandom(this.state.randomRobotSeed);
         let randomRobots = [];
 
-        for(let i = 0; i < 5; i++) {
-            randomRobots.push(this.getIndexFromRange(rng(), this.props.robots));
+        for(let i = 0; i < num; i++) {
+            randomRobots.push(this.getIndexFromRange(rng(), robotsOrKittens));
         }
 
         if(randomRobots[0] === {}) {

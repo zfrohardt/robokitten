@@ -57,8 +57,8 @@ class KillKittens extends React.Component {
         })
     }
 
-    renderBattleRobots = () => {
-        return this.state.warriors.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
+    renderBattleRobots = (combatants) => {
+        return combatants.map(warrior => <RobotBattleCard name={`Robot #${warrior.modelNumber}`} {...warrior} />)
     }
 
     render() {
@@ -83,7 +83,7 @@ class KillKittens extends React.Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            {this.renderBattleRobots()}
+                            {this.renderBattleRobots(this.state.warriors)}
                         </Grid.Column>
                         <Grid.Column>
                             <div className="gameLog">
@@ -94,7 +94,7 @@ class KillKittens extends React.Component {
                             </div>
                         </Grid.Column>
                         <Grid.Column>
-                            {this.renderBattleRobots()}
+                            {this.renderBattleRobots(this.props.kittens)}
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>

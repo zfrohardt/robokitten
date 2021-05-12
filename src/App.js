@@ -24,6 +24,7 @@ export default class App extends Component {
             robots: [],
             abilities: [],
             captains: [],
+            kittens: []
         };
     }
 
@@ -54,14 +55,17 @@ export default class App extends Component {
                 )
 
                 // TODO: when kittens is a seperate endpoint, we can use this to join kitten abilities into the kitten objects
-                // fetch(`${API}/kittens`).then(resp => resp.json())
-                //     .then(kittens => {
-                //         let mergedKittens = kittens.map(kitten => {
-                //             kitten.abilities = abilities.filter(ability => kitten.abilityIds.includes(ability.id));
-                //             return kitten;
-                //         })
-                //     }
-                // )
+                fetch(`${API}/kittens`).then(resp => resp.json())
+                    .then(kittens => {
+                        let mergedKittens = kittens.map(kitten => {
+                            kitten.abilities = abilities.filter(ability => kitten.abilityIds.includes(ability.id));
+                            return kitten;
+                        })
+                        this.setState({
+                            kittens: mergedKittens
+                        })
+                    }
+                )
             }
         )
     }
