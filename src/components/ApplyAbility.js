@@ -48,7 +48,7 @@ const abilityLookup = {
         },
     13: (state, self, target, seed) => {
             state.team = state.team.map(warrior => warrior.currentDamage += 3);
-            return `${self.name} used Rage and boosted the damage of ${warrior.name} by 3`;
+            return `${self.name} used Rage and boosted the damage of his team by 3`;
         },
     14: (state, self, target, seed) => {
             let damage = 3 + attack("normal", target.type, self.currentDamage, seed);
@@ -135,9 +135,10 @@ const abilityLookup = {
 
 // returns an attack's damage. Will return max damage if seed is left 0
 let attack = (damageType, targetType, range, seed = 0) => {
+    console.log("Attack seed: " + seed);
     let damage = range;
-    if (seed) {
-        damage = generateNormalRandom(seed, 1, range);
+    if (seed !== 0) {
+        damage = generateUniformRandom(seed, 1, range);
     }
 
     if (damageType === "normal" || damageType === targetType) {
@@ -152,7 +153,13 @@ let effective = (damage, target) => {
     return (damage === "fire" && target === "lightning") || (damage === "lightning" && target === "bullet") || (damage === "bullet" && target === "fire");
 }
 
+let generateUniformRandom = (seed, lowerBound = 0, upperBound = 1) => {
+    let rng = SeedRandom(seed);
+    return Math.floor(rng() * (upperBound - lowerBound)) + lowerBound;
+}
+
 // generate a normally distributed random number between two bounds, from here: https://stackoverflow.com/a/49434653
+// There may be a bug here, values do not appear to have a random distribution
 let generateNormalRandom = (seed, lowerBound = 0, upperBound = 1) => {
     let rng = SeedRandom(seed)
     let u = 0, v = 0;
