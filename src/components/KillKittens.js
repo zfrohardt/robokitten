@@ -85,7 +85,7 @@ class KillKittens extends React.Component {
                         <Grid.Column>
                             {this.renderBattleRobots(this.state.warriors)}
                         </Grid.Column>
-                        <Grid.Column>
+                        <Grid.Column width={3}>
                             <div className="gameLog">
                                 <h3>Game Log</h3>
                                 <ul>

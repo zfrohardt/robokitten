@@ -26,7 +26,7 @@ const RobotBattleCard = props => {
     }
 
     return(
-        <Grid container >
+        <Grid container className={props.cat ? 'cat' : null}>
             <Grid.Column width={8}>
                 <Card className={props.type}>
                     <Card.Content>
@@ -35,10 +35,11 @@ const RobotBattleCard = props => {
                             width: '30%',
                             float: 'left'}}> 
                         <Image 
-                        src={`https://robohash.org/ModelNumber${props.modelNumber}.png`} 
+                        src={props.cat ? `https://robohash.org/ModelNumber${props.modelNumber}.png?set=set4` : `https://robohash.org/ModelNumber${props.modelNumber}.png`} 
                         className={props.type}
                         size="tiny"
-                        circular />
+                        circular 
+                        style={{transform: 'scaleX(-1)'}} />
                         </div>
                         <Card.Header><Icon color='grey' name={iconMapper[props.type]} />{props.name}</Card.Header>
                     </Card.Content>
@@ -59,7 +60,7 @@ const RobotBattleCard = props => {
                     </Card.Content>
                 </Card>
             </Grid.Column>
-            <Grid.Column width={5}>
+            <Grid.Column width={8}>
                 <Menu vertical >
                     {renderAbilities()}
                     
