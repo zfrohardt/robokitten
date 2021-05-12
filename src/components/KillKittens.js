@@ -95,22 +95,19 @@ class KillKittens extends React.Component {
             console.log(returnArray);
             return returnArray;
         })
-
-        console.log(events);
-
         events = events.reduce((acc, arr) => acc.concat(arr), [])
+        events.sort((x, y) => (x.ability.passive === y.ability.passive)? 0 : (x.ability.passive)? 0 : 1);
 
-        console.log(events);
-
-        events.sort((x, y) => (x.ability.passive === y.ability.passive)? 0 : (x.ability.passive)? 1 : 0);
-
-        console.log(events);
-
+        events = events.map(event => {
+            console.log("TEAM");
+            console.log(state.team);
+            applyAbility(rng(), event.ability.id, state, event.self, event.target)
+        });
+        this.postEvents(events);
         this.setState({
             seed: rng(),
             turnNumber: this.state.turnNumber + 1,
         })
-        //this.postEvents([event, event2]);
         this.resetPendingUpdates();
     }
 
