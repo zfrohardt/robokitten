@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Button, Container, Grid, Image} from 'semantic-ui-react';
-import Captain from './Captain';
 
 const Victory = props => {
     return (
