@@ -69,7 +69,7 @@ export default class Game extends Component {
     }
 
     postVictories = (victoryObj) => {
-        configObj = {
+        let configObj = {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

@@ -103,6 +103,8 @@ class KillKittens extends React.Component {
 
         events = events.map(event => applyAbility(rng(), event.ability.id, state, event.self, event.target));
         this.postEvents(events);
+        console.log(robots.filter(robot => robot.currentHealth > 0))
+        console.log(kittens.filter(kitten => kitten.currentHealth > 0))
         this.setState({
             seed: rng(),
             turnNumber: this.state.turnNumber + 1,
@@ -131,9 +133,14 @@ class KillKittens extends React.Component {
     }
 
     render() {
-        console.log(this.numberAlive())
         return (
-            (this.state.kittens.length === 0)? <Victory name={this.props.captain.name}/> : 
+            (this.state.kittens.length === 0)? <Victory postVictory={() => 
+                this.props.postVictories({
+                    captainName: this.props.captain.name, 
+                    captainId: this.props.captain.id, 
+                    troops:this.props.warriors.map(troop => {return {name: troop.name, id: troop.id}}), eventLog: this.state.events})} 
+                    name={this.props.captain.name}
+                /> : 
             (this.state.warriors.length === 0)? <Defeat /> :
             <div>
                 <Grid columns='equal' >
