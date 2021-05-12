@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Card, Grid, Icon, Image} from 'semantic-ui-react';
+import {Button, Card, Container, Grid, Icon, Image} from 'semantic-ui-react';
 import iconMapper from './TypeIcons'
 
 const RobotBattleCard = props => {
@@ -10,7 +10,7 @@ const RobotBattleCard = props => {
 
     return(
         <Grid container >
-            <Grid.Column width={12}>
+            <Grid.Column width={8}>
                 <Card className={props.type}>
                     <Card.Content>
                         <div className={`image ${props.type}`} style={{
@@ -32,13 +32,15 @@ const RobotBattleCard = props => {
                     </Card.Content>
                 </Card>
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column width={5}>
                 <Button.Group vertical>
                     {renderAbilities()}
                 </Button.Group>
             </Grid.Column>
-            <Grid.Column>
-
+            <Grid.Column width={5}>
+                <Card>
+                    <p>Choose an action...</p>
+                </Card>
             </Grid.Column>
         </Grid>
     )
