@@ -8,7 +8,9 @@ class KillKittens extends React.Component {
         super();
         this.state = {
             warriors: [],
-            events: []
+            kittens: [],
+            events: [],
+            turnNumber: 1,
         };
     }
 
@@ -71,6 +73,10 @@ class KillKittens extends React.Component {
         });
     }
 
+    endOfTurnHandler = (robots, kittens) => {
+        console.log("This is the end of a turn");
+    }
+
     render() {
         return (
             <div>
@@ -85,7 +91,7 @@ class KillKittens extends React.Component {
                             color="olive" 
                             content="End Turn"
                             disabled={false}
-                            onClick={() => console.log('end turn')} />
+                            onClick={event => this.endOfTurnHandler()}/>
                         </Grid.Column>
                         <Grid.Column>
                             <Captain {...this.props.captain}/>
