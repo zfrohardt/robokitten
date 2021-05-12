@@ -3,6 +3,8 @@ import RobotBattleCard from './RobotBattleCard'
 import Captain from './Captain'
 import { Button, Grid } from 'semantic-ui-react';
 import applyAbility from './ApplyAbility';
+import Victory from './Victory';
+import Defeat from './Defeat';
 import SeedRandom from 'seedrandom';
 
 const defaultAbilityPackage = {confirmed: false, abilities:[]}
@@ -79,7 +81,7 @@ class KillKittens extends React.Component {
     }
 
     renderBattleRobots = (combatants, enemies, turn) => {
-        return combatants.map((warrior, index) => (warrior.currentHealth === 0)? null : <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
+        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
     }
 
     postEvents(events) {
@@ -131,6 +133,8 @@ class KillKittens extends React.Component {
     render() {
         console.log(this.numberAlive())
         return (
+            (this.state.kittens.length === 0)? <Victory name={this.props.captain.name}/> : 
+            (this.state.warriors.length === 0)? <Defeat /> :
             <div>
                 <Grid columns='equal' >
                     <Grid.Row>
