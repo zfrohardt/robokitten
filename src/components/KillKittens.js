@@ -74,8 +74,8 @@ class KillKittens extends React.Component {
         })
     }
 
-    renderBattleRobots = (combatants, enemies) => {
-        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants}/>)
+    renderBattleRobots = (combatants, enemies, turn) => {
+        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
     }
 
     postEvents(events) {
@@ -132,7 +132,7 @@ class KillKittens extends React.Component {
                     </Grid.Row>
                     <Grid.Row>
                         <Grid.Column>
-                            {this.renderBattleRobots(this.state.warriors, this.props.kittens)}
+                            {this.renderBattleRobots(this.state.warriors, this.props.kittens, this.state.turnNumber % 2 === 0)}
                         </Grid.Column>
                         <Grid.Column width={3}>
                             <div className="gameLog">
@@ -143,7 +143,7 @@ class KillKittens extends React.Component {
                             </div>
                         </Grid.Column>
                         <Grid.Column>
-                            {this.renderBattleRobots(this.props.kittens, this.state.warriors)}
+                            {this.renderBattleRobots(this.props.kittens, this.state.warriors, this.state.turnNumber % 2 === 1)}
                         </Grid.Column>
                     </Grid.Row>
                 </Grid>
