@@ -34,8 +34,7 @@ class KillKittens extends React.Component {
             combatant._currentHealth = combatant.maxHealth;
             Object.defineProperty(combatant, "currentHealth", {
                 set: function(newHealth) {
-                    this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
-                    this._currentHealth = (newHealth > 0)? newHealth : 0;
+                    this._currentHealth = (newHealth > this.maxHealth)? this.maxHealth : (newHealth < 0)? 0 : newHealth;
                     updateCallback();
                 },
                 get: function() {
