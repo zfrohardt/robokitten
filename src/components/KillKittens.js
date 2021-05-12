@@ -21,6 +21,10 @@ class KillKittens extends React.Component {
         };
     }
 
+    componentDidUpdate() {
+        console.log(this.state.pendingAbilities)
+    }
+
     componentDidMount() {
         let updateCallback = () => this.forceUpdate();
         this.setState({
@@ -71,7 +75,7 @@ class KillKittens extends React.Component {
     }
 
     renderBattleRobots = (combatants, enemies) => {
-        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.updatePackage(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants}/>)
+        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants}/>)
     }
 
     postEvents(events) {
