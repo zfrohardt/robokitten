@@ -146,7 +146,7 @@ class KillKittens extends React.Component {
                 <Grid columns='equal' >
                     <Grid.Row>
                         <Grid.Column>
-                            <Captain {...this.props.captain}/>
+                            <Captain {...this.props.robotCaptain} cat={false} />
                         </Grid.Column>
                         <Grid.Column verticalAlign="middle" width={2}>
                             <Button 
@@ -157,7 +157,7 @@ class KillKittens extends React.Component {
                             onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.kittens)}/>
                         </Grid.Column>
                         <Grid.Column>
-                            <Captain {...this.props.captain}/>
+                            <Captain {...this.props.kittenCaptain} cat={true}/>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>

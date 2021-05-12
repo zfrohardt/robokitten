@@ -10,7 +10,8 @@ export default class Game extends Component {
         let rng = SeedRandom(props.seed);
 
         this.state = {
-            captainSeed: rng(),
+            robotCaptainSeed: rng(),
+            kittenCaptainSeed: rng(),
             randomRobotSeed: rng(),
             gameplaySeed: rng(),
             warriors: [],
@@ -22,8 +23,8 @@ export default class Game extends Component {
         // console.log(this.props.robots)
         return (
             (this.state.setup)? 
-                <GameSetup captain={this.getCaptain()} robotChoices={this.getRandomCombatants(this.props.robots, 5)} selectCallback={(robots) => this.selectWarriors(robots)} /> :
-                <KillKittens warriors={this.state.warriors} captain={this.getCaptain()} kittens={this.getRandomCombatants(this.props.kittens, 3)} postVictories={this.postVictories} />
+                <GameSetup robotCaptain={this.getCaptain(this.state.robotCaptainSeed)} robotChoices={this.getRandomCombatants(this.props.robots, 5)} selectCallback={(robots) => this.selectWarriors(robots)} /> :
+                <KillKittens warriors={this.state.warriors} robotCaptain={this.getCaptain(this.state.robotCaptainSeed)} kittens={this.getRandomCombatants(this.props.kittens, 3)} kittenCaptain={this.getCaptain(this.state.kittenCaptainSeed)} postVictories={this.postVictories} />
         );
     }
 
@@ -50,8 +51,8 @@ export default class Game extends Component {
         return randomRobots;
     }
 
-    getCaptain() {
-        let captain = this.getIndexFromRange(this.state.captainSeed, this.props.captains);
+    getCaptain(seed) {
+        let captain = this.getIndexFromRange(seed, this.props.captains);
         captain.name = "Marc"
         return captain;
     }
@@ -69,7 +70,11 @@ export default class Game extends Component {
     }
 
     postVictories = (victoryObj) => {
+<<<<<<< HEAD
         let configObj = {
+=======
+        const configObj = {
+>>>>>>> stats
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"

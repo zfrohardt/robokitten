@@ -79,3 +79,8 @@ div.column .captain>.extra {
 div.ui.container.grid.cat {
   flex-direction: row-reverse;
 }
+
+.gameLog {
+  max-height: 600px;
+  overflow: auto;
+}
