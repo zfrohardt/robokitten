@@ -5,36 +5,132 @@ const applyAbility = (seed, abilityId, state, self, target={}) => {
 }
 
 const abilityLookup = {
-    1 : (state, self, target, seed) => true, // redirect
-    2 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentDefense += 1)},
-    3 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentDefense += 2)},
-    4 : (state, self, target, seed) => true, // redirect
-    5 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentDefense *= 2)},
-    6 : (state, self, target, seed) => {target.currentHealth += 5},
-    7 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentHealth += 4)},
-    8 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentHealth += 2)},
-    9 : (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentDamage += 2)},
-    10: (state, self, target, seed) => false, // reduce
-    11: (state, self, target, seed) => {target.currentHealth -= attack("normal", target.type, self.currentDamage, seed)},
-    12: (state, self, target, seed) => {target.currentHealth -= 2 * attack("normal", target.type, self.currentDamage, seed)},
-    13: (state, self, target, seed) => {state.team = state.team.map(warrior => warrior.currentDamage += 3)},
-    14: (state, self, target, seed) => {target.currentHealth -= 3 + attack("normal", target.type, self.currentDamage, seed)},
-    15: (state, self, target, seed) => {target.currentHealth = 0; self.currentHealth = 0},
-    16: (state, self, target, seed) => {target.currentHealth -= attack("lightning", target.type, self.currentDamage)},
-    17: (state, self, target, seed) => {target.currentHealth -= attack("lightning", target.type, self.currentDamage, seed)},
-    18: (state, self, target, seed) => {target.currentHealth -= 3 + attack("lightning", target.type, self.currentDamage, seed)},
-    19: (state, self, target, seed) => {target.currentHealth -= 2 + attack("lightning", target.type, self.currentDamage, seed)},
-    20: (state, self, target, seed) => {target.currentHealth -= 2 * attack("lightning", target.type, self.currentDamage, seed)},
-    21: (state, self, target, seed) => {target.currentHealth -= attack("fire", target.type, self.currentDamage)},
-    22: (state, self, target, seed) => {target.currentHealth -= 1 + attack("fire", target.type, self.currentDamage, seed)},
-    23: (state, self, target, seed) => {target.currentHealth -= 3 +  attack("fire", target.type, self.currentDamage, seed)},
-    24: (state, self, target, seed) => {target.currentHealth -= 2 * attack("fire", target.type, self.currentDamage, seed)},
-    25: (state, self, target, seed) => {target.currentHealth -= attack("fire", target.type, self.currentDamage, seed)},
-    26: (state, self, target, seed) => {target.currentHealth -= attack("bullet", target.type, self.currentDamage)},
-    27: (state, self, target, seed) => {target.currentHealth -= 2 * attack("bullet", target.type, self.currentDamage, seed)},
-    28: (state, self, target, seed) => {target.currentHealth -= attack("bullet", target.type, self.currentDamage, seed)},
-    29: (state, self, target, seed) => false, // halved
-    30: (state, self, target, seed) => {target.currentHealth -= 3 + attack("bullet", target.type, self.currentDamage, seed)},
+    1 : (state, self, target, seed) => "Absorb hasn't been implemented yet. Sorry, you wasted your turn", // redirect
+    2 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentDefense += 1);
+            return `${self.name} used Harden boosted his team's defense by 1`;
+        },
+    3 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentDefense += 2);
+            return `${self.name} used Protect and boosted his team's defense by 2`;
+        },
+    4 : (state, self, target, seed) => "Protect hasn't been implemented yet. Sorry, you wasted your turn", // redirect
+    5 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentDefense *= 2);
+            return `${self.name} used Iron Defense and boosted his team's defense by 2x`;
+        },
+    6 : (state, self, target, seed) => {
+            target.currentHealth += 5;
+            return `${self.name} used Helping Hand and healed ${target.name} by 5`
+        },
+    7 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentHealth += 4);
+            return `${self.name} used Mr. Fixit and healed his team for 4`;
+        },
+    8 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentHealth += 2);
+            return `${self.name} used Tune Up and healed his team for 2`
+        },
+    9 : (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentDamage += 2);
+            return `${self.name} used Battle Cry and boosted his team's damage by 2`
+        },
+    10: (state, self, target, seed) => "Robot Bark hasn't been implemented yet. Sorry, you wasted your turn", // reduce
+    11: (state, self, target, seed) => {
+            let damage = attack("normal", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Scratch and attacked ${target.name} for ${damage} normal damage`;
+        },
+    12: (state, self, target, seed) => {
+            let damage = 2 * attack("normal", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Double Kick and attacked ${target.name} for ${damage} normal damage`;
+        },
+    13: (state, self, target, seed) => {
+            state.team = state.team.map(warrior => warrior.currentDamage += 3);
+            return `${self.name} used Rage and boosted the damage of ${warrior.name} by 3`;
+        },
+    14: (state, self, target, seed) => {
+            let damage = 3 + attack("normal", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Sonic Boom and attacked ${target.name} for ${damage} normal damage`;
+        },
+    15: (state, self, target, seed) => {
+            target.currentHealth = 0;
+            self.currentHealth = 0;
+            return `${self.name} used Kamikaze and killed ${target.name}`;
+        },
+    16: (state, self, target, seed) => {
+            let damage = attack("lightning", target.type, self.currentDamage);
+            target.currentHealth -= damage;
+            return `${self.name} used Lightning Bolt and attacked ${target.name} for ${damage} lightning damage`;
+        },
+    17: (state, self, target, seed) => {
+            let damage = attack("lightning", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Shock and attacked ${target.name} for ${damage} lightning damage`;
+        },
+    18: (state, self, target, seed) => {
+            let damage = 3 + attack("lightning", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Thunder Punch and attacked ${target.name} for ${damage} lightning damage`;
+        },
+    19: (state, self, target, seed) => {
+            let damage = 2 + attack("lightning", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Magnetic Flux and attacked ${target.name} for ${damage} lightning damage`;
+        },
+    20: (state, self, target, seed) => {
+        let damage = 2 * attack("lightning", target.type, self.currentDamage, seed);
+        target.currentHealth -= damage;
+        return `${self.name} used Zap Cannon and attacked ${target.name} for ${damage} lightning damage`;
+        },
+    21: (state, self, target, seed) => {
+            let damage = attack("fire", target.type, self.currentDamage);
+            target.currentHealth -= damage;
+            return `${self.name} used Fire Ball and attacked ${target.name} for ${damage} fire damage`;
+        },
+    22: (state, self, target, seed) => {
+            let damage = 1 + attack("fire", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Torch and attacked ${target.name} for ${damage} fire damage`;
+        },
+    23: (state, self, target, seed) => {
+            let damage = 3 + attack("fire", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Heat Ray and attacked ${target.name} for ${damage} fire damage`;
+        },
+    24: (state, self, target, seed) => {
+            let damage = 2 * attack("fire", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Burning Oil and attacked ${target.name} for ${damage} fire damage`;
+    },
+    25: (state, self, target, seed) => {
+            let damage = attack("fire", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Flame Slash and attacked ${target.name} for ${damage} fire damage`;
+        },
+    26: (state, self, target, seed) => {
+            let damage = attack("bullet", target.type, self.currentDamage);
+            target.currentHealth -= damage;
+            return `${self.name} used Sniper and attacked ${target.name} for ${damage} bullet damage`;
+        },
+    27: (state, self, target, seed) => {
+            let damage = 2 * attack("bullet", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Billet Barrrage and attacked ${target.name} for ${damage} bullet damage`;
+        },
+    28: (state, self, target, seed) => {
+            let damage = attack("bullet", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Open Fire and attacked ${target.name} for ${damage} bullet damage`;
+        },
+    29: (state, self, target, seed) => "Catnip Shot hasn't been implemented yet. Sorry, you wasted your turn", // halved
+    30: (state, self, target, seed) => {
+            let damage = 3 + attack("bullet", target.type, self.currentDamage, seed);
+            target.currentHealth -= damage;
+            return `${self.name} used Robot Rock and attacked ${target.name} for ${damage} bullet damage`;
+        },
 }
 
 // returns an attack's damage. Will return max damage if seed is left 0
