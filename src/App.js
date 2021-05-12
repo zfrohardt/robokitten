@@ -102,7 +102,7 @@ export default class App extends Component {
                                 <Route exact path="/play" render={() => <Redirect to={`/play/${this.getURLSeed()}`} />} />
                                 <Route exact path="/play/:seed" render={(props) => <Game seed={props.match.params.seed} {...this.state}  />} />
                                 <Route exact path="/troops" render={() => <Troops robots={this.state.robots} />} />
-                                <Route exact path="/enemies" render={() => <Enemies kittens={this.state.kittens}/>} />
+                                <Route exact path="/enemies" render={() => <Troops kittens robots={this.state.kittens}/>} />
                                 <Redirect exact from="/kittens" to="/enemies" />
                                 <Route exact path='/statistics' component={Stats} />
                                 <Route component={Error} status={404} />

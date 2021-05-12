@@ -71,4 +71,18 @@ const RobotBattleCard = props => {
     )
 }
 
+const confirmedAttack = () => {
+    return true;
+}
+
+const getAbilityPackage = () => {
+    // {
+    //     abilities: [
+    //         {},
+    //         {},
+    //         {}
+    //     ]
+    // }
+}
+
 export default RobotBattleCard
