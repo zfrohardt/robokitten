@@ -21,56 +21,57 @@ class KillKittens extends React.Component {
         };
     }
 
-    componentDidUpdate() {
-        console.log(this.state.pendingAbilities)
-    }
-
     componentDidMount() {
         let updateCallback = () => this.forceUpdate();
         this.setState({
-            warriors: this.props.warriors.map(warrior => {
-                warrior._currentHealth = warrior.maxHealth;
-                Object.defineProperty(warrior, "currentHealth", {
-                    set: function(newHealth) {
-                        this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
-                        this._currentHealth = (newHealth > 0)? newHealth : 0;
-                        updateCallback();
-                    },
-                    get: function() {
-                        return this._currentHealth;
-                    },
-                    configurable: true,
-                    enumerable: true,
-                });
+            warriors: this.addStatefulStats(this.props.warriors, updateCallback),
+            kittens: this.addStatefulStats(this.props.kittens, updateCallback)
+        })
+    }
 
-                warrior._currentDamage = warrior.baseDamage;
-                Object.defineProperty(warrior, "currentDamage", {
-                    set: function(newDamage) {
-                        this._currentDamage = (newDamage > 0)? newDamage : 0;
-                        updateCallback();
-                    },
-                    get: function() {
-                        return this._currentDamage;
-                    },
-                    configurable: true,
-                    enumerable: true,
-                });
+    addStatefulStats = (combatants, updateCallback) => {
+        return combatants.map(combatant => {
+            combatant._currentHealth = combatant.maxHealth;
+            Object.defineProperty(combatant, "currentHealth", {
+                set: function(newHealth) {
+                    this._currentHealth = (newHealth < this.maxHealth)? newHealth : this.maxHealth;
+                    this._currentHealth = (newHealth > 0)? newHealth : 0;
+                    updateCallback();
+                },
+                get: function() {
+                    return this._currentHealth;
+                },
+                configurable: true,
+                enumerable: true,
+            });
 
-                warrior._currentDefense = warrior.baseDefense;
-                Object.defineProperty(warrior, "currentDefense", {
-                    set: function(newDefense) {
-                        this._currentDefense = (newDefense > 0)? newDefense : 0;
-                        updateCallback();
-                    },
-                    get: function() {
-                        return this._currentDefense;
-                    },
-                    configurable: true,
-                    enumerable: true,
-                });
+            combatant._currentDamage = combatant.baseDamage;
+            Object.defineProperty(combatant, "currentDamage", {
+                set: function(newDamage) {
+                    this._currentDamage = (newDamage > 0)? newDamage : 0;
+                    updateCallback();
+                },
+                get: function() {
+                    return this._currentDamage;
+                },
+                configurable: true,
+                enumerable: true,
+            });
 
-                return warrior;
-            })
+            combatant._currentDefense = combatant.baseDefense;
+            Object.defineProperty(combatant, "currentDefense", {
+                set: function(newDefense) {
+                    this._currentDefense = (newDefense > 0)? newDefense : 0;
+                    updateCallback();
+                },
+                get: function() {
+                    return this._currentDefense;
+                },
+                configurable: true,
+                enumerable: true,
+            });
+
+            return combatant;
         })
     }
 
@@ -87,13 +88,30 @@ class KillKittens extends React.Component {
     endOfTurnHandler = (robots, kittens) => {
         let rng = SeedRandom(this.state.seed);
         let state = (this.state.turnNumber % 2 === 1)? {team: robots, enemies: kittens} : {team: kittens, enemies: robots};
-        let event = applyAbility(rng(), 25, state, robots[0], robots[1]);
-        let event2 = applyAbility(rng(), 13, state, robots[0], robots[1]);
+        
+        let events = this.state.pendingAbilities.map((pending, index) => {
+            let returnArray = pending.abilities.map(ability => {ability.self = state.team[index]; return ability;})
+            console.log("RETURN ARRAY");
+            console.log(returnArray);
+            return returnArray;
+        })
+
+        console.log(events);
+
+        events = events.reduce((acc, arr) => acc.concat(arr), [])
+
+        console.log(events);
+
+        events.sort((x, y) => (x.ability.passive === y.ability.passive)? 0 : (x.ability.passive)? 1 : 0);
+
+        console.log(events);
+
         this.setState({
             seed: rng(),
             turnNumber: this.state.turnNumber + 1,
         })
-        this.postEvents([event, event2])
+        //this.postEvents([event, event2]);
+        this.resetPendingUpdates();
     }
 
     packageUpdate(index, abilityPackage) {
@@ -123,8 +141,8 @@ class KillKittens extends React.Component {
                             size="large" 
                             color="olive" 
                             content={`End ${(this.state.turnNumber % 2 === 1)? "Robot" : "Kitten"} Turn`}
-                            disabled={this.state.pendingAbilities.reduce((acc, val) => acc && val, true)}
-                            onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.robots)}/>
+                            disabled={!this.state.pendingAbilities.reduce((acc, val) => acc && val.confirmed, true)}
+                            onClick={event => this.endOfTurnHandler(this.state.warriors, this.state.kittens)}/>
                         </Grid.Column>
                         <Grid.Column>
                             <Captain {...this.props.captain}/>
