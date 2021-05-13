@@ -1246,52 +1246,31 @@
       ]
     },
     {
-      "captainName": "Marc",
-      "captainId": 2,
+      "captainName": "Ivett Seana",
+      "captainId": 3,
       "troops": [
         {
-          "id": 11
-        },
-        {
+          "name": "Doralynn Honor",
           "id": 30
         },
         {
-          "id": 13
-        }
-      ],
-      "eventLog": [],
-      "id": 3
-    },
-    {
-      "captainName": "Marc",
-      "captainId": 2,
-      "troops": [
-        {
-          "id": 11
+          "name": "Kellen Barbra",
+          "id": 26
         },
         {
-          "id": 30
-        },
-        {
-          "id": 13
+          "name": "Katharine Elenore",
+          "id": 10
         }
       ],
       "eventLog": [
-        "undefined used Protect and boosted his team's defense by 2",
-        "undefined used Harden boosted his team's defense by 1",
-        "undefined used Harden boosted his team's defense by 1",
-        "undefined used Torch and attacked undefined for 1.5 fire damage",
-        "undefined used Sonic Boom and attacked undefined for 4 normal damage",
-        "undefined used Sonic Boom and attacked undefined for 4 normal damage",
-        "undefined used Harden boosted his team's defense by 1",
-        "undefined used Tune Up and healed his team for 2",
-        "Robot Bark hasn't been implemented yet. Sorry, you wasted your turn",
-        "undefined used Protect and boosted his team's defense by 2",
-        "undefined used Magnetic Flux and attacked undefined for 2.5 lightning damage",
-        "undefined used Kamikaze and killed undefined",
-        "undefined used Torch and attacked undefined for 2 fire damage"
+        "Doralynn Honor used Harden boosted his team's defense by 1",
+        "Kellen Barbra used Harden boosted his team's defense by 1",
+        "Kellen Barbra used Mr. Fixit and healed his team for 4",
+        "Doralynn Honor used Sonic Boom and attacked Natividad Cicily for 4 normal damage",
+        "Kellen Barbra used Robot Rock and attacked Natividad Cicily for 4 bullet damage",
+        "Katharine Elenore used Sonic Boom and attacked Natividad Cicily for 7 normal damage"
       ],
-      "id": 4
+      "id": 3
     }
   ]
 }

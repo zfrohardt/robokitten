@@ -140,7 +140,7 @@ class KillKittens extends React.Component {
 
     render() {
         return (
-            (this.state.kittens.length === 2)? <Victory postVictory={() => 
+            (this.state.kittens.length === 0)? <Victory postVictory={() => 
                 this.props.postVictories({
                     captainName: this.props.robotCaptain.name,
                     captainId: this.props.robotCaptain.modelNumber,

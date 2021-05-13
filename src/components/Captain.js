@@ -8,7 +8,7 @@ const Captain = props => {
             <Card.Content>
                 <Card.Header>
                     <Icon color='grey' name='flag' />
-                    Captain my Captain{props.name}
+                    Captain {props.name}
                 </Card.Header>
                 <Card.Meta>Model Number {props.modelNumber}</Card.Meta>
                 <Card.Description>{props.description}</Card.Description>

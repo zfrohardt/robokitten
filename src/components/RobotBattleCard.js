@@ -35,14 +35,14 @@ class RobotBattleCard extends Component {
             return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
             <Dropdown.Menu>
                 <Dropdown.Header>Choose a target</Dropdown.Header>
-                {this.props.enemies.map((enemy, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, enemy)}>{`# ${enemy.modelNumber}`}</Dropdown.Item>)}
+                {this.props.enemies.map((enemy, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, enemy)}>{`${enemy.name}`}</Dropdown.Item>)}
             </Dropdown.Menu>
             </Dropdown>} />
         } else if (ability.target === 'warrior') {
             return <Popup content={ability.description} trigger={<Dropdown item text={ability.name}>
             <Dropdown.Menu>
                 <Dropdown.Header>Choose a target</Dropdown.Header>
-                {this.props.team.map((teammate, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, teammate)}>{`# ${teammate.modelNumber}`}</Dropdown.Item>)}
+                {this.props.team.map((teammate, index) => <Dropdown.Item disabled={this.props.turn} onClick={()=>this.chooseAbility(ability, teammate)}>{`${teammate.name}`}</Dropdown.Item>)}
             </Dropdown.Menu>
             </Dropdown>} />
         }
