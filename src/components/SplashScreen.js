@@ -1,9 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Button, Container, Grid, Header} from 'semantic-ui-react';
+import {Button, Container, Grid, Header, Image} from 'semantic-ui-react';
+import kitty from '../evilkitty.jpeg';
 
 const SplashScreen = props => (
     <Grid stackable container textAlign="center" columns="equal">
+        <Grid.Row>
+            <Grid.Column width={9}>
+                <Image src={kitty} />
+            </Grid.Column>
+        </Grid.Row>
         <Grid.Row>
             <Header as='h1'>It's either us or them.</Header>
         </Grid.Row>
