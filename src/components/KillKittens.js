@@ -105,7 +105,7 @@ class KillKittens extends React.Component {
         events = events.reduce((acc, arr) => acc.concat(arr), [])
         events.sort((x, y) => (x.ability.passive === y.ability.passive)? 0 : (x.ability.passive)? 0 : 1);
 
-        events = events.map(event => applyAbility(rng(), event.ability.id, state, event.self, event.target));
+        events = events.map(event => applyAbility(rng(), event.ability, state, event.self, event.target));
         this.postEvents(events);
 
         // resets opponent's damage and defence before next turn            
