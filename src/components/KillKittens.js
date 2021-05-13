@@ -20,6 +20,7 @@ class KillKittens extends React.Component {
             turnNumber: 1,
             seed: props.seed,
             pendingAbilities: defaultAbilityPackageGroup,
+            mounted: false
         };
     }
 
@@ -27,7 +28,8 @@ class KillKittens extends React.Component {
         let updateCallback = () => this.forceUpdate();
         this.setState({
             warriors: this.addStatefulStats(this.props.warriors, updateCallback),
-            kittens: this.addStatefulStats(this.props.kittens, updateCallback)
+            kittens: this.addStatefulStats(this.props.kittens, updateCallback),
+            mounted: true
         })
     }
 
@@ -105,8 +107,9 @@ class KillKittens extends React.Component {
 
         events = events.map(event => applyAbility(rng(), event.ability.id, state, event.self, event.target));
         this.postEvents(events);
-        console.log(robots.filter(robot => robot.currentHealth > 0))
-        console.log(kittens.filter(kitten => kitten.currentHealth > 0))
+
+        // resets opponent's damage and defence before next turn            
+        state.enemies = state.enemies.map(enemy => {enemy._currentDamage = enemy.baseDamage; enemy._currentDefense = enemy.baseDefense; return enemy;})
         this.setState({
             seed: rng(),
             turnNumber: this.state.turnNumber + 1,
@@ -140,7 +143,7 @@ class KillKittens extends React.Component {
 
     render() {
         return (
-            (this.state.kittens.length === 0)? <Victory postVictory={() => 
+            (this.state.kittens.length === 0 && this.state.mounted)? <Victory victory={this.state.kittens.length === 0} postVictory={() => 
                 this.props.postVictories({
                     captainName: this.props.robotCaptain.name,
                     captainId: this.props.robotCaptain.modelNumber,
@@ -150,7 +153,7 @@ class KillKittens extends React.Component {
 
                     name={this.props.robotCaptain.name}
                 /> : 
-            (this.state.warriors.length === 0)? <Defeat /> :
+            (this.state.warriors.length === 0 && this.state.mounted)? <Defeat /> :
             <div>
                 <Grid columns='equal' >
                     <Grid.Row>
