@@ -1,156 +1,156 @@
 import SeedRandom from 'seedrandom';
 
-const applyAbility = (seed, abilityId, state, self, target={}) => {
-    return abilityLookup[abilityId](state, self, target, seed);
+const applyAbility = (seed, ability, state, self, target={}) => {
+    return abilityLookup[ability.id](state, self, target, seed, ability);
 }
 
 const abilityLookup = {
-    1 : (state, self, target, seed) => "Absorb hasn't been implemented yet. Sorry, you wasted your turn", // redirect
-    2 : (state, self, target, seed) => {
+    1 : (state, self, target, seed, ability) => `${ability.name} hasn't been implemented yet. Sorry, you wasted your turn`, // redirect
+    2 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentDefense += 1;
                 return warrior;
             })
-            return `${self.name} used Harden boosted his team's defense by 1`;
+            return `${self.name} used ${ability.name} boosted his team's defense by 1`;
         },
-    3 : (state, self, target, seed) => {
+    3 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentDefense += 2;
                 return warrior;
             });
-            return `${self.name} used Protect and boosted his team's defense by 2`;
+            return `${self.name} used ${ability.name} and boosted his team's defense by 2`;
         },
-    4 : (state, self, target, seed) => "Attract hasn't been implemented yet. Sorry, you wasted your turn", // redirect
-    5 : (state, self, target, seed) => {
+    4 : (state, self, target, seed, ability) => `${ability.name} hasn't been implemented yet. Sorry, you wasted your turn`, // redirect
+    5 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentDefense *= 2;
                 return warrior;
             });
-            return `${self.name} used Iron Defense and boosted his team's defense by 2x`;
+            return `${self.name} used ${ability.name} and boosted his team's defense by 2x`;
         },
-    6 : (state, self, target, seed) => {
+    6 : (state, self, target, seed, ability) => {
             target.currentHealth += 5;
-            return `${self.name} used Helping Hand and healed ${target.name} by 5`
+            return `${self.name} used ${ability.name} and healed ${target.name} by 5`
         },
-    7 : (state, self, target, seed) => {
+    7 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentHealth += 4;
                 return warrior;
             });
-            return `${self.name} used Mr. Fixit and healed his team for 4`;
+            return `${self.name} used ${ability.name} and healed his team for 4`;
         },
-    8 : (state, self, target, seed) => {
+    8 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentHealth += 2;
                 return warrior;
             });
-            return `${self.name} used Tune Up and healed his team for 2`
+            return `${self.name} used ${ability.name} and healed his team for 2`
         },
-    9 : (state, self, target, seed) => {
+    9 : (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentDamage += 2;
                 return warrior;
             });
-            return `${self.name} used Battle Cry and boosted his team's damage by 2`
+            return `${self.name} used ${ability.name} and boosted his team's damage by 2`
         },
-    10: (state, self, target, seed) => "Robot Bark hasn't been implemented yet. Sorry, you wasted your turn", // reduce
-    11: (state, self, target, seed) => {
-            let damage = attack("normal", target.type, self.currentDamage, seed);
+    10: (state, self, target, seed, ability) => `${ability.name} hasn't been implemented yet. Sorry, you wasted your turn`, // reduce
+    11: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Scratch and attacked ${target.name} for ${damage} normal damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    12: (state, self, target, seed) => {
-            let damage = 2 * attack("normal", target.type, self.currentDamage, seed);
+    12: (state, self, target, seed, ability) => {
+            let damage = 2 * attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Double Kick and attacked ${target.name} for ${damage} normal damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    13: (state, self, target, seed) => {
+    13: (state, self, target, seed, ability) => {
             state.team = state.team.map(warrior => {
                 warrior.currentDamage += 3;
                 return warrior;
             });
-            return `${self.name} used Rage and boosted the damage of his team by 3`;
+            return `${self.name} used ${ability.name} and boosted the damage of his team by 3`;
         },
-    14: (state, self, target, seed) => {
-            let damage = 3 + attack("normal", target.type, self.currentDamage, seed);
+    14: (state, self, target, seed, ability) => {
+            let damage = 3 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Sonic Boom and attacked ${target.name} for ${damage} normal damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    15: (state, self, target, seed) => {
+    15: (state, self, target, seed, ability) => {
             target.currentHealth = 0;
             self.currentHealth = 0;
-            return `${self.name} used Kamikaze and killed ${target.name}`;
+            return `${self.name} used ${ability.name} and killed ${target.name}`;
         },
-    16: (state, self, target, seed) => {
-            let damage = attack("lightning", target.type, self.currentDamage);
+    16: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage);
             target.currentHealth -= damage;
-            return `${self.name} used Lightning Bolt and attacked ${target.name} for ${damage} lightning damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    17: (state, self, target, seed) => {
-            let damage = attack("lightning", target.type, self.currentDamage, seed);
+    17: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Shock and attacked ${target.name} for ${damage} lightning damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    18: (state, self, target, seed) => {
-            let damage = 3 + attack("lightning", target.type, self.currentDamage, seed);
+    18: (state, self, target, seed, ability) => {
+            let damage = 3 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Thunder Punch and attacked ${target.name} for ${damage} lightning damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    19: (state, self, target, seed) => {
-            let damage = 2 + attack("lightning", target.type, self.currentDamage, seed);
+    19: (state, self, target, seed, ability) => {
+            let damage = 2 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Magnetic Flux and attacked ${target.name} for ${damage} lightning damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    20: (state, self, target, seed) => {
-        let damage = 2 * attack("lightning", target.type, self.currentDamage, seed);
+    20: (state, self, target, seed, ability) => {
+        let damage = 2 * attack(ability.type, target.type, self.currentDamage, seed);
         target.currentHealth -= damage;
-        return `${self.name} used Zap Cannon and attacked ${target.name} for ${damage} lightning damage`;
+        return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    21: (state, self, target, seed) => {
-            let damage = attack("fire", target.type, self.currentDamage);
+    21: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage);
             target.currentHealth -= damage;
-            return `${self.name} used Fire Ball and attacked ${target.name} for ${damage} fire damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    22: (state, self, target, seed) => {
-            let damage = 1 + attack("fire", target.type, self.currentDamage, seed);
+    22: (state, self, target, seed, ability) => {
+            let damage = 1 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Torch and attacked ${target.name} for ${damage} fire damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    23: (state, self, target, seed) => {
-            let damage = 3 + attack("fire", target.type, self.currentDamage, seed);
+    23: (state, self, target, seed, ability) => {
+            let damage = 3 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Heat Ray and attacked ${target.name} for ${damage} fire damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    24: (state, self, target, seed) => {
-            let damage = 2 * attack("fire", target.type, self.currentDamage, seed);
+    24: (state, self, target, seed, ability) => {
+            let damage = 2 * attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Burning Oil and attacked ${target.name} for ${damage} fire damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
     },
-    25: (state, self, target, seed) => {
-            let damage = attack("fire", target.type, self.currentDamage, seed);
+    25: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Flame Slash and attacked ${target.name} for ${damage} fire damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    26: (state, self, target, seed) => {
-            let damage = attack("bullet", target.type, self.currentDamage);
+    26: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage);
             target.currentHealth -= damage;
-            return `${self.name} used Sniper and attacked ${target.name} for ${damage} bullet damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    27: (state, self, target, seed) => {
-            let damage = 2 * attack("bullet", target.type, self.currentDamage, seed);
+    27: (state, self, target, seed, ability) => {
+            let damage = 2 * attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Billet Barrrage and attacked ${target.name} for ${damage} bullet damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    28: (state, self, target, seed) => {
-            let damage = attack("bullet", target.type, self.currentDamage, seed);
+    28: (state, self, target, seed, ability) => {
+            let damage = attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Open Fire and attacked ${target.name} for ${damage} bullet damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
-    29: (state, self, target, seed) => "Catnip Shot hasn't been implemented yet. Sorry, you wasted your turn", // halved
-    30: (state, self, target, seed) => {
-            let damage = 3 + attack("bullet", target.type, self.currentDamage, seed);
+    29: (state, self, target, seed, ability) => `${ability.name} hasn't been implemented yet. Sorry, you wasted your turn`, // halved
+    30: (state, self, target, seed, ability) => {
+            let damage = 3 + attack(ability.type, target.type, self.currentDamage, seed);
             target.currentHealth -= damage;
-            return `${self.name} used Robot Rock and attacked ${target.name} for ${damage} bullet damage`;
+            return `${self.name} used ${ability.name} and attacked ${target.name} for ${damage} ${ability.type} damage`;
         },
 }
 
