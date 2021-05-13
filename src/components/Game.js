@@ -61,7 +61,7 @@ export default class Game extends Component {
         if (arr.length === 0) {
             return {}
         }
-        return arr[this.getNumberFromRange(rand, arr.length)];
+        return {...arr[this.getNumberFromRange(rand, arr.length)]};
     }
     
 

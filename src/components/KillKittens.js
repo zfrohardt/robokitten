@@ -81,7 +81,8 @@ class KillKittens extends React.Component {
     }
 
     renderBattleRobots = (combatants, enemies, turn) => {
-        return combatants.map((warrior, index) => <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior} enemies={enemies} team={combatants} turn={turn}/>)
+        return combatants.map((warrior, index) => (warrior.currentHealth === 0)? null : <RobotBattleCard packageUpdate={(abilityPackage) => this.packageUpdate(index, abilityPackage)} name={`Robot #${warrior.modelNumber}`} {...warrior}
+            enemies={enemies.filter(enemy => enemy.currentHealth > 0)} team={combatants.filter(combatant => combatant.currentHealth > 0)} turn={turn}/>)
     }
 
     postEvents(events) {
@@ -94,7 +95,8 @@ class KillKittens extends React.Component {
         let rng = SeedRandom(this.state.seed);
         let state = (this.state.turnNumber % 2 === 1)? {team: robots, enemies: kittens} : {team: kittens, enemies: robots};
         
-        let events = this.state.pendingAbilities.map((pending, index) => {
+        let events = this.state.pendingAbilities.filter((pending) => pending.confirmed);
+        events = events.map((pending, index) => {
             let returnArray = pending.abilities.map(ability => {ability.self = state.team[index]; return ability;})
             return returnArray;
         })
@@ -111,7 +113,7 @@ class KillKittens extends React.Component {
             warriors: robots.filter(robot => robot.currentHealth > 0),
             kittens: kittens.filter(kitten => kitten.currentHealth > 0),
         })
-        this.resetPendingUpdates();
+        this.resetPendingUpdates(state.team.length);
     }
 
     packageUpdate(index, abilityPackage) {
@@ -122,9 +124,13 @@ class KillKittens extends React.Component {
         })
     }
 
-    resetPendingUpdates() {
+    resetPendingUpdates(n = 3) {
+        let pendingAbilities = [];
+        for(let i = 0; i < n; i++) {
+            pendingAbilities.push(defaultAbilityPackage);
+        }
         this.setState({
-            pendingAbilities: defaultAbilityPackageGroup,
+            pendingAbilities: pendingAbilities,
         })
     }
 
@@ -134,12 +140,12 @@ class KillKittens extends React.Component {
 
     render() {
         return (
-            (this.state.kittens.length === 0)? <Victory postVictory={() => 
+            (this.state.kittens.length === 2)? <Victory postVictory={() => 
                 this.props.postVictories({
-                    captainName: this.props.robotCaptain.name, 
-                    captainId: this.props.robotCaptain.id, 
+                    captainName: this.props.robotCaptain.name,
+                    captainId: this.props.robotCaptain.modelNumber,
                     troops:this.props.warriors.map(troop => {
-                        return {name: troop.name, id: troop.id}
+                        return {name: troop.name, id: troop.modelNumber}
                     }), eventLog: this.state.events})}
 
                     name={this.props.robotCaptain.name}
