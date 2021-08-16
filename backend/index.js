@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+import routes from './routes/routes'
+
 //enables .env file
 dotenv.congif()
 
@@ -11,6 +13,8 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded())
+
+app.use('/', routes)
 
 const CONNECTION_URL = process.env.CONNECTION_URL
 const PORT = process.env.PORT || 5000
