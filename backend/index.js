@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+//enables .env file
 dotenv.congif()
 
 const app = express()
