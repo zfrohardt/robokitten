@@ -14,7 +14,9 @@ export const getAllKittens = async (req, res) => {
 export const getKitten = async (req, res) => {
     const { id: _id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No kitten found with that id')
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).send('No kitten found with that id')
+    }
 
     const kitten = await Kitten.findById(_id).populate("Ability")
 

@@ -14,7 +14,9 @@ export const getAllCaptains = async (req, res) => {
 export const getCaptain = async (req, res) => {
     const { id: _id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No captain found with that id')
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).send('No captain found with that id')
+    }
 
     const captain = await Captain.findById(_id)
 

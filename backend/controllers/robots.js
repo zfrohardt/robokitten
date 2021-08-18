@@ -14,7 +14,9 @@ export const getAllRobots = async (req, res) => {
 export const getRobot = async (req, res) => {
     const { id: _id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No robot found with that id')
+    if (!mongoose.Types.ObjectId.isValid(_id)) {
+        return res.status(404).send('No robot found with that id')
+    }
 
     const robot = await Robot.findById(_id).populate("Ability")
 
