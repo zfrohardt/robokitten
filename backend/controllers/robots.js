@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Robot from '../models/robot'
 
-export const getRobots = async (req, res) => {
+export const getAllRobots = async (req, res) => {
     try {
         const robots = await Robot.find()
 
@@ -11,7 +11,7 @@ export const getRobots = async (req, res) => {
     }
 }
 
-export const getOneRobot = async (req, res) => {
+export const getRobot = async (req, res) => {
     const { id: _id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No robot found with that id')

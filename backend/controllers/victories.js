@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Victory from '../models/victory'
 
-export const getVictories = async (req, res) => {
+export const getAllVictories = async (req, res) => {
     try {
         const victories = await Victory.find()
 
@@ -10,6 +10,8 @@ export const getVictories = async (req, res) => {
         res.status(404).json({ message: error.message })
     }
 }
+
+// We may want a getVictory action
 
 export const postVictory = async (req, res) => {
     const victory = req.body

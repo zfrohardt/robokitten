@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Captain from '../models/captain'
 
-export const getCaptains = async (req, res) => {
+export const getAllCaptains = async (req, res) => {
     try {
         const captains = await Captain.find()
 
@@ -11,7 +11,7 @@ export const getCaptains = async (req, res) => {
     }
 }
 
-export const getOneCaptain = async (req, res) => {
+export const getCaptain = async (req, res) => {
     const { id: _id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No captain found with that id')

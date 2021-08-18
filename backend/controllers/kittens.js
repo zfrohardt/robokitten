@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import Kitten from '../models/kitten'
 
-export const getKittens = async (req, res) => {
+export const getAllKittens = async (req, res) => {
     try {
         const kittens = await Kitten.find()
 
@@ -11,7 +11,7 @@ export const getKittens = async (req, res) => {
     }
 }
 
-export const getOneKitten = async (req, res) => {
+export const getKitten = async (req, res) => {
     const { id: _id } = req.params
 
     if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No kitten found with that id')
