@@ -149,7 +149,7 @@ const filterType = (troop, filter) => {
 }
 
 const makeRobotCard = (key, robot) => {
-    console.log(robot.maxHealth);
+    // console.log(robot.maxHealth);
     return (
         <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} />
     );
