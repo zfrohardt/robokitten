@@ -78,9 +78,9 @@ const sortOptions = [
 
 const sortFunctions = {
     "modelNumber": (x, y) => x.modelNumber - y.modelNumber,
-    "damage": (x, y) => y.damage - x.damage,
-    "health": (x, y) => y.health - x.health,
-    "defense": (x, y) => y.defense - x.defense,
+    "damage": (x, y) => y.baseDamage - x.baseDamage,
+    "health": (x, y) => y.maxHealth - x.maxHealth,
+    "defense": (x, y) => y.baseDefense - x.baseDefense,
 }
 
 const classOptions = [
@@ -149,14 +149,14 @@ const filterType = (troop, filter) => {
 }
 
 const makeRobotCard = (key, robot) => {
-    console.log(robot);
+    console.log(robot.maxHealth);
     return (
         <RobotDisplayCard key={key} {...robot} name={`Robot Model ${robot.modelNumber}`} />
     );
 }
 
 const makeKittenCard = (key, kitten) => {
-    console.log(kitten);
+    // console.log(kitten);
     return (
         <KittenDisplayCard key={key} {...kitten} name={`Kitten Breed ${kitten.modelNumber}`} />
     );
