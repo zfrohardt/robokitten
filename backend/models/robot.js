@@ -8,7 +8,7 @@ const robotSchema = Schema({
     maxHealth: Number,
     baseDefense: Number,
     type: String,
-    abilities: [{
+    abilityIds: [{
         type: Schema.Types.ObjectId,
         ref: "Ability"
     }],

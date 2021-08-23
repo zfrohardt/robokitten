@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 import Robot from '../models/robot.js'
+import Ability from '../models/ability.js'
 
 export const getAllRobots = async (req, res) => {
     try {
-        const robots = await Robot.find()
+        const robots = await Robot.find().populate("abilityIds")
 
         res.status(200).json(robots)
     } catch (error) {
@@ -18,7 +19,7 @@ export const getRobot = async (req, res) => {
         return res.status(404).send('No robot found with that id')
     }
 
-    const robot = await Robot.findById(_id).populate("Ability")
+    const robot = await Robot.findById(_id).populate("abilityIds")
 
     res.json(robot)
 }
