@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-import Kitten from '../models/kitten'
+import Kitten from '../models/kitten.js'
 
 export const getAllKittens = async (req, res) => {
     try {
-        const kittens = await Kitten.find()
+        const kittens = await Kitten.find().populate("Ability")
 
         res.status(200).json(kittens)
     } catch (error) {

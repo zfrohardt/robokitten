@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Captain from '../models/captain'
+import Captain from '../models/captain.js'
 
 export const getAllCaptains = async (req, res) => {
     try {

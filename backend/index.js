@@ -3,16 +3,16 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-import routes from './routes/routes'
+import routes from './routes/routes.js'
 
 //enables .env file
-dotenv.congif()
+dotenv.config()
 
 const app = express()
 
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded())
+// app.use(express.urlencoded())
 
 app.use('/', routes)
 

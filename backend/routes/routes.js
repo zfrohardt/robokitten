@@ -1,9 +1,9 @@
 import express from "express";
 
-import { getAllRobots, getRobot } from '../controllers/robots'
-import { getAllKittens, getKitten } from '../controllers/kittens'
-import { getAllCaptains, getCaptain } from '../controllers/captains'
-import { getAllVictories, postVictory } from '../controllers/victories'
+import { getAllRobots, getRobot } from '../controllers/robots.js'
+import { getAllKittens, getKitten } from '../controllers/kittens.js'
+import { getAllCaptains, getCaptain } from '../controllers/captains.js'
+import { getAllVictories, postVictory } from '../controllers/victories.js'
 
 const router = express.Router()
 

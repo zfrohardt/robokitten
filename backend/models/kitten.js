@@ -1,4 +1,5 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
+const { Schema } = mongoose
 
 const kittenSchema = Schema({
     class: String,
@@ -7,9 +8,9 @@ const kittenSchema = Schema({
     maxHealth: Number,
     baseDefense: Number,
     type: String,
-    abilities: [{
+    abilityIds: [{
         type: Schema.Types.ObjectId,
-        ref: "Ability"
+        ref: 'Ability'
     }],
     cat: Boolean
 })

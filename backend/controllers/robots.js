@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Robot from '../models/robot'
+import Robot from '../models/robot.js'
 
 export const getAllRobots = async (req, res) => {
     try {

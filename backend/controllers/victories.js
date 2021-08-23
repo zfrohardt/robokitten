@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import Victory from '../models/victory'
+import Victory from '../models/victory.js'
 
 export const getAllVictories = async (req, res) => {
     try {
