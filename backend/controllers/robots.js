@@ -11,9 +11,9 @@ let abilitySort = (x, y) => {
 
 export const getAllRobots = async (req, res) => {
     try {
-        const robots = await Robot.find().populate("abilityIds")
+        const robots = await Robot.find().populate("abilities")
         const robotsSortedAbilities = robots.map(robot => {
-            robot.abilityIds.sort(abilitySort)
+            robot.abilities.sort(abilitySort)
             return robot
         })
 
@@ -30,7 +30,7 @@ export const getRobot = async (req, res) => {
         return res.status(404).send('No robot found with that id')
     }
 
-    const robot = await Robot.findById(_id).populate("abilityIds")
-    robot.abilityIds.sort(abilitySort)
+    const robot = await Robot.findById(_id).populate("abilities")
+    robot.abilities.sort(abilitySort)
     res.json(robot)
 }

@@ -8,7 +8,7 @@ const kittenSchema = Schema({
     maxHealth: Number,
     baseDefense: Number,
     type: String,
-    abilityIds: [{
+    abilities: [{
         type: Schema.Types.ObjectId,
         ref: 'Ability'
     }],

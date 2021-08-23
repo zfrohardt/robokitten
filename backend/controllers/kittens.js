@@ -11,9 +11,9 @@ let abilitySort = (x, y) => {
 
 export const getAllKittens = async (req, res) => {
     try {
-        const kittens = await Kitten.find().populate("abilityIds")
+        const kittens = await Kitten.find().populate("abilities")
         const kittensSortedAbilities = kittens.map(kitten => {
-            kitten.abilityIds.sort(abilitySort)
+            kitten.abilities.sort(abilitySort)
             return kitten
         })
 
@@ -30,7 +30,7 @@ export const getKitten = async (req, res) => {
         return res.status(404).send('No kitten found with that id')
     }
 
-    const kitten = await Kitten.findById(_id).populate("abilityIds")
-    kitten.abilityIds.sort(abilitySort)
+    const kitten = await Kitten.findById(_id).populate("abilities")
+    kitten.abilities.sort(abilitySort)
     res.json(kitten)
 }
