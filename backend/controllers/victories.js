@@ -1,9 +1,11 @@
 import mongoose from "mongoose";
 import Victory from '../models/victory.js'
+import Captain from '../models/captain.js'
+import Robot from '../models/robot.js'
 
 export const getAllVictories = async (req, res) => {
     try {
-        const victories = await Victory.find()
+        const victories = await Victory.find().populate('captain.captainInfo').populate('troops.troopInfo')
 
         res.status(200).json(victories)
     } catch (error) {
