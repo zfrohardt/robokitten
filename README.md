@@ -14,7 +14,13 @@ Project is created with:
 - Unique names generator 4.5.0
 
 ## Launch
-To launch this app, run the following:
+To launch this app, first get the backend up and running
+cd into the backend directory and run the following:
+```
+$ yarn install
+$ yarn start
+```
+Then cd into the frontend directory and run the following:
 ```
 $ yarn install
 $ yarn start
