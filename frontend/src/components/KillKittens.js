@@ -143,15 +143,29 @@ class KillKittens extends React.Component {
 
     render() {
         return (
-            (this.state.kittens.length === 0 && this.state.mounted)? <Victory victory={this.state.kittens.length === 0} postVictory={() => 
-                this.props.postVictories({
-                    captainName: this.props.robotCaptain.name,
-                    captainId: this.props.robotCaptain.modelNumber,
-                    troops:this.props.warriors.map(troop => {
-                        return {name: troop.name, id: troop.modelNumber}
-                    }), eventLog: this.state.events})}
-
-                    name={this.props.robotCaptain.name}
+            (this.state.kittens.length === 0 && this.state.mounted)? <Victory 
+                victory={this.state.kittens.length === 0} 
+                postVictory={() => 
+                    this.props.postVictories(
+                    // {
+                    // captainName: this.props.robotCaptain.name,
+                    // captainId: this.props.robotCaptain.modelNumber,
+                    // troops: this.props.warriors.map(troop => {
+                    //     return {name: troop.name, id: troop.modelNumber}
+                    // }), eventLog: this.state.events}
+                    {
+                        captain: {
+                            captainName: this.props.robotCaptain.name,
+                            captainInfo: this.props.robotCaptain._id},
+                        troops: this.props.warriors.map(troop => {
+                            return {
+                                troopName: troop.name,
+                                troopInfo: troop._id
+                            }}),
+                        eventLog: this.state.events
+                    }
+                    )}
+                name={this.props.robotCaptain.name}
                 /> : 
             (this.state.warriors.length === 0 && this.state.mounted)? <Defeat /> :
             <div>

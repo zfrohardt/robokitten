@@ -14,7 +14,8 @@ import Enemies from './components/Enemies';
 import Stats from './components/Stats';
 import Error from './components/Error';
 
-const API = 'http://localhost:3000';
+// const API = 'http://localhost:3000'; --- old endpoint for db.json using json server
+const API = 'http://localhost:5000';
 const STD_URL_LENGTH = 3;
 
 export default class App extends Component {
@@ -22,51 +23,55 @@ export default class App extends Component {
         super();
         this.state = {
             robots: [],
-            abilities: [],
+            // do not need abilities anymore as they will be embedded in robots or kittens
+            // abilities: [],
             captains: [],
             kittens: []
         };
     }
 
     componentDidMount() {
-        this.populateDataFromServer('abilities');
+        // do not need abilities anymore as they will be embedded in robots or kittens
+        // this.populateDataFromServer('abilities');
         this.populateDataFromServer('captains');
+        this.populateDataFromServer('robots');
+        this.populateDataFromServer('kittens');
 
-        let abilitySort = (x, y) => {
-            if (x.passive === y.passive) {
-                return (x.name < y.name)? -1 : 1;
-            }
-            return (x.passive)? -1 : 1;
-        }
+        // let abilitySort = (x, y) => {
+        //     if (x.passive === y.passive) {
+        //         return (x.name < y.name)? -1 : 1;
+        //     }
+        //     return (x.passive)? -1 : 1;
+        // }
 
-        fetch(`${API}/abilities`).then(resp => resp.json())
-            .then(abilities => {
-                fetch(`${API}/robots`).then(resp => resp.json())
-                    .then(robots => {
-                        let mergedRobots = robots.map(robot => {
-                            robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
-                            robot.abilities = robot.abilities.sort(abilitySort);
-                            return robot;
-                        });
-                        this.setState({
-                            robots: mergedRobots,
-                        })
-                    }
-                )
+        // fetch(`${API}/abilities`).then(resp => resp.json())
+        //     .then(abilities => {
+        //         fetch(`${API}/robots`).then(resp => resp.json())
+        //             .then(robots => {
+        //                 let mergedRobots = robots.map(robot => {
+        //                     robot.abilities = abilities.filter(ability => robot.abilityIds.includes(ability.id));
+        //                     robot.abilities = robot.abilities.sort(abilitySort);
+        //                     return robot;
+        //                 });
+        //                 this.setState({
+        //                     robots: mergedRobots,
+        //                 })
+        //             }
+        //         )
 
-                fetch(`${API}/kittens`).then(resp => resp.json())
-                    .then(kittens => {
-                        let mergedKittens = kittens.map(kitten => {
-                            kitten.abilities = abilities.filter(ability => kitten.abilityIds.includes(ability.id));
-                            return kitten;
-                        })
-                        this.setState({
-                            kittens: mergedKittens
-                        })
-                    }
-                )
-            }
-        )
+        //         fetch(`${API}/kittens`).then(resp => resp.json())
+        //             .then(kittens => {
+        //                 let mergedKittens = kittens.map(kitten => {
+        //                     kitten.abilities = abilities.filter(ability => kitten.abilityIds.includes(ability.id));
+        //                     return kitten;
+        //                 })
+        //                 this.setState({
+        //                     kittens: mergedKittens
+        //                 })
+        //             }
+        //         )
+        //     }
+        // )
     }
 
     getURLSeed() {

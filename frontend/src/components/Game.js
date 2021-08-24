@@ -90,7 +90,7 @@ export default class Game extends Component {
               },
             body: JSON.stringify(victoryObj)
         }
-        fetch('http://localhost:3000/victories', configObj)
+        fetch('http://localhost:5000/victories', configObj)
         .then(res => res.json())
         .then(console.log)
     }
